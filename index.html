@@ -55,6 +55,83 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ══════════════════════════════════════════
+   BIO CH3 — Notes Styles
+   (extracted here so browser doesn't re-parse
+   on every renderMessage / innerHTML set)
+══════════════════════════════════════════ */
+.b3sc{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 24px 18px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+.b3sn{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bio);font-weight:500;margin-bottom:6px;}
+.b3st{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.b3fb{background:var(--bio-l);border:1px solid var(--bio-b);border-left:4px solid var(--bio);border-radius:10px;padding:14px 18px;margin:14px 0;font-family:var(--mono);font-size:13px;color:#991b1b;font-weight:500;line-height:1.9;}
+.b3eb{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:14px 0;}
+.b3el{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.b3nt{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+.b3nt th{background:var(--bio-l);color:#991b1b;font-weight:700;padding:10px 14px;text-align:left;border-bottom:2px solid var(--bio-b);font-family:var(--mono);font-size:11px;letter-spacing:.5px;}
+.b3nt td{padding:10px 14px;border-bottom:1px solid #f3f4f6;color:var(--text2);font-size:14px;vertical-align:top;}
+.b3nt tr:last-child td{border-bottom:none;}
+.b3cal{border-radius:12px;padding:16px 18px;margin:16px 0;display:flex;gap:12px;align-items:flex-start;}
+.b3cal.fire{background:#fff7ed;border:1px solid #fed7aa;}
+.b3cal.tip{background:#faf5ff;border:1px solid #e9d5ff;}
+.b3cal.green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.b3cal.warn{background:#fefce8;border:1px solid #fde68a;}
+.b3cal.red{background:var(--bio-l);border:1px solid var(--bio-b);}
+.b3cal.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.b3ci{font-size:18px;flex-shrink:0;margin-top:1px;}
+.b3cb{font-size:14px;color:var(--text2);line-height:1.7;}
+.b3cb strong{display:block;margin-bottom:4px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);}
+.b3qr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+.b3qr-item{background:var(--bio-l);border:1px solid var(--bio-b);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:12px;color:#991b1b;line-height:1.7;}
+@media(max-width:520px){.b3qr{grid-template-columns:1fr;}}
+.b3cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.b3cc{border-radius:12px;padding:16px;}
+.b3cc.left{background:#f0fdf4;border:1px solid #bbf7d0;}
+.b3cc.right{background:var(--bio-l);border:1px solid var(--bio-b);}
+.b3cc.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.b3cc.purple{background:#faf5ff;border:1px solid #e9d5ff;}
+.b3cc.orange{background:#fff7ed;border:1px solid #fed7aa;}
+.b3cc.yellow{background:#fefce8;border:1px solid #fde68a;}
+.b3ct{font-weight:700;font-size:14px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.08);}
+.b3cc.left .b3ct{color:#15803d;}
+.b3cc.right .b3ct{color:#991b1b;}
+.b3cc.blue .b3ct{color:#1e40af;}
+.b3cc.purple .b3ct{color:#7e22ce;}
+.b3cc.orange .b3ct{color:#c2410c;}
+.b3cc.yellow .b3ct{color:#92400e;}
+.b3cc ul{margin:0;padding-left:16px;font-size:13px;color:var(--text2);line-height:1.9;}
+@media(max-width:520px){.b3cmp{grid-template-columns:1fr;}}
+.b3def{background:var(--white);border:2px solid var(--bio-b);border-radius:12px;padding:16px 18px;margin:14px 0;}
+.b3dt{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--bio);margin-bottom:6px;font-weight:600;}
+.b3dx{font-size:14px;color:var(--text2);line-height:1.7;}
+.b3flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;}
+.b3fbox{background:var(--bio-l);border:1px solid var(--bio-b);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:#991b1b;text-align:center;line-height:1.5;}
+.b3fbox.blue{background:#eff6ff;border-color:#bfdbfe;color:#1e40af;}
+.b3fbox.green{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;}
+.b3fbox.purple{background:#faf5ff;border-color:#e9d5ff;color:#7e22ce;}
+.b3fbox.orange{background:#fff7ed;border-color:#fed7aa;color:#c2410c;}
+.b3fbox.yellow{background:#fefce8;border-color:#fde68a;color:#92400e;}
+.b3farr{font-size:18px;color:var(--bio);font-weight:700;}
+.b3board{background:#0f172a;border-radius:14px;padding:20px 22px;margin:18px 0;color:#e2e8f0;}
+.b3board .bb-head{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;}
+.b3board .bb-marks{background:#1c2f1a;border:1px solid #16a34a;border-radius:6px;padding:3px 10px;font-family:var(--mono);font-size:11px;color:#86efac;}
+.b3board .bb-q{font-size:15px;font-weight:600;color:#f1f5f9;margin-bottom:14px;line-height:1.6;}
+.b3board .bb-step{border-left:2px solid #dc2626;padding-left:14px;margin-bottom:12px;}
+.b3board .bb-sl{font-family:var(--mono);font-size:10px;color:#f87171;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.b3board .bb-sc{font-size:14px;color:#cbd5e1;line-height:1.8;}
+.b3board .bb-ans{background:#1c2f1a;border:1px solid #16a34a;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px;color:#86efac;font-weight:600;}
+.b3banner{background:linear-gradient(135deg,#991b1b 0%,#dc2626 60%,#ef4444 100%);border-radius:16px;padding:28px 24px;margin-bottom:24px;color:white;}
+.b3banner h1{font-family:var(--serif);font-size:28px;font-weight:900;margin:0 0 6px;color:white;}
+.b3banner p{font-size:14px;opacity:.85;margin:0;line-height:1.6;}
+.b3topic-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.b3topic-pill{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:600;color:white;}
+.b3pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.b3pill{border-radius:999px;padding:5px 14px;font-size:12px;font-weight:700;letter-spacing:.5px;}
+.b3pill.red{background:var(--bio-l);color:var(--bio);border:1px solid var(--bio-b);}
+.b3pill.green{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;}
+.b3pill.blue{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;}
+.b3pill.purple{background:#faf5ff;color:#7e22ce;border:1px solid #e9d5ff;}
+.b3pill.orange{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;}
+
 /* ── SCROLLBAR ─────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
@@ -1001,6 +1078,103 @@ body {
 }
 .lk-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+
+/* ── BIO CH4 STYLES ── */
+/* ── BIO CH4 — HEREDITY ─────────────────────── */
+.b4sc{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 24px 18px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+.b4sn{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bio);font-weight:500;margin-bottom:6px;}
+.b4st{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.b4def{background:var(--white);border:2px solid var(--bio-b);border-radius:12px;padding:16px 18px;margin:14px 0;}
+.b4dt{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--bio);margin-bottom:6px;font-weight:600;}
+.b4dx{font-size:14px;color:var(--text2);line-height:1.7;}
+.b4cal{border-radius:12px;padding:16px 18px;margin:16px 0;display:flex;gap:12px;align-items:flex-start;}
+.b4cal.fire{background:#fff7ed;border:1px solid #fed7aa;}
+.b4cal.tip{background:#faf5ff;border:1px solid #e9d5ff;}
+.b4cal.green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.b4cal.warn{background:#fefce8;border:1px solid #fde68a;}
+.b4cal.red{background:var(--bio-l);border:1px solid var(--bio-b);}
+.b4cal.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.b4ci{font-size:18px;flex-shrink:0;margin-top:1px;}
+.b4cb{font-size:14px;color:var(--text2);line-height:1.7;}
+.b4cb strong{display:block;margin-bottom:4px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);}
+.b4nt{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+.b4nt th{background:var(--bio-l);color:#991b1b;font-weight:700;padding:10px 14px;text-align:left;border-bottom:2px solid var(--bio-b);font-family:var(--mono);font-size:11px;letter-spacing:.5px;}
+.b4nt td{padding:10px 14px;border-bottom:1px solid #f3f4f6;color:var(--text2);font-size:14px;vertical-align:top;}
+.b4nt tr:last-child td{border-bottom:none;}
+.b4nt tr:hover td{background:#fafafa;}
+.b4qr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+.b4qr-item{background:var(--bio-l);border:1px solid var(--bio-b);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:12px;color:#991b1b;line-height:1.7;}
+@media(max-width:520px){.b4qr{grid-template-columns:1fr;}}
+.b4cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.b4cc{border-radius:12px;padding:16px;}
+.b4cc.left{background:#f0fdf4;border:1px solid #bbf7d0;}
+.b4cc.right{background:var(--bio-l);border:1px solid var(--bio-b);}
+.b4cc.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.b4cc.purple{background:#faf5ff;border:1px solid #e9d5ff;}
+.b4cc.orange{background:#fff7ed;border:1px solid #fed7aa;}
+.b4cc.yellow{background:#fefce8;border:1px solid #fde68a;}
+.b4ct{font-weight:700;font-size:14px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.08);}
+.b4cc.left .b4ct{color:#15803d;}
+.b4cc.right .b4ct{color:#991b1b;}
+.b4cc.blue .b4ct{color:#1e40af;}
+.b4cc.purple .b4ct{color:#7e22ce;}
+.b4cc.orange .b4ct{color:#c2410c;}
+.b4cc.yellow .b4ct{color:#92400e;}
+.b4cc ul{margin:0;padding-left:16px;font-size:13px;color:var(--text2);line-height:1.9;}
+@media(max-width:520px){.b4cmp{grid-template-columns:1fr;}}
+.b4flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;}
+.b4fbox{background:var(--bio-l);border:1px solid var(--bio-b);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:#991b1b;text-align:center;line-height:1.5;}
+.b4fbox.blue{background:#eff6ff;border-color:#bfdbfe;color:#1e40af;}
+.b4fbox.green{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;}
+.b4fbox.purple{background:#faf5ff;border-color:#e9d5ff;color:#7e22ce;}
+.b4fbox.orange{background:#fff7ed;border-color:#fed7aa;color:#c2410c;}
+.b4fbox.yellow{background:#fefce8;border-color:#fde68a;color:#92400e;}
+.b4farr{font-size:18px;color:var(--bio);font-weight:700;}
+.b4pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.b4pill{border-radius:999px;padding:5px 14px;font-size:12px;font-weight:700;letter-spacing:.5px;}
+.b4pill.red{background:var(--bio-l);color:var(--bio);border:1px solid var(--bio-b);}
+.b4pill.green{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;}
+.b4pill.blue{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;}
+.b4pill.purple{background:#faf5ff;color:#7e22ce;border:1px solid #e9d5ff;}
+.b4pill.orange{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;}
+
+/* Punnett square */
+.b4punnett{display:inline-grid;grid-template-columns:auto repeat(2,80px);grid-template-rows:auto repeat(2,80px);gap:2px;margin:16px auto;font-family:var(--mono);font-size:13px;}
+.b4punnett .ph{background:transparent;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text3);font-size:12px;padding:4px;}
+.b4punnett .pc{background:var(--bio-l);border:1px solid var(--bio-b);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#991b1b;font-size:15px;padding:10px;}
+.b4punnett .pc.dom{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;}
+.b4punnett-wrap{text-align:center;margin:16px 0;}
+.b4punnett-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.b4ratio{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
+.b4ratio-item{border-radius:10px;padding:10px 16px;text-align:center;font-family:var(--mono);font-size:12px;font-weight:700;}
+.b4ratio-item.dom{background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;}
+.b4ratio-item.rec{background:var(--bio-l);border:1px solid var(--bio-b);color:#991b1b;}
+.b4ratio-num{font-size:22px;font-weight:900;display:block;margin-bottom:2px;}
+
+/* Board question */
+.b4board{background:#0f172a;border-radius:14px;padding:20px 22px;margin:18px 0;color:#e2e8f0;}
+.b4board .bb-head{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;}
+.b4board .bb-marks{background:#1c2f1a;border:1px solid #16a34a;border-radius:6px;padding:3px 10px;font-family:var(--mono);font-size:11px;color:#86efac;}
+.b4board .bb-q{font-size:15px;font-weight:600;color:#f1f5f9;margin-bottom:14px;line-height:1.6;}
+.b4board .bb-step{border-left:2px solid #dc2626;padding-left:14px;margin-bottom:12px;}
+.b4board .bb-sl{font-family:var(--mono);font-size:10px;color:#f87171;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.b4board .bb-sc{font-size:14px;color:#cbd5e1;line-height:1.8;}
+.b4board .bb-ans{background:#1c2f1a;border:1px solid #16a34a;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px;color:#86efac;font-weight:600;}
+
+/* Chapter banner */
+.b4banner{background:linear-gradient(135deg,#991b1b 0%,#dc2626 60%,#ef4444 100%);border-radius:16px;padding:28px 24px;margin-bottom:24px;color:white;}
+.b4banner h1{font-family:var(--serif);font-size:28px;font-weight:900;margin:0 0 6px;color:white;}
+.b4banner p{font-size:14px;opacity:.85;margin:0;line-height:1.6;}
+.b4topic-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.b4topic-pill{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:600;color:white;}
+
+/* Timeline for evolution */
+.b4timeline{position:relative;padding-left:28px;margin:14px 0;}
+.b4timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--bio-b);}
+.b4titem{position:relative;margin-bottom:18px;}
+.b4titem::before{content:'';position:absolute;left:-24px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--bio);border:2px solid white;box-shadow:0 0 0 2px var(--bio-b);}
+.b4tlabel{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--bio);margin-bottom:3px;font-weight:600;}
+.b4tcontent{font-size:14px;color:var(--text2);line-height:1.7;}
 </style>
 </head>
 <body>
@@ -4182,10 +4356,2174 @@ const NOTES_CONTENT = {
   <div class="b2qr-item">Nervous: fast, electrical<br/>Hormonal: slow, chemical via blood</div>
 </div>
 `,
-  'bio-3': ``,
-  'bio-4': ``,
+  'bio-3': `<!-- ══ CHAPTER BANNER ══ -->
+<div class="b3banner">
+  <h1>How do Organisms Reproduce?</h1>
+  <p>Class 10 Biology · NCERT Chapter 3 · 2025–26</p>
+  <div class="b3topic-pills">
+    <span class="b3topic-pill">Asexual Reproduction</span>
+    <span class="b3topic-pill">Sexual Reproduction</span>
+    <span class="b3topic-pill">Fission</span>
+    <span class="b3topic-pill">Budding</span>
+    <span class="b3topic-pill">Fragmentation</span>
+    <span class="b3topic-pill">Regeneration</span>
+    <span class="b3topic-pill">Vegetative Propagation</span>
+    <span class="b3topic-pill">Human Reproduction</span>
+  </div>
+</div>
+
+<!-- ══ INTRO ══ -->
+<div class="b3sc">
+  <div class="b3sn">Introduction</div>
+  <div class="b3st">Why do Organisms Reproduce?</div>
+  <div class="b3def">
+    <div class="b3dt">Reproduction</div>
+    <div class="b3dx">The process by which organisms produce new individuals (offspring) similar to themselves is called reproduction. It is essential for the continuation of a species — without it, a species would eventually become extinct. Reproduction is NOT necessary for the survival of an individual organism but is necessary for the survival of the species.</div>
+  </div>
+  <div class="b3cal tip">
+    <div class="b3ci">💡</div>
+    <div class="b3cb"><strong>Key Concept — DNA Copying</strong>Reproduction involves creating copies of DNA. The blueprint for the body is stored in DNA. When a cell divides, it must copy its DNA so the new cell receives complete instructions. Errors (mutations) during copying cause variations — this is the basis of evolution.</div>
+  </div>
+  <table class="b3nt">
+    <tr><th>Type</th><th>Involves</th><th>Parents Needed</th><th>Variation</th><th>Found In</th></tr>
+    <tr><td><strong>Asexual</strong></td><td>Only mitosis, no gametes</td><td>1</td><td>Very little / None</td><td>Simple organisms, plants</td></tr>
+    <tr><td><strong>Sexual</strong></td><td>Meiosis + fusion of gametes</td><td>2 (usually)</td><td>High</td><td>Most complex organisms</td></tr>
+  </table>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PART 1: ASEXUAL REPRODUCTION
+══════════════════════════════════════════ -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--bio);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--bio-b);">Part 1 — Asexual Reproduction</h2>
+
+<div class="b3sc">
+  <div class="b3sn">Section 1.1</div>
+  <div class="b3st">Fission — Simplest Form of Reproduction</div>
+  <div class="b3def">
+    <div class="b3dt">Fission</div>
+    <div class="b3dx">The splitting of a unicellular organism into two or more daughter cells is called fission. It is the simplest form of asexual reproduction, seen in prokaryotes and simple eukaryotes.</div>
+  </div>
+  <div class="b3cmp">
+    <div class="b3cc left">
+      <div class="b3ct">Binary Fission</div>
+      <ul>
+        <li>Parent divides into <strong>2</strong> equal daughter cells</li>
+        <li>Most common type</li>
+        <li>DNA copied → cell elongates → divides</li>
+        <li>Examples: Amoeba, Bacteria (E. coli), Paramecium</li>
+        <li>Can occur in any plane in Amoeba</li>
+        <li>Leishmania divides in a definite plane (along its flagellum)</li>
+      </ul>
+    </div>
+    <div class="b3cc orange">
+      <div class="b3ct">Multiple Fission</div>
+      <ul>
+        <li>Parent divides into <strong>many</strong> daughter cells at once</li>
+        <li>Nucleus divides many times first → cytoplasm divides</li>
+        <li>Example: Plasmodium (malaria parasite)</li>
+        <li>Often occurs under unfavourable conditions</li>
+        <li>Cyst formation protects organism</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FISSION DIAGRAM -->
+  <svg width="100%" viewBox="0 0 680 240" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="b3arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="240" fill="#fff1f2" rx="12"/>
+    <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b" font-family="sans-serif">BINARY FISSION IN AMOEBA</text>
+
+    <!-- Step 1: Original cell -->
+    <ellipse cx="100" cy="130" rx="60" ry="45" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <ellipse cx="100" cy="130" rx="18" ry="14" fill="#dc2626" opacity="0.5"/>
+    <text x="100" y="127" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif" font-weight="700">Nucleus</text>
+    <text x="100" y="140" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">DNA copies</text>
+    <text x="100" y="196" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">① Parent cell</text>
+
+    <!-- Arrow 1 -->
+    <line x1="162" y1="130" x2="202" y2="130" stroke="#dc2626" stroke-width="2" marker-end="url(#b3arr)"/>
+
+    <!-- Step 2: Elongating cell -->
+    <ellipse cx="270" cy="130" rx="80" ry="38" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <ellipse cx="240" cy="130" rx="16" ry="12" fill="#dc2626" opacity="0.5"/>
+    <ellipse cx="300" cy="130" rx="16" ry="12" fill="#dc2626" opacity="0.5"/>
+    <line x1="270" y1="92" x2="270" y2="168" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="270" y="196" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">② Cell elongates, nuclei separate</text>
+
+    <!-- Arrow 2 -->
+    <line x1="352" y1="130" x2="392" y2="130" stroke="#dc2626" stroke-width="2" marker-end="url(#b3arr)"/>
+
+    <!-- Step 3: Two daughter cells -->
+    <ellipse cx="470" cy="120" rx="46" ry="36" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <ellipse cx="470" cy="118" rx="13" ry="10" fill="#dc2626" opacity="0.5"/>
+    <ellipse cx="600" cy="120" rx="46" ry="36" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <ellipse cx="600" cy="118" rx="13" ry="10" fill="#dc2626" opacity="0.5"/>
+    <text x="535" y="196" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">③ Two identical daughter cells</text>
+    <text x="535" y="218" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">Each receives a complete copy of DNA</text>
+  </svg>
+</div>
+
+<!-- BUDDING -->
+<div class="b3sc">
+  <div class="b3sn">Section 1.2</div>
+  <div class="b3st">Budding</div>
+  <div class="b3def">
+    <div class="b3dt">Budding</div>
+    <div class="b3dx">A small outgrowth (bud) develops from the parent organism. The bud grows, eventually detaches and becomes a new independent organism. The parent remains intact.</div>
+  </div>
+
+  <!-- BUDDING DIAGRAM -->
+  <svg width="100%" viewBox="0 0 680 220" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <rect width="680" height="220" fill="#fff1f2" rx="12"/>
+    <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b" font-family="sans-serif">BUDDING IN YEAST (4 STAGES)</text>
+
+    <!-- Stage 1: Yeast cell -->
+    <ellipse cx="80" cy="125" rx="48" ry="42" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <ellipse cx="80" cy="124" rx="14" ry="11" fill="#dc2626" opacity="0.45"/>
+    <text x="80" y="183" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">① Parent cell</text>
+
+    <!-- Arrow -->
+    <line x1="130" y1="125" x2="155" y2="125" stroke="#dc2626" stroke-width="1.5" marker-end="url(#b3arr)"/>
+
+    <!-- Stage 2: Small bud appears -->
+    <ellipse cx="215" cy="128" rx="48" ry="42" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <ellipse cx="215" cy="127" rx="14" ry="11" fill="#dc2626" opacity="0.45"/>
+    <ellipse cx="247" cy="107" rx="16" ry="12" fill="#fecdd3" stroke="#dc2626" stroke-width="1.5"/>
+    <ellipse cx="247" cy="105" rx="6" ry="5" fill="#dc2626" opacity="0.35"/>
+    <text x="215" y="183" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">② Bud forms</text>
+
+    <!-- Arrow -->
+    <line x1="268" y1="125" x2="292" y2="125" stroke="#dc2626" stroke-width="1.5" marker-end="url(#b3arr)"/>
+
+    <!-- Stage 3: Bud grows larger -->
+    <ellipse cx="352" cy="130" rx="48" ry="42" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <ellipse cx="352" cy="129" rx="14" ry="11" fill="#dc2626" opacity="0.45"/>
+    <ellipse cx="390" cy="103" rx="25" ry="20" fill="#fecdd3" stroke="#dc2626" stroke-width="1.5"/>
+    <ellipse cx="390" cy="102" rx="9" ry="8" fill="#dc2626" opacity="0.4"/>
+    <text x="363" y="183" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">③ Bud grows</text>
+
+    <!-- Arrow -->
+    <line x1="416" y1="125" x2="440" y2="125" stroke="#dc2626" stroke-width="1.5" marker-end="url(#b3arr)"/>
+
+    <!-- Stage 4: Two separate cells -->
+    <ellipse cx="497" cy="138" rx="48" ry="42" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <ellipse cx="497" cy="137" rx="14" ry="11" fill="#dc2626" opacity="0.45"/>
+    <ellipse cx="597" cy="104" rx="38" ry="32" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <ellipse cx="597" cy="103" rx="12" ry="10" fill="#dc2626" opacity="0.45"/>
+    <text x="547" y="183" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">④ Bud detaches → new organism</text>
+
+    <text x="340" y="207" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">Also seen in Hydra — a multicellular organism</text>
+  </svg>
+
+  <div class="b3cal tip">
+    <div class="b3ci">💡</div>
+    <div class="b3cb"><strong>Budding in Hydra</strong>Hydra is a multicellular organism that also reproduces by budding. A small bud grows out from the parent's body wall. It develops tentacles and a mouth, then eventually detaches to live as a new independent Hydra.</div>
+  </div>
+</div>
+
+<!-- FRAGMENTATION & REGENERATION -->
+<div class="b3sc">
+  <div class="b3sn">Section 1.3</div>
+  <div class="b3st">Fragmentation &amp; Regeneration</div>
+  <div class="b3cmp">
+    <div class="b3cc orange">
+      <div class="b3ct">Fragmentation</div>
+      <ul>
+        <li>Organism breaks into <strong>fragments</strong></li>
+        <li>Each fragment grows into a new organism</li>
+        <li>Not all organisms can do this — needs ability to regenerate</li>
+        <li>Example: Spirogyra (filamentous alga) — breaks into pieces, each grows</li>
+        <li>Also: Planaria (flatworm)</li>
+      </ul>
+    </div>
+    <div class="b3cc left">
+      <div class="b3ct">Regeneration</div>
+      <ul>
+        <li>Some organisms can regrow entire body from a small piece</li>
+        <li>Uses specialised cells called <strong>totipotent cells</strong></li>
+        <li>Example: Planaria — cut into many pieces, each grows into new Planaria</li>
+        <li>Example: Hydra — can regenerate from a small piece</li>
+        <li>NOT the same as reproduction (fragmentation uses regeneration, but regeneration itself is response to injury)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SPIROGYRA FRAGMENTATION DIAGRAM -->
+  <svg width="100%" viewBox="0 0 680 160" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <rect width="680" height="160" fill="#fff7ed" rx="12"/>
+    <text x="340" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#c2410c" font-family="sans-serif">FRAGMENTATION IN SPIROGYRA</text>
+
+    <!-- Long filament -->
+    <rect x="40" y="68" width="260" height="24" rx="12" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+    <!-- Cell divisions inside filament -->
+    <line x1="100" y1="68" x2="100" y2="92" stroke="#d97706" stroke-width="1"/>
+    <line x1="160" y1="68" x2="160" y2="92" stroke="#d97706" stroke-width="1"/>
+    <line x1="220" y1="68" x2="220" y2="92" stroke="#d97706" stroke-width="1"/>
+    <text x="170" y="125" text-anchor="middle" font-size="11" fill="#92400e" font-family="sans-serif">① Long filament of Spirogyra</text>
+
+    <!-- Arrow -->
+    <line x1="306" y1="80" x2="340" y2="80" stroke="#d97706" stroke-width="2" marker-end="url(#b3arr)"/>
+
+    <!-- Three fragments -->
+    <rect x="352" y="60" width="70" height="24" rx="12" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+    <line x1="387" y1="60" x2="387" y2="84" stroke="#d97706" stroke-width="1"/>
+    <rect x="438" y="60" width="70" height="24" rx="12" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+    <line x1="473" y1="60" x2="473" y2="84" stroke="#d97706" stroke-width="1"/>
+    <rect x="524" y="60" width="70" height="24" rx="12" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+    <line x1="559" y1="60" x2="559" y2="84" stroke="#d97706" stroke-width="1"/>
+
+    <!-- Down arrows from fragments -->
+    <line x1="387" y1="86" x2="387" y2="108" stroke="#16a34a" stroke-width="1.5" marker-end="url(#b3arr)"/>
+    <line x1="473" y1="86" x2="473" y2="108" stroke="#16a34a" stroke-width="1.5" marker-end="url(#b3arr)"/>
+    <line x1="559" y1="86" x2="559" y2="108" stroke="#16a34a" stroke-width="1.5" marker-end="url(#b3arr)"/>
+
+    <text x="387" y="125" text-anchor="middle" font-size="10" fill="#15803d" font-family="sans-serif">New</text>
+    <text x="473" y="125" text-anchor="middle" font-size="10" fill="#15803d" font-family="sans-serif">New</text>
+    <text x="559" y="125" text-anchor="middle" font-size="10" fill="#15803d" font-family="sans-serif">New</text>
+    <text x="387" y="138" text-anchor="middle" font-size="10" fill="#15803d" font-family="sans-serif">filament</text>
+    <text x="473" y="138" text-anchor="middle" font-size="10" fill="#15803d" font-family="sans-serif">filament</text>
+    <text x="559" y="138" text-anchor="middle" font-size="10" fill="#15803d" font-family="sans-serif">filament</text>
+
+    <text x="170" y="143" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">② Breaks into fragments</text>
+  </svg>
+</div>
+
+<!-- SPORE FORMATION -->
+<div class="b3sc">
+  <div class="b3sn">Section 1.4</div>
+  <div class="b3st">Spore Formation</div>
+  <div class="b3def">
+    <div class="b3dt">Spore Formation</div>
+    <div class="b3dx">Some organisms produce large numbers of tiny reproductive units called <strong>spores</strong>. Spores are enclosed in a protective coat (sporangium) that helps them survive unfavourable conditions — heat, cold, drought. When conditions become favourable, spores germinate and grow into new organisms.</div>
+  </div>
+  <div class="b3fb">Examples: Rhizopus (bread mould) — spores in black sporangia<br/>Penicillium — green spores<br/>Ferns, mosses — spore-forming plants</div>
+
+  <!-- SPORE FORMATION DIAGRAM -->
+  <svg width="100%" viewBox="0 0 680 200" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <rect width="680" height="200" fill="#fff1f2" rx="12"/>
+    <text x="340" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b" font-family="sans-serif">SPORE FORMATION IN RHIZOPUS (BREAD MOULD)</text>
+
+    <!-- Mycelium base -->
+    <path d="M 60 150 Q 100 140 140 150 Q 180 160 220 150 Q 260 140 300 150" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="180" y="175" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">Mycelium (hyphae on bread)</text>
+
+    <!-- Sporangiophores (vertical stalks) -->
+    <line x1="100" y1="148" x2="100" y2="90" stroke="#dc2626" stroke-width="1.5"/>
+    <line x1="180" y1="148" x2="180" y2="75" stroke="#dc2626" stroke-width="1.5"/>
+    <line x1="260" y1="148" x2="260" y2="90" stroke="#dc2626" stroke-width="1.5"/>
+
+    <!-- Sporangia (circles at top of stalks) -->
+    <circle cx="100" cy="82" r="16" fill="#111827" stroke="#374151" stroke-width="1"/>
+    <circle cx="180" cy="66" r="20" fill="#111827" stroke="#374151" stroke-width="1"/>
+    <circle cx="260" cy="82" r="16" fill="#111827" stroke="#374151" stroke-width="1"/>
+
+    <text x="100" y="57" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">Sporangium</text>
+    <text x="180" y="40" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">Sporangium</text>
+    <text x="260" y="57" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">Sporangium</text>
+
+    <!-- Spores releasing -->
+    <circle cx="420" cy="70" r="5" fill="#374151"/>
+    <circle cx="445" cy="55" r="4" fill="#374151"/>
+    <circle cx="468" cy="75" r="5" fill="#374151"/>
+    <circle cx="490" cy="45" r="4" fill="#374151"/>
+    <circle cx="510" cy="70" r="6" fill="#374151"/>
+    <circle cx="535" cy="55" r="4" fill="#374151"/>
+    <circle cx="555" cy="80" r="5" fill="#374151"/>
+    <circle cx="580" cy="60" r="5" fill="#374151"/>
+    <circle cx="600" cy="42" r="4" fill="#374151"/>
+    <text x="510" y="108" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">Spores released into air</text>
+
+    <!-- Arrow from sporangium -->
+    <line x1="330" y1="80" x2="400" y2="70" stroke="#dc2626" stroke-width="1.5" marker-end="url(#b3arr)" stroke-dasharray="4 2"/>
+
+    <!-- Germination -->
+    <line x1="510" y1="108" x2="510" y2="140" stroke="#16a34a" stroke-width="1.5" marker-end="url(#b3arr)"/>
+    <text x="510" y="162" text-anchor="middle" font-size="11" fill="#15803d" font-family="sans-serif">Land on food → germinate → new mould</text>
+    <text x="510" y="178" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">Protective coat allows survival in harsh conditions</text>
+  </svg>
+</div>
+
+<!-- VEGETATIVE PROPAGATION -->
+<div class="b3sc">
+  <div class="b3sn">Section 1.5 — ⭐ Important</div>
+  <div class="b3st">Vegetative Propagation in Plants</div>
+  <div class="b3def">
+    <div class="b3dt">Vegetative Propagation</div>
+    <div class="b3dx">The process of reproduction in plants using vegetative parts (roots, stems, leaves, buds) rather than seeds is called vegetative propagation. All new plants are genetically identical to the parent (clones).</div>
+  </div>
+
+  <h3>Natural Vegetative Propagation</h3>
+  <table class="b3nt">
+    <tr><th>Plant Part</th><th>Example Plant</th><th>Structure Used</th><th>How it Works</th></tr>
+    <tr><td><strong>Stem — Runner</strong></td><td>Grass, Strawberry</td><td>Stolon / Runner</td><td>Horizontal stem runs along ground, forms roots at nodes</td></tr>
+    <tr><td><strong>Stem — Rhizome</strong></td><td>Ginger, Turmeric, Fern</td><td>Underground stem</td><td>Swollen underground stem with buds that grow into new plant</td></tr>
+    <tr><td><strong>Stem — Bulb</strong></td><td>Onion, Garlic, Lily</td><td>Bulb (leaves + stem)</td><td>Fleshy leaves surround a bud; each bud grows into new plant</td></tr>
+    <tr><td><strong>Stem — Tuber</strong></td><td>Potato</td><td>Stem tuber with eyes</td><td>"Eyes" are buds — each grows into a new plant</td></tr>
+    <tr><td><strong>Leaf</strong></td><td>Bryophyllum (sprout leaf)</td><td>Leaf with notches</td><td>Buds grow at notches on leaf edges, fall off, grow into new plants</td></tr>
+    <tr><td><strong>Root</strong></td><td>Sweet potato, Dahlia</td><td>Tuberous roots</td><td>Roots store food and can produce new shoots</td></tr>
+  </table>
+
+  <h3>Artificial Vegetative Propagation</h3>
+  <table class="b3nt">
+    <tr><th>Method</th><th>How</th><th>Example</th><th>Advantage</th></tr>
+    <tr><td><strong>Cutting</strong></td><td>Cut stem/leaf planted in soil</td><td>Rose, Sugarcane, Bougainvillea</td><td>Quick, preserves parent traits</td></tr>
+    <tr><td><strong>Grafting</strong></td><td>Stem (scion) joined to rooted plant (stock)</td><td>Mango, Apple, Citrus</td><td>Combines best traits of two varieties</td></tr>
+    <tr><td><strong>Layering</strong></td><td>Branch bent to soil, roots form, then cut</td><td>Jasmine, Strawberry</td><td>High success rate</td></tr>
+    <tr><td><strong>Tissue Culture</strong></td><td>Cells grown in nutrient medium in lab</td><td>Orchids, Banana, Potato</td><td>Mass production, disease-free plants</td></tr>
+  </table>
+
+  <div class="b3cal fire">
+    <div class="b3ci">🔥</div>
+    <div class="b3cb"><strong>Advantages of Vegetative Propagation</strong>
+    1. Faster than growing from seeds<br/>
+    2. Offspring are genetically identical to parent (preserves desirable traits)<br/>
+    3. Plants that rarely produce seeds can still reproduce<br/>
+    4. Seedless fruits (banana, grapes, orange) can be produced<br/>
+    5. Can reproduce in a shorter growing season</div>
+  </div>
+
+  <!-- TISSUE CULTURE NOTE -->
+  <div class="b3eb">
+    <div class="b3el">Tissue Culture (Micropropagation) — Modern Method</div>
+    <p style="font-size:14px;margin:8px 0 4px;color:var(--text2);">Tiny pieces of plant tissue (called <strong>explant</strong>) taken from growing tips are placed in nutrient medium containing hormones. The tissue divides and grows into a mass of undifferentiated cells called <strong>callus</strong>. Callus is then transferred to differentiation medium → grows into small plants (plantlets). Used commercially to grow thousands of identical disease-free plants quickly.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PART 2: SEXUAL REPRODUCTION
+══════════════════════════════════════════ -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--bio);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--bio-b);">Part 2 — Sexual Reproduction</h2>
+
+<div class="b3sc">
+  <div class="b3sn">Section 2.1</div>
+  <div class="b3st">Why Sexual Reproduction?</div>
+  <div class="b3def">
+    <div class="b3dt">Sexual Reproduction</div>
+    <div class="b3dx">Reproduction involving formation of male and female gametes (sex cells), their fusion (fertilisation) to form a zygote, which then develops into a new organism. Two parents are typically involved (one male, one female). Gametes are haploid (n); zygote is diploid (2n).</div>
+  </div>
+  <div class="b3cmp">
+    <div class="b3cc left">
+      <div class="b3ct">Advantages of Sexual Reproduction</div>
+      <ul>
+        <li>Creates variation in offspring</li>
+        <li>Variation drives natural selection → evolution</li>
+        <li>Harmful mutations can be masked by dominant alleles</li>
+        <li>Offspring more adaptable to changing environments</li>
+      </ul>
+    </div>
+    <div class="b3cc right">
+      <div class="b3ct">Disadvantages</div>
+      <ul>
+        <li>Slower than asexual reproduction</li>
+        <li>Requires finding a mate</li>
+        <li>Uses more energy</li>
+        <li>Fewer offspring produced</li>
+      </ul>
+    </div>
+  </div>
+  <div class="b3cal tip">
+    <div class="b3ci">💡</div>
+    <div class="b3cb"><strong>Gametes — Key Terms</strong>Male gamete = sperm (motile, smaller) · Female gamete = ovum/egg (non-motile, larger, food-rich) · Fusion of gametes = Fertilisation · Product = Zygote (2n) · Gametes are produced by MEIOSIS</div>
+  </div>
+</div>
+
+<!-- SEXUAL REPRODUCTION IN PLANTS -->
+<div class="b3sc">
+  <div class="b3sn">Section 2.2 — ⭐ Very Important</div>
+  <div class="b3st">Sexual Reproduction in Flowering Plants</div>
+  <div class="b3def">
+    <div class="b3dt">Flower</div>
+    <div class="b3dx">The flower is the reproductive organ of angiosperms (flowering plants). It contains both male and female reproductive parts (or just one in some species).</div>
+  </div>
+
+  <!-- FLOWER STRUCTURE DIAGRAM -->
+  <svg width="100%" viewBox="0 0 680 420" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="flarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="420" fill="#fff1f2" rx="12"/>
+    <text x="240" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b" font-family="sans-serif">STRUCTURE OF A FLOWER (LONGITUDINAL SECTION)</text>
+
+    <!-- Petals (background, decorative) -->
+    <ellipse cx="195" cy="180" rx="55" ry="90" fill="#fecdd3" stroke="#f9a8d4" stroke-width="1" opacity="0.7" transform="rotate(-30 195 180)"/>
+    <ellipse cx="245" cy="145" rx="55" ry="90" fill="#fecdd3" stroke="#f9a8d4" stroke-width="1" opacity="0.7" transform="rotate(20 245 145)"/>
+    <ellipse cx="180" cy="230" rx="50" ry="80" fill="#fecdd3" stroke="#f9a8d4" stroke-width="1" opacity="0.6" transform="rotate(-60 180 230)"/>
+
+    <!-- Receptacle & Sepals -->
+    <rect x="185" y="328" width="80" height="30" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+    <text x="225" y="347" text-anchor="middle" font-size="11" fill="#065f46" font-family="sans-serif">Receptacle</text>
+    <!-- Pedicel (stalk) -->
+    <line x1="225" y1="358" x2="225" y2="390" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+    <text x="225" y="408" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">Pedicel (stalk)</text>
+    <!-- Sepals -->
+    <ellipse cx="185" cy="322" rx="18" ry="12" fill="#6ee7b7" stroke="#059669" stroke-width="1" transform="rotate(-20 185 322)"/>
+    <ellipse cx="265" cy="322" rx="18" ry="12" fill="#6ee7b7" stroke="#059669" stroke-width="1" transform="rotate(20 265 322)"/>
+
+    <!-- PISTIL (female) — center -->
+    <!-- Stigma -->
+    <ellipse cx="225" cy="158" rx="20" ry="10" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+    <text x="225" y="162" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif" font-weight="700">Stigma</text>
+    <!-- Style -->
+    <rect x="218" y="168" width="14" height="50" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+    <text x="244" y="195" font-size="10" fill="#92400e" font-family="sans-serif">Style</text>
+    <!-- Ovary -->
+    <ellipse cx="225" cy="235" rx="30" ry="28" fill="#fed7aa" stroke="#d97706" stroke-width="2"/>
+    <text x="225" y="232" text-anchor="middle" font-size="11" fill="#92400e" font-family="sans-serif" font-weight="700">Ovary</text>
+    <!-- Ovules inside -->
+    <ellipse cx="218" cy="248" rx="9" ry="7" fill="#f97316" opacity="0.7"/>
+    <ellipse cx="233" cy="248" rx="9" ry="7" fill="#f97316" opacity="0.7"/>
+    <text x="225" y="257" text-anchor="middle" font-size="9" fill="#c2410c" font-family="sans-serif">ovules</text>
+
+    <!-- STAMEN (male) — both sides -->
+    <!-- Left stamen -->
+    <line x1="175" y1="175" x2="175" y2="270" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="175" cy="168" rx="12" ry="10" fill="#fecdd3" stroke="#dc2626" stroke-width="1.5"/>
+    <ellipse cx="175" cy="168" rx="5" ry="4" fill="#dc2626" opacity="0.6"/>
+    <!-- Right stamen -->
+    <line x1="278" y1="175" x2="278" y2="270" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="278" cy="168" rx="12" ry="10" fill="#fecdd3" stroke="#dc2626" stroke-width="1.5"/>
+    <ellipse cx="278" cy="168" rx="5" ry="4" fill="#dc2626" opacity="0.6"/>
+
+    <!-- Pollen grains shown -->
+    <circle cx="162" cy="155" r="4" fill="#fbbf24"/>
+    <circle cx="172" cy="148" r="3" fill="#fbbf24"/>
+    <circle cx="188" cy="152" r="4" fill="#fbbf24"/>
+    <circle cx="270" cy="148" r="4" fill="#fbbf24"/>
+    <circle cx="284" cy="153" r="3" fill="#fbbf24"/>
+
+    <!-- Right side labels -->
+    <text x="370" y="56" font-size="12" font-weight="700" fill="#991b1b" font-family="sans-serif">Female part (Pistil / Carpel)</text>
+    <line x1="246" y1="158" x2="368" y2="80" stroke="#d97706" stroke-width="1" stroke-dasharray="3 2"/>
+    <text x="370" y="75" font-size="11" fill="#9ca3af" font-family="sans-serif">Stigma — receives pollen</text>
+    <text x="370" y="120" font-size="11" fill="#9ca3af" font-family="sans-serif">Style — connects stigma to ovary</text>
+    <text x="370" y="145" font-size="11" fill="#9ca3af" font-family="sans-serif">Ovary — contains ovules (eggs)</text>
+    <line x1="255" y1="235" x2="368" y2="145" stroke="#d97706" stroke-width="1" stroke-dasharray="3 2"/>
+
+    <text x="370" y="195" font-size="12" font-weight="700" fill="#dc2626" font-family="sans-serif">Male part (Stamen)</text>
+    <line x1="188" y1="168" x2="368" y2="220" stroke="#dc2626" stroke-width="1" stroke-dasharray="3 2"/>
+    <text x="370" y="218" font-size="11" fill="#9ca3af" font-family="sans-serif">Anther — produces pollen grains</text>
+    <text x="370" y="246" font-size="11" fill="#9ca3af" font-family="sans-serif">Filament — supports the anther</text>
+    <line x1="278" y1="220" x2="368" y2="250" stroke="#dc2626" stroke-width="1" stroke-dasharray="3 2"/>
+
+    <text x="370" y="296" font-size="12" font-weight="700" fill="#15803d" font-family="sans-serif">Other parts</text>
+    <text x="370" y="315" font-size="11" fill="#9ca3af" font-family="sans-serif">Petals — attract pollinators</text>
+    <text x="370" y="333" font-size="11" fill="#9ca3af" font-family="sans-serif">Sepals — protect the bud</text>
+    <text x="370" y="351" font-size="11" fill="#9ca3af" font-family="sans-serif">Pollen — contain male gametes</text>
+
+    <text x="225" y="125" text-anchor="middle" font-size="10" fill="#fbbf24" font-family="sans-serif">Pollen grains (yellow)</text>
+    <text x="225" y="140" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">on anther</text>
+  </svg>
+
+  <h3>Key Terminology</h3>
+  <table class="b3nt">
+    <tr><th>Term</th><th>Structure</th><th>Function</th><th>Contains</th></tr>
+    <tr><td><strong>Stamen</strong></td><td>Anther + Filament</td><td>Male reproductive organ</td><td>Pollen grains (male gametes)</td></tr>
+    <tr><td><strong>Pistil / Carpel</strong></td><td>Stigma + Style + Ovary</td><td>Female reproductive organ</td><td>Ovules (female gametes/eggs)</td></tr>
+    <tr><td><strong>Anther</strong></td><td>Knob on top of filament</td><td>Produces &amp; stores pollen</td><td>Pollen grains</td></tr>
+    <tr><td><strong>Ovary</strong></td><td>Swollen base of pistil</td><td>Contains ovules; becomes fruit</td><td>Ovules → seeds after fertilisation</td></tr>
+    <tr><td><strong>Stigma</strong></td><td>Sticky tip of pistil</td><td>Receives pollen</td><td>—</td></tr>
+    <tr><td><strong>Pollen</strong></td><td>Tiny grains from anther</td><td>Carries male gamete to ovule</td><td>Male gamete</td></tr>
+  </table>
+</div>
+
+<!-- POLLINATION & FERTILISATION -->
+<div class="b3sc">
+  <div class="b3sn">Section 2.3 — ⭐⭐ Most Important</div>
+  <div class="b3st">Pollination and Fertilisation in Plants</div>
+  <div class="b3def">
+    <div class="b3dt">Pollination</div>
+    <div class="b3dx">Transfer of pollen grains from the anther (of stamen) to the stigma (of pistil) is called pollination. It is NOT fertilisation — it is just the delivery of pollen.</div>
+  </div>
+
+  <div class="b3cmp">
+    <div class="b3cc left">
+      <div class="b3ct">Self-Pollination</div>
+      <ul>
+        <li>Pollen transfers from anther to stigma of the <strong>same flower</strong> or same plant</li>
+        <li>No external agent needed</li>
+        <li>Less variation produced</li>
+        <li>Example: Pea, Wheat, Rice</li>
+      </ul>
+    </div>
+    <div class="b3cc blue">
+      <div class="b3ct">Cross-Pollination</div>
+      <ul>
+        <li>Pollen transfers from anther of one flower to stigma of a <strong>different plant</strong></li>
+        <li>Agents: Wind, insects, water, birds, bats</li>
+        <li>More variation in offspring</li>
+        <li>Example: Maize (wind), Sunflower (insect)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- POLLINATION TO FERTILISATION FLOW -->
+  <svg width="100%" viewBox="0 0 680 340" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="pfarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="340" fill="#fff1f2" rx="12"/>
+    <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b" font-family="sans-serif">FROM POLLINATION TO SEED FORMATION</text>
+
+    <!-- Step 1: Pollen on stigma -->
+    <rect x="20" y="55" width="130" height="70" rx="10" fill="#fecdd3" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="85" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" font-family="sans-serif">Pollen lands</text>
+    <text x="85" y="96" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">on stigma</text>
+    <text x="85" y="110" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">(pollination)</text>
+    <text x="85" y="138" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">①</text>
+
+    <!-- Arrow -->
+    <line x1="152" y1="90" x2="172" y2="90" stroke="#dc2626" stroke-width="2" marker-end="url(#pfarr)"/>
+
+    <!-- Step 2: Pollen tube -->
+    <rect x="174" y="55" width="130" height="70" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="239" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" font-family="sans-serif">Pollen tube</text>
+    <text x="239" y="92" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">grows down</text>
+    <text x="239" y="106" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">the style</text>
+    <text x="239" y="138" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">②</text>
+
+    <!-- Arrow -->
+    <line x1="306" y1="90" x2="326" y2="90" stroke="#dc2626" stroke-width="2" marker-end="url(#pfarr)"/>
+
+    <!-- Step 3: Fertilisation -->
+    <rect x="328" y="40" width="130" height="100" rx="10" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <text x="393" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" font-family="sans-serif">Fertilisation</text>
+    <text x="393" y="86" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">Male gamete +</text>
+    <text x="393" y="100" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">Female gamete</text>
+    <text x="393" y="114" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">= Zygote (2n)</text>
+    <text x="393" y="152" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">③</text>
+
+    <!-- Arrow -->
+    <line x1="460" y1="90" x2="480" y2="90" stroke="#059669" stroke-width="2" marker-end="url(#pfarr)"/>
+
+    <!-- Step 4: Seed & Fruit -->
+    <rect x="482" y="40" width="170" height="100" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+    <text x="567" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46" font-family="sans-serif">Seed &amp; Fruit form</text>
+    <text x="567" y="83" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Ovule → Seed</text>
+    <text x="567" y="97" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Ovary → Fruit</text>
+    <text x="567" y="111" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Zygote → Embryo</text>
+    <text x="567" y="152" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">④</text>
+
+    <!-- POLLEN TUBE DETAIL DIAGRAM (below) -->
+    <text x="340" y="185" text-anchor="middle" font-size="12" font-weight="700" fill="#991b1b" font-family="sans-serif">Pollen Tube Growth — Detail</text>
+
+    <!-- Stigma -->
+    <rect x="270" y="198" width="140" height="24" rx="6" fill="#fde68a" stroke="#d97706" stroke-width="1"/>
+    <text x="340" y="214" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">Stigma (pollen lands here)</text>
+
+    <!-- Style (tube growing through) -->
+    <rect x="318" y="222" width="44" height="50" rx="4" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+    <!-- Pollen tube -->
+    <line x1="340" y1="222" x2="340" y2="272" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"/>
+    <circle cx="340" cy="220" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1"/>
+    <text x="268" y="250" text-anchor="middle" font-size="10" fill="#b45309" font-family="sans-serif">Style</text>
+    <text x="410" y="250" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">← pollen tube carries</text>
+    <text x="410" y="262" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">   male gamete down</text>
+
+    <!-- Ovary -->
+    <ellipse cx="340" cy="300" rx="45" ry="36" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+    <ellipse cx="332" cy="308" rx="12" ry="10" fill="#fca5a5" stroke="#dc2626" stroke-width="1"/>
+    <ellipse cx="350" cy="308" rx="12" ry="10" fill="#fca5a5" stroke="#dc2626" stroke-width="1"/>
+    <text x="340" y="296" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">Ovary</text>
+    <text x="340" y="320" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">ovules</text>
+
+    <text x="340" y="330" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">Pollen tube reaches ovule → male gamete fuses with egg → fertilisation</text>
+  </svg>
+
+  <h3>After Fertilisation — What Becomes What?</h3>
+  <div class="b3flow">
+    <div class="b3fbox">Ovule</div>
+    <div class="b3farr">→</div>
+    <div class="b3fbox green">Seed</div>
+    <div style="width:24px;"></div>
+    <div class="b3fbox">Ovary wall</div>
+    <div class="b3farr">→</div>
+    <div class="b3fbox green">Fruit (pericarp)</div>
+    <div style="width:24px;"></div>
+    <div class="b3fbox">Zygote</div>
+    <div class="b3farr">→</div>
+    <div class="b3fbox green">Embryo (inside seed)</div>
+  </div>
+  <div class="b3fb">Zygote (2n) → divides by mitosis → Embryo<br/>Ovule → Seed (embryo + stored food + seed coat)<br/>Ovary → Fruit<br/>Petals, sepals, stamens → wither and fall off</div>
+
+  <div class="b3cal fire">
+    <div class="b3ci">🔥</div>
+    <div class="b3cb"><strong>Seed Structure</strong>A seed contains: (1) Embryo — the baby plant (shoot + root) (2) Cotyledon(s) — stored food for germination (3) Seed coat (testa) — protective outer layer. Monocots have 1 cotyledon; Dicots have 2 cotyledons.</div>
+  </div>
+</div>
+
+<!-- SEXUAL REPRODUCTION IN HUMANS -->
+<div class="b3sc">
+  <div class="b3sn">Section 2.4 — ⭐⭐ Most Important</div>
+  <div class="b3st">Sexual Reproduction in Humans — Male Reproductive System</div>
+
+  <!-- MALE REPRODUCTIVE SYSTEM DIAGRAM -->
+  <svg width="100%" viewBox="0 0 680 340" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="mrarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="340" fill="#eff6ff" rx="12"/>
+    <text x="340" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af" font-family="sans-serif">MALE REPRODUCTIVE SYSTEM</text>
+
+    <!-- Bladder -->
+    <ellipse cx="200" cy="85" rx="44" ry="34" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="200" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">Urinary</text>
+    <text x="200" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">Bladder</text>
+
+    <!-- Prostate gland -->
+    <ellipse cx="200" cy="148" rx="28" ry="20" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1"/>
+    <text x="200" y="152" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">Prostate</text>
+
+    <!-- Urethra -->
+    <line x1="200" y1="168" x2="200" y2="215" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    <line x1="200" y1="215" x2="225" y2="245" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    <line x1="225" y1="245" x2="225" y2="295" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Testes (2) -->
+    <ellipse cx="155" cy="290" rx="36" ry="30" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <text x="155" y="287" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" font-family="sans-serif">Testis</text>
+    <text x="155" y="301" text-anchor="middle" font-size="9" fill="#dc2626" font-family="sans-serif">(makes sperm)</text>
+    <ellipse cx="295" cy="290" rx="36" ry="30" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <text x="295" y="287" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" font-family="sans-serif">Testis</text>
+    <text x="295" y="301" text-anchor="middle" font-size="9" fill="#dc2626" font-family="sans-serif">(makes sperm)</text>
+
+    <!-- Epididymis -->
+    <path d="M 191 274 Q 200 258 200 240 Q 200 224 200 216" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 259 274 Q 250 258 250 240 Q 250 224 225 216" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Vas deferens -->
+    <path d="M 200 168 Q 200 148 200 128 Q 200 118 200 119" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Scrotum outline -->
+    <ellipse cx="225" cy="294" rx="80" ry="40" fill="none" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5 3"/>
+    <text x="225" y="330" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Scrotum (outside body — keeps testes 2-3°C cooler)</text>
+
+    <!-- RIGHT SIDE LABELS -->
+    <text x="400" y="50" font-size="12" font-weight="700" fill="#1e40af" font-family="sans-serif">Male Reproductive Organs</text>
+    <text x="400" y="72" font-size="11" fill="#374151" font-family="sans-serif">• Testes — produce sperm (spermatogenesis)</text>
+    <text x="400" y="90" font-size="11" fill="#374151" font-family="sans-serif">• Epididymis — sperm maturation &amp; storage</text>
+    <text x="400" y="108" font-size="11" fill="#374151" font-family="sans-serif">• Vas deferens — carries sperm to urethra</text>
+    <text x="400" y="126" font-size="11" fill="#374151" font-family="sans-serif">• Prostate gland — secretes seminal fluid</text>
+    <text x="400" y="144" font-size="11" fill="#374151" font-family="sans-serif">• Seminal vesicles — produce fluid (energy)</text>
+    <text x="400" y="162" font-size="11" fill="#374151" font-family="sans-serif">• Urethra — common passage (urine + semen)</text>
+    <text x="400" y="180" font-size="11" fill="#374151" font-family="sans-serif">• Penis — external organ for sperm delivery</text>
+
+    <text x="400" y="214" font-size="12" font-weight="700" fill="#991b1b" font-family="sans-serif">Key Facts:</text>
+    <text x="400" y="232" font-size="11" fill="#991b1b" font-family="sans-serif">• Scrotum keeps testes outside body</text>
+    <text x="400" y="248" font-size="11" fill="#991b1b" font-family="sans-serif">  → 2-3°C cooler → sperm production needs it</text>
+    <text x="400" y="266" font-size="11" fill="#991b1b" font-family="sans-serif">• Testosterone — male sex hormone</text>
+    <text x="400" y="282" font-size="11" fill="#991b1b" font-family="sans-serif">  produced by testes</text>
+    <text x="400" y="300" font-size="11" fill="#991b1b" font-family="sans-serif">• Semen = sperm + seminal fluid</text>
+  </svg>
+</div>
+
+<div class="b3sc">
+  <div class="b3sn">Section 2.5 — ⭐⭐ Most Important</div>
+  <div class="b3st">Female Reproductive System</div>
+
+  <!-- FEMALE REPRODUCTIVE SYSTEM DIAGRAM -->
+  <svg width="100%" viewBox="0 0 680 360" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="frarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="360" fill="#fff1f2" rx="12"/>
+    <text x="340" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b" font-family="sans-serif">FEMALE REPRODUCTIVE SYSTEM</text>
+
+    <!-- Uterus (pear-shaped) -->
+    <path d="M 165 145 Q 155 185 150 220 Q 148 255 180 280 Q 210 300 230 300 Q 250 300 270 280 Q 302 255 300 220 Q 295 185 285 145 Q 265 130 230 128 Q 195 130 165 145 Z" fill="#fecdd3" stroke="#dc2626" stroke-width="2"/>
+    <text x="230" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#991b1b" font-family="sans-serif">UTERUS</text>
+    <text x="230" y="216" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">(womb)</text>
+    <text x="230" y="232" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">embryo develops here</text>
+
+    <!-- Endometrium label -->
+    <text x="230" y="265" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">Endometrium</text>
+    <text x="230" y="277" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">(inner lining, shed in menstruation)</text>
+
+    <!-- Oviducts / Fallopian Tubes -->
+    <path d="M 165 145 Q 130 128 100 140 Q 75 152 68 175" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 285 145 Q 320 128 350 140 Q 375 152 382 175" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="86" y="195" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">Oviduct</text>
+    <text x="363" y="195" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">Oviduct</text>
+    <text x="86" y="208" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">(Fallopian tube)</text>
+    <text x="363" y="208" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">(Fallopian tube)</text>
+
+    <!-- Fimbriae -->
+    <path d="M 68 175 Q 60 185 52 195 M 68 175 Q 65 190 58 200 M 68 175 Q 76 188 70 200" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M 382 175 Q 390 185 398 195 M 382 175 Q 385 190 392 200 M 382 175 Q 374 188 380 200" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="58" y="218" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">fimbriae</text>
+    <text x="392" y="218" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">fimbriae</text>
+
+    <!-- Ovaries -->
+    <ellipse cx="58" cy="155" rx="24" ry="18" fill="#fca5a5" stroke="#dc2626" stroke-width="2"/>
+    <text x="58" y="152" text-anchor="middle" font-size="10" font-weight="700" fill="#991b1b" font-family="sans-serif">Ovary</text>
+    <text x="58" y="166" text-anchor="middle" font-size="9" fill="#dc2626" font-family="sans-serif">(eggs)</text>
+    <ellipse cx="392" cy="155" rx="24" ry="18" fill="#fca5a5" stroke="#dc2626" stroke-width="2"/>
+    <text x="392" y="152" text-anchor="middle" font-size="10" font-weight="700" fill="#991b1b" font-family="sans-serif">Ovary</text>
+    <text x="392" y="166" text-anchor="middle" font-size="9" fill="#dc2626" font-family="sans-serif">(eggs)</text>
+
+    <!-- Cervix -->
+    <rect x="205" y="298" width="50" height="22" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+    <text x="230" y="313" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">Cervix</text>
+
+    <!-- Vagina -->
+    <rect x="210" y="320" width="40" height="26" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+    <text x="230" y="337" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">Vagina</text>
+
+    <!-- Right side labels -->
+    <text x="460" y="50" font-size="12" font-weight="700" fill="#991b1b" font-family="sans-serif">Female Reproductive Organs</text>
+    <text x="460" y="72" font-size="11" fill="#374151" font-family="sans-serif">• Ovaries — produce eggs (ova)</text>
+    <text x="460" y="90" font-size="11" fill="#374151" font-family="sans-serif">  also produce oestrogen &amp; progesterone</text>
+    <text x="460" y="110" font-size="11" fill="#374151" font-family="sans-serif">• Oviduct (Fallopian tube) — carries egg</text>
+    <text x="460" y="128" font-size="11" fill="#374151" font-family="sans-serif">  from ovary to uterus; fertilisation occurs here</text>
+    <text x="460" y="148" font-size="11" fill="#374151" font-family="sans-serif">• Uterus (womb) — embryo implants and</text>
+    <text x="460" y="166" font-size="11" fill="#374151" font-family="sans-serif">  develops here for ~9 months</text>
+    <text x="460" y="186" font-size="11" fill="#374151" font-family="sans-serif">• Cervix — lower narrow part of uterus</text>
+    <text x="460" y="206" font-size="11" fill="#374151" font-family="sans-serif">• Vagina — birth canal; receives sperm</text>
+
+    <text x="460" y="240" font-size="12" font-weight="700" fill="#dc2626" font-family="sans-serif">Key Events:</text>
+    <text x="460" y="260" font-size="11" fill="#dc2626" font-family="sans-serif">• Ovulation: release of egg from ovary</text>
+    <text x="460" y="278" font-size="11" fill="#dc2626" font-family="sans-serif">  (once every ~28 days)</text>
+    <text x="460" y="298" font-size="11" fill="#dc2626" font-family="sans-serif">• Fertilisation: in oviduct</text>
+    <text x="460" y="316" font-size="11" fill="#dc2626" font-family="sans-serif">• Implantation: zygote attaches to</text>
+    <text x="460" y="334" font-size="11" fill="#dc2626" font-family="sans-serif">  endometrium of uterus</text>
+  </svg>
+</div>
+
+<!-- FERTILISATION & EMBRYO DEVELOPMENT -->
+<div class="b3sc">
+  <div class="b3sn">Section 2.6 — ⭐⭐ Most Important</div>
+  <div class="b3st">Fertilisation, Implantation &amp; Pregnancy</div>
+
+  <!-- DEVELOPMENT FLOW DIAGRAM -->
+  <svg width="100%" viewBox="0 0 680 280" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="devarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="280" fill="#fff1f2" rx="12"/>
+    <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b" font-family="sans-serif">FROM FERTILISATION TO BIRTH</text>
+
+    <!-- Step boxes (horizontal flow) -->
+    <!-- 1. Ovulation -->
+    <rect x="20" y="55" width="105" height="70" rx="10" fill="#fecdd3" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="72" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" font-family="sans-serif">Ovulation</text>
+    <text x="72" y="95" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">Egg released</text>
+    <text x="72" y="109" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">from ovary</text>
+    <text x="72" y="136" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">Day ~14</text>
+    <line x1="127" y1="90" x2="147" y2="90" stroke="#dc2626" stroke-width="2" marker-end="url(#devarr)"/>
+
+    <!-- 2. Fertilisation -->
+    <rect x="148" y="55" width="105" height="70" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="200" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" font-family="sans-serif">Fertilisation</text>
+    <text x="200" y="93" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">Sperm + Egg</text>
+    <text x="200" y="107" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">= Zygote (2n)</text>
+    <text x="200" y="136" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">In oviduct</text>
+    <line x1="255" y1="90" x2="275" y2="90" stroke="#dc2626" stroke-width="2" marker-end="url(#devarr)"/>
+
+    <!-- 3. Cleavage -->
+    <rect x="276" y="55" width="105" height="70" rx="10" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+    <text x="328" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e" font-family="sans-serif">Cleavage</text>
+    <text x="328" y="93" text-anchor="middle" font-size="10" fill="#b45309" font-family="sans-serif">Zygote divides</text>
+    <text x="328" y="107" text-anchor="middle" font-size="10" fill="#b45309" font-family="sans-serif">repeatedly (mitosis)</text>
+    <text x="328" y="136" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">Moving to uterus</text>
+    <line x1="383" y1="90" x2="403" y2="90" stroke="#d97706" stroke-width="2" marker-end="url(#devarr)"/>
+
+    <!-- 4. Implantation -->
+    <rect x="404" y="55" width="108" height="70" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+    <text x="458" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46" font-family="sans-serif">Implantation</text>
+    <text x="458" y="93" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Embryo attaches</text>
+    <text x="458" y="107" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">to endometrium</text>
+    <text x="458" y="136" text-anchor="middle" font-size="9" fill="#9ca3af" font-family="sans-serif">Day 6-7</text>
+    <line x1="514" y1="90" x2="534" y2="90" stroke="#059669" stroke-width="2" marker-end="url(#devarr)"/>
+
+    <!-- 5. Development -->
+    <rect x="535" y="40" width="120" height="100" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+    <text x="595" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46" font-family="sans-serif">Development</text>
+    <text x="595" y="83" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Embryo → Foetus</text>
+    <text x="595" y="97" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Organs form</text>
+    <text x="595" y="111" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">~9 months</text>
+    <text x="595" y="125" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">then Birth</text>
+
+    <!-- PLACENTA note (below) -->
+    <rect x="40" y="170" width="600" height="90" rx="12" fill="#f8fafc" stroke="#e5e9f2" stroke-width="1"/>
+    <text x="340" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#374151" font-family="sans-serif">The Placenta — Connection Between Mother and Foetus</text>
+    <text x="340" y="213" text-anchor="middle" font-size="11" fill="#6b7280" font-family="sans-serif">A disc-like structure embedded in uterine wall. Connects foetus (via umbilical cord) to mother's blood supply.</text>
+    <text x="340" y="231" text-anchor="middle" font-size="11" fill="#6b7280" font-family="sans-serif">Functions: Supplies O₂ and nutrients to foetus · Removes CO₂ and waste from foetus</text>
+    <text x="340" y="249" text-anchor="middle" font-size="11" fill="#6b7280" font-family="sans-serif">Note: Mother's blood and foetal blood NEVER mix — exchange occurs through thin placental membrane</text>
+  </svg>
+
+  <div class="b3cal fire">
+    <div class="b3ci">🔥</div>
+    <div class="b3cb"><strong>Gestation Period</strong>In humans: ~280 days (40 weeks / 9 months). The zygote undergoes repeated cell division (mitosis), not meiosis. The embryo becomes a foetus once recognisable body parts form (after about 8 weeks). Birth occurs when fully developed foetus is delivered through the vagina (or Caesarean section).</div>
+  </div>
+</div>
+
+<!-- MENSTRUAL CYCLE -->
+<div class="b3sc">
+  <div class="b3sn">Section 2.7 — Important</div>
+  <div class="b3st">The Menstrual Cycle</div>
+  <div class="b3def">
+    <div class="b3dt">Menstrual Cycle</div>
+    <div class="b3dx">A roughly 28-day cycle in human females, regulated by hormones, involving the preparation of the uterus lining (endometrium) for possible pregnancy. If fertilisation does not occur, the lining breaks down and is shed — this is menstruation (periods).</div>
+  </div>
+
+  <!-- MENSTRUAL CYCLE DIAGRAM -->
+  <svg width="100%" viewBox="0 0 680 230" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <rect width="680" height="230" fill="#fff1f2" rx="12"/>
+    <text x="340" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b" font-family="sans-serif">MENSTRUAL CYCLE (~28 DAYS)</text>
+
+    <!-- Timeline bar -->
+    <rect x="40" y="60" width="600" height="40" rx="8" fill="#f3f4f6" stroke="#e5e9f2" stroke-width="1"/>
+
+    <!-- Phase 1: Menstruation (Day 1-5) -->
+    <rect x="40" y="60" width="108" height="40" rx="8" fill="#fecdd3" stroke="#dc2626" stroke-width="1"/>
+    <text x="94" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#991b1b" font-family="sans-serif">Menstruation</text>
+    <text x="94" y="91" text-anchor="middle" font-size="9" fill="#dc2626" font-family="sans-serif">Day 1-5</text>
+
+    <!-- Phase 2: Follicular (Day 6-13) -->
+    <rect x="150" y="60" width="170" height="40" rx="0" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+    <text x="235" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e" font-family="sans-serif">Follicular Phase</text>
+    <text x="235" y="91" text-anchor="middle" font-size="9" fill="#b45309" font-family="sans-serif">Day 6-13 · Lining rebuilds</text>
+
+    <!-- Phase 3: Ovulation (Day 14) -->
+    <rect x="322" y="55" width="56" height="50" rx="4" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+    <text x="350" y="75" text-anchor="middle" font-size="10" font-weight="700" fill="white" font-family="sans-serif">Ovulation</text>
+    <text x="350" y="90" text-anchor="middle" font-size="9" fill="#fecdd3" font-family="sans-serif">Day 14</text>
+    <text x="350" y="103" text-anchor="middle" font-size="8" fill="#fecdd3" font-family="sans-serif">Egg released</text>
+
+    <!-- Phase 4: Luteal (Day 15-28) -->
+    <rect x="380" y="60" width="260" height="40" rx="0" fill="#d1fae5" stroke="#059669" stroke-width="1"/>
+    <text x="510" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#065f46" font-family="sans-serif">Luteal Phase</text>
+    <text x="510" y="91" text-anchor="middle" font-size="9" fill="#059669" font-family="sans-serif">Day 15-28 · Lining thickens for possible implantation</text>
+
+    <!-- Day labels -->
+    <text x="40" y="120" font-size="10" fill="#9ca3af" font-family="sans-serif">Day 1</text>
+    <text x="255" y="120" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">Day 13</text>
+    <text x="350" y="120" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">Day 14</text>
+    <text x="510" y="120" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">Day 21</text>
+    <text x="635" y="120" font-size="10" fill="#9ca3af" font-family="sans-serif">Day 28</text>
+
+    <!-- Two outcomes -->
+    <rect x="80" y="140" width="220" height="68" rx="10" fill="#fecdd3" stroke="#dc2626" stroke-width="1"/>
+    <text x="190" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" font-family="sans-serif">If NO fertilisation:</text>
+    <text x="190" y="178" text-anchor="middle" font-size="11" fill="#dc2626" font-family="sans-serif">Endometrium breaks down</text>
+    <text x="190" y="194" text-anchor="middle" font-size="11" fill="#dc2626" font-family="sans-serif">→ Menstruation (bleeding)</text>
+
+    <rect x="380" y="140" width="220" height="68" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1"/>
+    <text x="490" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46" font-family="sans-serif">If fertilisation OCCURS:</text>
+    <text x="490" y="178" text-anchor="middle" font-size="11" fill="#059669" font-family="sans-serif">Zygote implants in</text>
+    <text x="490" y="194" text-anchor="middle" font-size="11" fill="#059669" font-family="sans-serif">endometrium → Pregnancy</text>
+
+    <text x="340" y="220" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">Menarche = first menstruation (puberty) · Menopause = cessation (~45-50 years)</text>
+  </svg>
+
+  <div class="b3cal tip">
+    <div class="b3ci">💡</div>
+    <div class="b3cb"><strong>Hormones of Menstrual Cycle</strong>FSH (Follicle Stimulating Hormone) — stimulates egg maturation · LH (Luteinising Hormone) — triggers ovulation · Oestrogen — builds endometrium · Progesterone — maintains endometrium. If fertilisation occurs, HCG (Human Chorionic Gonadotropin) is produced — this is what pregnancy tests detect.</div>
+  </div>
+</div>
+
+<!-- CONTRACEPTION -->
+<div class="b3sc">
+  <div class="b3sn">Section 2.8 — Important</div>
+  <div class="b3st">Contraception — Methods of Birth Control</div>
+  <div class="b3def">
+    <div class="b3dt">Contraception</div>
+    <div class="b3dx">Methods used to prevent pregnancy (unwanted) are called contraception or birth control. They work by either preventing fertilisation or preventing implantation of the embryo.</div>
+  </div>
+
+  <table class="b3nt">
+    <tr><th>Method</th><th>Type</th><th>How it Works</th><th>Example</th></tr>
+    <tr><td><strong>Condom</strong></td><td>Barrier</td><td>Physical barrier — prevents sperm from reaching egg. Also prevents STDs.</td><td>Male condom (latex); Female condom</td></tr>
+    <tr><td><strong>Diaphragm</strong></td><td>Barrier</td><td>Physical barrier placed over cervix</td><td>Cervical cap, diaphragm</td></tr>
+    <tr><td><strong>Oral contraceptive pills (OCP)</strong></td><td>Hormonal</td><td>Synthetic oestrogen/progesterone prevent ovulation</td><td>"The pill" — taken daily</td></tr>
+    <tr><td><strong>IUD (Intra-Uterine Device)</strong></td><td>Mechanical</td><td>Copper-T or hormonal IUD placed in uterus — prevents implantation</td><td>Copper-T</td></tr>
+    <tr><td><strong>Surgical</strong></td><td>Permanent</td><td>Cuts/ties the vas deferens (male) or oviduct (female)</td><td>Vasectomy (male), Tubectomy/Tubulation (female)</td></tr>
+    <tr><td><strong>Condom</strong></td><td>Protection</td><td>Only method that also protects against STDs (HIV, gonorrhoea, etc.)</td><td>Latex condom</td></tr>
+  </table>
+
+  <div class="b3cal warn">
+    <div class="b3ci">⚠️</div>
+    <div class="b3cb"><strong>Abortion — Key Points</strong>Induced abortion (MTP — Medical Termination of Pregnancy) is the intentional termination of pregnancy. In India it is legal under certain conditions (MTP Act). It is NOT a contraceptive method — it should not be used as a regular birth control measure. Condom is the only contraceptive that prevents STDs.</div>
+  </div>
+
+  <div class="b3cal green">
+    <div class="b3ci">✅</div>
+    <div class="b3cb"><strong>STDs / STIs — Sexually Transmitted Diseases</strong>Infections spread through sexual contact: HIV/AIDS (most dangerous), Gonorrhoea, Syphilis, Warts (HPV), Hepatitis B. Prevention: Use of condom during sexual intercourse. HIV destroys T-lymphocytes (WBCs) → weakens immunity → AIDS.</div>
+  </div>
+</div>
+
+<!-- ══ SUMMARY — ASEXUAL VS SEXUAL ══ -->
+<div class="b3sc">
+  <div class="b3sn">Summary</div>
+  <div class="b3st">Asexual vs Sexual Reproduction — Complete Comparison</div>
+  <table class="b3nt">
+    <tr><th>Feature</th><th>Asexual Reproduction</th><th>Sexual Reproduction</th></tr>
+    <tr><td><strong>Parents required</strong></td><td>1</td><td>Usually 2</td></tr>
+    <tr><td><strong>Gametes</strong></td><td>Not formed</td><td>Male and female gametes formed</td></tr>
+    <tr><td><strong>Type of division</strong></td><td>Mitosis only</td><td>Meiosis (gamete formation) + Mitosis (development)</td></tr>
+    <tr><td><strong>Variation in offspring</strong></td><td>Very little or none — identical clones</td><td>High variation — drives evolution</td></tr>
+    <tr><td><strong>Speed</strong></td><td>Fast — large numbers quickly</td><td>Slow — fewer offspring</td></tr>
+    <tr><td><strong>Examples</strong></td><td>Amoeba, Yeast, Hydra, Spirogyra, Ferns</td><td>Humans, Frogs, Flowering plants, Fish</td></tr>
+    <tr><td><strong>Advantage</strong></td><td>Rapid colonisation</td><td>Variation → adaptability → evolution</td></tr>
+  </table>
+</div>
+
+<!-- ══ BOARD EXAM QUESTIONS ══ -->
+<h2 style="font-family:var(--serif);font-size:22px;color:var(--text);margin:32px 0 16px;">📋 Board Exam Questions</h2>
+
+<div class="b3board">
+  <div class="bb-head">Important Question · Asexual Reproduction <span class="bb-marks">3 Marks</span></div>
+  <div class="bb-q">What is vegetative propagation? Give two examples and mention one advantage.</div>
+  <div class="bb-step">
+    <div class="bb-sl">Definition</div>
+    <div class="bb-sc">Vegetative propagation is the method of asexual reproduction in plants in which new plants grow from vegetative parts (roots, stems, leaves, buds) of the parent plant. No seeds are involved.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Examples</div>
+    <div class="bb-sc">1. Potato — new plant grows from "eyes" (buds on tuber/stem)<br/>2. Bryophyllum — buds grow at notches on leaf edges, fall and grow into new plants<br/>Also: Rose (cutting), Ginger (rhizome)</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Advantage</div>
+    <div class="bb-sc">Offspring are genetically identical to parent — useful to preserve desirable characteristics. Also allows plants that rarely produce seeds (banana, seedless grapes) to reproduce.</div>
+  </div>
+  <div class="bb-ans">∴ Vegetative propagation = asexual reproduction from plant body parts. Faster than seed method.</div>
+</div>
+
+<div class="b3board">
+  <div class="bb-head">Important Question · Asexual Reproduction <span class="bb-marks">5 Marks</span></div>
+  <div class="bb-q">Describe the different modes of asexual reproduction with suitable examples.</div>
+  <div class="bb-step">
+    <div class="bb-sl">1. Fission</div>
+    <div class="bb-sc">Parent splits into 2 (binary fission) or many (multiple fission) daughter cells. Binary: Amoeba, Bacteria. Multiple: Plasmodium (malaria parasite forms many cells at once inside a cyst).</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">2. Budding</div>
+    <div class="bb-sc">A small bud grows on the parent body, develops, and detaches as a new organism. Example: Yeast (unicellular), Hydra (multicellular). Parent remains intact and smaller than original.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">3. Fragmentation</div>
+    <div class="bb-sc">Organism breaks into fragments, each capable of growing into a new individual. Example: Spirogyra (filamentous alga) breaks into pieces, each grows into a new filament.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">4. Regeneration</div>
+    <div class="bb-sc">Organisms can regenerate a complete body from small body pieces using totipotent cells. Example: Planaria — cutting it into several pieces, each grows into a new complete Planaria.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">5. Spore Formation</div>
+    <div class="bb-sc">Organism produces protected spores (in sporangia) that are released and germinate in favourable conditions. Example: Rhizopus (bread mould) produces spores in black sporangia at tips of sporangiophores.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">6. Vegetative Propagation</div>
+    <div class="bb-sc">New plants from vegetative parts (stem, root, leaf). Example: Potato (tuber), Bryophyllum (leaf), Rose (cutting).</div>
+  </div>
+  <div class="bb-ans">∴ Asexual reproduction = no gametes, 1 parent, offspring are clones. Multiple methods suited to different organisms.</div>
+</div>
+
+<div class="b3board">
+  <div class="bb-head">Important Question · Flowers <span class="bb-marks">3 Marks</span></div>
+  <div class="bb-q">Draw a labelled diagram of a flower and name its male and female reproductive parts.</div>
+  <div class="bb-step">
+    <div class="bb-sl">Male Reproductive Part — Stamen</div>
+    <div class="bb-sc">Consists of: (1) Anther — produces pollen grains which contain male gametes. (2) Filament — thin stalk supporting the anther.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Female Reproductive Part — Pistil / Carpel</div>
+    <div class="bb-sc">Consists of: (1) Stigma — sticky tip that receives pollen. (2) Style — tube connecting stigma to ovary. (3) Ovary — contains ovules (which contain female gametes / eggs). After fertilisation: ovary → fruit, ovule → seed.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Other Parts</div>
+    <div class="bb-sc">Petals — attract pollinators (insects, birds). Sepals — protect the flower bud.</div>
+  </div>
+  <div class="bb-ans">∴ Stamen = male organ (anther + filament). Pistil = female organ (stigma + style + ovary).</div>
+</div>
+
+<div class="b3board">
+  <div class="bb-head">Important Question · Plants <span class="bb-marks">5 Marks</span></div>
+  <div class="bb-q">Explain pollination and fertilisation in flowering plants. What happens to the flower parts after fertilisation?</div>
+  <div class="bb-step">
+    <div class="bb-sl">Pollination</div>
+    <div class="bb-sc">Transfer of pollen grains from the anther to the stigma is called pollination. Self-pollination: same flower. Cross-pollination: different plant (by wind, insects, water, birds). Pollen grain lands on stigma and germinates.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Pollen Tube Growth</div>
+    <div class="bb-sc">Pollen grain germinates on stigma → pollen tube grows down the style → reaches the ovary → enters ovule through a small pore (micropyle). Male gamete travels through pollen tube.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Fertilisation</div>
+    <div class="bb-sc">Male gamete fuses with the egg cell (female gamete) inside the ovule → forms Zygote (2n). This process is called fertilisation. In flowering plants it is called double fertilisation (one male gamete fuses with egg → zygote; another fuses with polar nuclei → endosperm).</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">After Fertilisation</div>
+    <div class="bb-sc">Ovule → Seed (zygote → embryo inside seed). Ovary wall → Fruit (pericarp). Petals, sepals, stamens → wither and fall. Style → dries and falls. Only the ovary remains and becomes the fruit.</div>
+  </div>
+  <div class="bb-ans">∴ Pollination (pollen transfer) → Pollen tube growth → Fertilisation (zygote) → Seed + Fruit formation.</div>
+</div>
+
+<div class="b3board">
+  <div class="bb-head">Important Question · Human Reproduction <span class="bb-marks">5 Marks</span></div>
+  <div class="bb-q">Describe the process of fertilisation, implantation and development of the embryo in humans.</div>
+  <div class="bb-step">
+    <div class="bb-sl">Fertilisation</div>
+    <div class="bb-sc">After ovulation, the egg travels through the oviduct (Fallopian tube). Sperm deposited in vagina swim up through cervix, uterus and into the oviduct. One sperm penetrates the egg → male gamete (n) + female gamete (n) → Zygote (2n). Fertilisation occurs in the oviduct.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Cleavage and Travel</div>
+    <div class="bb-sc">Zygote divides repeatedly by mitosis (cleavage) as it moves through the oviduct → becomes a ball of cells (morula → blastocyst). Reaches uterus in about 6-7 days.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Implantation</div>
+    <div class="bb-sc">Blastocyst embeds into the thickened endometrium (uterine lining) — this is called implantation. Endometrium is thick, richly vascular — provides nutrition to developing embryo.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Embryo Development &amp; Placenta</div>
+    <div class="bb-sc">Placenta forms — connects embryo to mother via umbilical cord. Supplies O₂ and nutrients; removes CO₂ and waste. Embryo develops into foetus over ~9 months. Birth occurs when fully developed baby is pushed out through cervix and vagina by uterine contractions.</div>
+  </div>
+  <div class="bb-ans">∴ Fertilisation (oviduct) → Cleavage → Implantation (endometrium) → Placenta forms → ~9 months development → Birth.</div>
+</div>
+
+<div class="b3board">
+  <div class="bb-head">Important Question · Contraception <span class="bb-marks">3 Marks</span></div>
+  <div class="bb-q">Name any four methods of contraception. Which method also prevents transmission of STDs?</div>
+  <div class="bb-step">
+    <div class="bb-sl">Four Methods</div>
+    <div class="bb-sc">1. Condom (barrier) — prevents sperm reaching egg<br/>2. Oral contraceptive pills (OCP) — hormones prevent ovulation<br/>3. IUD / Copper-T — prevents implantation in uterus<br/>4. Surgical (Vasectomy / Tubectomy) — permanent, cuts reproductive ducts</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">STD Prevention</div>
+    <div class="bb-sc">Condom is the ONLY contraceptive method that also prevents sexually transmitted diseases (HIV/AIDS, gonorrhoea, syphilis, hepatitis B). All other methods only prevent pregnancy, not STDs.</div>
+  </div>
+  <div class="bb-ans">∴ Condom = prevents both pregnancy AND STDs. Other methods prevent only pregnancy.</div>
+</div>
+
+<div class="b3board">
+  <div class="bb-head">Important Question · Reproduction <span class="bb-marks">3 Marks</span></div>
+  <div class="bb-q">Why is variation important in sexual reproduction? How does it help in evolution?</div>
+  <div class="bb-step">
+    <div class="bb-sl">How Variation Arises</div>
+    <div class="bb-sc">During meiosis (gamete formation), genes are shuffled randomly. Each gamete has a unique combination of genes. Fertilisation brings together gametes from two parents → offspring has a new gene combination different from both parents. DNA copying errors also introduce small mutations.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Importance of Variation</div>
+    <div class="bb-sc">Variation means offspring have slightly different characteristics. When the environment changes (new disease, new predator, climate change), some variations may be more suitable for survival than others. Those individuals survive and reproduce → pass on their genes (natural selection).</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Role in Evolution</div>
+    <div class="bb-sc">Over many generations, beneficial variations accumulate in a population → population changes → new species eventually form. This is the basis of evolution (Darwin's theory of natural selection).</div>
+  </div>
+  <div class="bb-ans">∴ Variation = raw material for evolution. Sexual reproduction → variation → natural selection → evolution.</div>
+</div>
+
+<!-- COMMON MISTAKES -->
+<div class="b3cal warn" style="margin-top:24px;">
+  <div class="b3ci">⚠️</div>
+  <div class="b3cb">
+    <strong>Common Exam Mistakes — Reproduction</strong>
+    1. Pollination ≠ Fertilisation — pollination is pollen transfer; fertilisation is gamete fusion<br/>
+    2. Fragmentation requires regeneration — not all organisms that fragment can regenerate<br/>
+    3. Ovary becomes FRUIT; Ovule becomes SEED (not the other way around)<br/>
+    4. Fertilisation in humans occurs in OVIDUCT, not in the uterus<br/>
+    5. Placenta: mother's blood and foetal blood NEVER mix<br/>
+    6. Condom is the ONLY method preventing both pregnancy AND STDs<br/>
+    7. Asexual reproduction uses MITOSIS only; gametes are produced by MEIOSIS<br/>
+    8. Multiple fission in Plasmodium — nucleus divides FIRST, then cytoplasm
+  </div>
+</div>
+
+<!-- EXAM FOCUS -->
+<div class="b3cal fire">
+  <div class="b3ci">🔥</div>
+  <div class="b3cb">
+    <strong>Exam Focus — High Weightage Topics</strong>
+    Modes of asexual reproduction (all types with examples) · Flower structure diagram with labels · Pollination vs fertilisation · Vegetative propagation methods · Human fertilisation + implantation + placenta · Menstrual cycle · Contraception methods · Importance of variation
+  </div>
+</div>
+
+<!-- QUICK REVISION GRID -->
+<h2 style="font-family:var(--serif);font-size:22px;color:var(--text);margin:28px 0 14px;">⚡ Quick Revision — How do Organisms Reproduce?</h2>
+<div class="b3qr">
+  <div class="b3qr-item">Binary fission: Amoeba, Bacteria<br/>Multiple fission: Plasmodium</div>
+  <div class="b3qr-item">Budding: Yeast (unicellular)<br/>Hydra (multicellular)</div>
+  <div class="b3qr-item">Fragmentation: Spirogyra<br/>Regeneration: Planaria</div>
+  <div class="b3qr-item">Spore formation: Rhizopus<br/>(bread mould, black sporangia)</div>
+  <div class="b3qr-item">Stamen = male (anther+filament)<br/>Pistil = female (stigma+style+ovary)</div>
+  <div class="b3qr-item">Ovary → Fruit<br/>Ovule → Seed (after fertilisation)</div>
+  <div class="b3qr-item">Fertilisation: oviduct<br/>Implantation: endometrium (uterus)</div>
+  <div class="b3qr-item">Placenta: O₂+nutrients to foetus<br/>Blood streams NEVER mix</div>
+  <div class="b3qr-item">Menstrual cycle: ~28 days<br/>Ovulation: Day 14</div>
+  <div class="b3qr-item">Condom: prevents pregnancy + STDs<br/>Only contraceptive to do BOTH</div>
+  <div class="b3qr-item">Variation → Natural selection<br/>→ Evolution (Darwin)</div>
+  <div class="b3qr-item">Gametes by MEIOSIS<br/>Development by MITOSIS</div>
+</div>`,
+  'bio-4': `<!-- ══ CHAPTER BANNER ══ -->
+<div class="b4banner">
+  <h1>Heredity</h1>
+  <p>Class 10 Biology · NCERT Chapter 4 · 2025–26</p>
+  <div class="b4topic-pills">
+    <span class="b4topic-pill">Mendel's Laws</span>
+    <span class="b4topic-pill">Monohybrid Cross</span>
+    <span class="b4topic-pill">Dihybrid Cross</span>
+    <span class="b4topic-pill">Dominant & Recessive</span>
+    <span class="b4topic-pill">Sex Determination</span>
+    <span class="b4topic-pill">Evolution</span>
+    <span class="b4topic-pill">Natural Selection</span>
+    <span class="b4topic-pill">Speciation</span>
+  </div>
+</div>
+
+<!-- ══ 1. INTRODUCTION ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 1</div>
+  <div class="b4st">Heredity — Introduction</div>
+  <div class="b4def">
+    <div class="b4dt">Heredity</div>
+    <div class="b4dx">The transmission of characteristics (traits) from parents to offspring through generations is called heredity. The traits that are passed on are called <strong>inherited traits</strong>. The study of heredity and variation is called <strong>Genetics</strong>.</div>
+  </div>
+  <div class="b4def">
+    <div class="b4dt">Variation</div>
+    <div class="b4dx">Differences in characteristics among individuals of the same species are called variations. Variations arise due to errors in DNA copying during reproduction, sexual reproduction (mixing of genes from two parents), and environmental factors.</div>
+  </div>
+  <div class="b4cal tip">
+    <div class="b4ci">💡</div>
+    <div class="b4cb"><strong>Why Variation Matters</strong>Variation is the raw material for evolution. Without variation, all individuals would be identical and natural selection could not operate. Beneficial variations help a species survive changing environments.</div>
+  </div>
+  <table class="b4nt">
+    <tr><th>Term</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td>Gene</td><td>A segment of DNA that codes for a specific trait</td><td>Gene for eye colour</td></tr>
+    <tr><td>Allele</td><td>Alternative forms of the same gene</td><td>Tall (T) and dwarf (t)</td></tr>
+    <tr><td>Dominant</td><td>Allele that expresses itself even in single copy</td><td>Tall (T) is dominant</td></tr>
+    <tr><td>Recessive</td><td>Allele that expresses only when both copies present</td><td>Dwarf (t) is recessive</td></tr>
+    <tr><td>Genotype</td><td>Genetic constitution (allele combination)</td><td>TT, Tt, tt</td></tr>
+    <tr><td>Phenotype</td><td>Observable physical characteristic</td><td>Tall or Dwarf plant</td></tr>
+    <tr><td>Homozygous</td><td>Both alleles are the same</td><td>TT or tt</td></tr>
+    <tr><td>Heterozygous</td><td>Two different alleles</td><td>Tt (hybrid)</td></tr>
+  </table>
+</div>
+
+<!-- ══ 2. MENDEL ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 2</div>
+  <div class="b4st">Gregor Johann Mendel — Father of Genetics</div>
+  <div class="b4cal blue">
+    <div class="b4ci">👨‍🔬</div>
+    <div class="b4cb"><strong>Who Was Mendel?</strong>Gregor Johann Mendel (1822–1884) was an Austrian monk who conducted experiments on pea plants (<em>Pisum sativum</em>) in his monastery garden from 1856–1863. He studied 7 pairs of contrasting traits over many generations and discovered the fundamental laws of inheritance.</div>
+  </div>
+  <div class="b4cal green">
+    <div class="b4ci">🌱</div>
+    <div class="b4cb"><strong>Why Pea Plants?</strong>Short life cycle · Large number of offspring · Easy to grow · Can be self-pollinated or cross-pollinated · Many clearly contrasting traits · Easily available and cheap</div>
+  </div>
+  <table class="b4nt">
+    <tr><th>Trait Studied</th><th>Dominant Form</th><th>Recessive Form</th></tr>
+    <tr><td>Seed shape</td><td>Round</td><td>Wrinkled</td></tr>
+    <tr><td>Seed colour</td><td>Yellow</td><td>Green</td></tr>
+    <tr><td>Pod shape</td><td>Inflated (full)</td><td>Constricted</td></tr>
+    <tr><td>Pod colour</td><td>Green</td><td>Yellow</td></tr>
+    <tr><td>Flower colour</td><td>Violet / Purple</td><td>White</td></tr>
+    <tr><td>Flower position</td><td>Axial (on stem)</td><td>Terminal (at tip)</td></tr>
+    <tr><td>Plant height</td><td>Tall</td><td>Dwarf</td></tr>
+  </table>
+  <div class="b4cal warn">
+    <div class="b4ci">⚠️</div>
+    <div class="b4cb"><strong>Exam Tip — Remember All 7 Traits</strong>Use the mnemonic: <strong>S</strong>hape · <strong>C</strong>olour (seed) · <strong>P</strong>od shape · <strong>P</strong>od colour · <strong>F</strong>lower colour · <strong>F</strong>lower position · <strong>H</strong>eight — "Some Cats Play Purring, Feeling Fine Here"</div>
+  </div>
+</div>
+
+<!-- ══ 3. MONOHYBRID CROSS ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 3</div>
+  <div class="b4st">Monohybrid Cross — Law of Segregation</div>
+  <div class="b4def">
+    <div class="b4dt">Monohybrid Cross</div>
+    <div class="b4dx">A cross between two parents that differ in only <strong>one pair</strong> of contrasting traits is called a monohybrid cross. Mendel used tall (TT) × dwarf (tt) pea plants.</div>
+  </div>
+
+  <!-- Cross diagram -->
+  <div class="b4cal blue">
+    <div class="b4ci">📊</div>
+    <div class="b4cb"><strong>F1 Generation (First Filial)</strong>
+    Parent 1: Tall (TT) × Parent 2: Dwarf (tt)<br/>
+    Gametes: T, T × t, t<br/>
+    All F1 offspring: Tt (Tall) — all plants are tall<br/>
+    <em>Recessive trait (dwarf) disappears in F1</em></div>
+  </div>
+
+  <div class="b4punnett-wrap">
+    <div class="b4punnett-label">F2 Generation — Tt × Tt Self-pollination</div>
+    <div class="b4punnett">
+      <div class="ph"></div>
+      <div class="ph">T</div>
+      <div class="ph">t</div>
+      <div class="ph">T</div>
+      <div class="pc dom">TT</div>
+      <div class="pc dom">Tt</div>
+      <div class="ph">t</div>
+      <div class="pc dom">Tt</div>
+      <div class="pc">tt</div>
+    </div>
+    <div class="b4ratio">
+      <div class="b4ratio-item dom"><span class="b4ratio-num">3</span>Tall (TT + Tt)</div>
+      <div class="b4ratio-item rec"><span class="b4ratio-num">1</span>Dwarf (tt)</div>
+    </div>
+  </div>
+
+  <div class="b4cal fire">
+    <div class="b4ci">🔥</div>
+    <div class="b4cb"><strong>F2 Ratios — Must Remember</strong>
+    Phenotypic ratio: <strong>3 Tall : 1 Dwarf (3:1)</strong><br/>
+    Genotypic ratio: <strong>1 TT : 2 Tt : 1 tt (1:2:1)</strong><br/>
+    The recessive trait REAPPEARS in F2 — proving traits don't blend but remain separate.</div>
+  </div>
+
+  <div class="b4def">
+    <div class="b4dt">Law of Segregation (First Law)</div>
+    <div class="b4dx">Every organism possesses a pair of alleles for each trait. During gamete formation, the two alleles of each pair <strong>segregate (separate)</strong> from each other so that each gamete receives only one allele. The two alleles reunite at fertilisation. This is also called the <strong>Law of Purity of Gametes</strong>.</div>
+  </div>
+</div>
+
+<!-- ══ 4. DIHYBRID CROSS ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 4</div>
+  <div class="b4st">Dihybrid Cross — Law of Independent Assortment</div>
+  <div class="b4def">
+    <div class="b4dt">Dihybrid Cross</div>
+    <div class="b4dx">A cross between two parents differing in <strong>two pairs</strong> of contrasting traits is called a dihybrid cross. Mendel crossed Round Yellow seeds (RRYY) × Wrinkled Green seeds (rryy).</div>
+  </div>
+  <div class="b4cal blue">
+    <div class="b4ci">📊</div>
+    <div class="b4cb"><strong>Step by Step</strong>
+    P: RRYY (Round Yellow) × rryy (Wrinkled Green)<br/>
+    F1: All RrYy — Round Yellow (both dominant traits appear)<br/><br/>
+    F1 × F1: RrYy × RrYy<br/>
+    F2 Phenotypic ratio: <strong>9 : 3 : 3 : 1</strong><br/>
+    9 Round Yellow : 3 Round Green : 3 Wrinkled Yellow : 1 Wrinkled Green</div>
+  </div>
+  <div class="b4cmp">
+    <div class="b4cc left">
+      <div class="b4ct">Round Yellow (9)</div>
+      <ul>
+        <li>R_Y_ combinations</li>
+        <li>Both dominant traits</li>
+        <li>RRYY, RRYy, RrYY, RrYy</li>
+      </ul>
+    </div>
+    <div class="b4cc right">
+      <div class="b4ct">Wrinkled Green (1)</div>
+      <ul>
+        <li>rryy only</li>
+        <li>Both recessive traits</li>
+        <li>New combination — not in parents</li>
+      </ul>
+    </div>
+  </div>
+  <div class="b4def">
+    <div class="b4dt">Law of Independent Assortment (Second Law)</div>
+    <div class="b4dx">When two pairs of traits are combined in a cross, the alleles of different pairs <strong>assort independently</strong> of each other during gamete formation. Each trait is inherited independently of the other trait. This produces new combinations of traits in offspring (like Wrinkled Yellow and Round Green which were not in parents).</div>
+  </div>
+  <div class="b4cal warn">
+    <div class="b4ci">⚠️</div>
+    <div class="b4cb"><strong>Important</strong>The 9:3:3:1 ratio applies only when both genes are on different chromosomes (not linked). Mendel was lucky — the 7 traits he chose were on different chromosomes!</div>
+  </div>
+</div>
+
+<!-- ══ 5. INHERITED TRAITS ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 5</div>
+  <div class="b4st">Inherited Traits in Humans</div>
+  <div class="b4cal tip">
+    <div class="b4ci">💡</div>
+    <div class="b4cb"><strong>How Traits are Inherited</strong>Human traits follow the same principles as Mendel's pea plants. Each trait is controlled by genes. We inherit one copy from each parent. Dominant allele expressed; recessive expressed only when homozygous.</div>
+  </div>
+  <table class="b4nt">
+    <tr><th>Trait</th><th>Dominant</th><th>Recessive</th></tr>
+    <tr><td>Tongue rolling</td><td>Can roll</td><td>Cannot roll</td></tr>
+    <tr><td>Earlobe</td><td>Free (hanging)</td><td>Attached</td></tr>
+    <tr><td>Thumb shape</td><td>Straight</td><td>Bent (hitchhiker's thumb)</td></tr>
+    <tr><td>Widow's peak</td><td>Present</td><td>Absent</td></tr>
+    <tr><td>Dimples</td><td>Present</td><td>Absent</td></tr>
+    <tr><td>Blood group A, B, AB</td><td>A and B are co-dominant</td><td>O is recessive</td></tr>
+  </table>
+  <div class="b4def">
+    <div class="b4dt">Acquired vs Inherited Traits</div>
+    <div class="b4dx"><strong>Inherited traits</strong> are encoded in DNA and passed from parent to offspring (e.g., eye colour, height, blood group). <strong>Acquired traits</strong> are developed during an organism's lifetime due to environment or experience — they are NOT passed to offspring (e.g., a weight lifter's muscles, a scar). Acquired traits do NOT change the DNA of germ cells.</div>
+  </div>
+  <div class="b4cmp">
+    <div class="b4cc left">
+      <div class="b4ct">Inherited Traits ✓</div>
+      <ul>
+        <li>Encoded in DNA</li>
+        <li>Present from birth</li>
+        <li>Passed to next generation</li>
+        <li>Eye colour, blood group, height</li>
+        <li>Genetic basis</li>
+      </ul>
+    </div>
+    <div class="b4cc right">
+      <div class="b4ct">Acquired Traits ✗</div>
+      <ul>
+        <li>Developed during lifetime</li>
+        <li>Due to environment/experience</li>
+        <li>NOT passed to offspring</li>
+        <li>Muscles, tanned skin, a cut</li>
+        <li>No change in germ cell DNA</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 6. SEX DETERMINATION ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 6</div>
+  <div class="b4st">Sex Determination in Humans</div>
+  <div class="b4def">
+    <div class="b4dt">Sex Chromosomes</div>
+    <div class="b4dx">Humans have 46 chromosomes (23 pairs). Out of these, 22 pairs are <strong>autosomes</strong> (non-sex chromosomes) and 1 pair are <strong>sex chromosomes</strong>. Females have two X chromosomes (XX). Males have one X and one Y chromosome (XY).</div>
+  </div>
+  <div class="b4punnett-wrap">
+    <div class="b4punnett-label">Sex Determination Cross — Mother (XX) × Father (XY)</div>
+    <div class="b4punnett">
+      <div class="ph"></div>
+      <div class="ph">X (egg)</div>
+      <div class="ph">X (egg)</div>
+      <div class="ph">X (sperm)</div>
+      <div class="pc dom">XX ♀</div>
+      <div class="pc dom">XX ♀</div>
+      <div class="ph">Y (sperm)</div>
+      <div class="pc">XY ♂</div>
+      <div class="pc">XY ♂</div>
+    </div>
+    <div class="b4ratio">
+      <div class="b4ratio-item dom"><span class="b4ratio-num">50%</span>Female (XX)</div>
+      <div class="b4ratio-item rec"><span class="b4ratio-num">50%</span>Male (XY)</div>
+    </div>
+  </div>
+  <div class="b4cal fire">
+    <div class="b4ci">🔥</div>
+    <div class="b4cb"><strong>Critical Exam Points — Sex Determination</strong>
+    1. All eggs from mother carry X chromosome only<br/>
+    2. Sperm from father carry EITHER X or Y<br/>
+    3. If X sperm fertilises egg → XX → Girl<br/>
+    4. If Y sperm fertilises egg → XY → Boy<br/>
+    5. <strong>Father determines the sex of the child — NOT the mother</strong><br/>
+    6. 50% probability of each sex in every pregnancy<br/>
+    7. Sex ratio is 1:1 (males:females) theoretically</div>
+  </div>
+  <div class="b4cal red">
+    <div class="b4ci">❗</div>
+    <div class="b4cb"><strong>Social Issue</strong>Female foeticide and sex-selective abortion are illegal and morally wrong. The science clearly shows the father's sperm determines sex — blaming the mother is scientifically incorrect. Both sexes are equally valuable.</div>
+  </div>
+</div>
+
+<!-- ══ 7. EVOLUTION ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 7</div>
+  <div class="b4st">Evolution</div>
+  <div class="b4def">
+    <div class="b4dt">Evolution</div>
+    <div class="b4dx">Evolution is the process by which new species develop from pre-existing species over long periods of time through gradual changes (variations). It is a slow, continuous process driven by natural selection acting on inherited variation.</div>
+  </div>
+  <div class="b4cal blue">
+    <div class="b4ci">🕰️</div>
+    <div class="b4cb"><strong>History of Evolutionary Thought</strong></div>
+  </div>
+  <div class="b4timeline">
+    <div class="b4titem">
+      <div class="b4tlabel">Lamarck (1809)</div>
+      <div class="b4tcontent">Proposed theory of <strong>Use and Disuse</strong> — organs used more become stronger and larger; unused organs shrink. Proposed <strong>inheritance of acquired characteristics</strong>. Example: Giraffes stretched necks → longer necks passed to offspring. <em>Now known to be INCORRECT — acquired traits are not inherited.</em></div>
+    </div>
+    <div class="b4titem">
+      <div class="b4tlabel">Charles Darwin (1859)</div>
+      <div class="b4tcontent">Proposed <strong>Theory of Natural Selection</strong> in "On the Origin of Species". Key idea: variations exist in nature → some variations are more suited to the environment → individuals with favourable variations survive and reproduce more (survival of the fittest) → favourable traits become more common over generations → new species form.</div>
+    </div>
+    <div class="b4titem">
+      <div class="b4tlabel">Modern Synthesis</div>
+      <div class="b4tcontent">Combined Darwin's natural selection with Mendel's genetics. Mutations in DNA cause variations. Natural selection acts on these genetic variations. Genes that increase survival are passed on more frequently.</div>
+    </div>
+  </div>
+  <div class="b4def">
+    <div class="b4dt">Natural Selection — Step by Step</div>
+    <div class="b4dx">
+      <div class="b4flow">
+        <div class="b4fbox">Variation exists<br/>in population</div>
+        <div class="b4farr">→</div>
+        <div class="b4fbox blue">Environment<br/>creates pressure</div>
+        <div class="b4farr">→</div>
+        <div class="b4fbox green">Fit individuals<br/>survive & reproduce</div>
+        <div class="b4farr">→</div>
+        <div class="b4fbox purple">Favourable traits<br/>passed to offspring</div>
+        <div class="b4farr">→</div>
+        <div class="b4fbox orange">Population changes<br/>over generations</div>
+        <div class="b4farr">→</div>
+        <div class="b4fbox yellow">New species<br/>may form</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 8. SPECIATION ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 8</div>
+  <div class="b4st">Speciation</div>
+  <div class="b4def">
+    <div class="b4dt">Speciation</div>
+    <div class="b4dx">The process by which new species form from existing species is called speciation. It occurs when two populations of the same species become reproductively isolated from each other and accumulate different genetic changes over time until they can no longer interbreed.</div>
+  </div>
+  <div class="b4cal tip">
+    <div class="b4ci">💡</div>
+    <div class="b4cb"><strong>How Speciation Happens — Geographical Isolation</strong>A population is split by a geographical barrier (mountain, river, ocean). The two groups can no longer interbreed. Each group accumulates different mutations. Natural selection acts differently in each environment. Over many generations — they become so different they can no longer produce fertile offspring → two separate species.</div>
+  </div>
+  <div class="b4cmp">
+    <div class="b4cc blue">
+      <div class="b4ct">Factors Causing Speciation</div>
+      <ul>
+        <li>Geographical isolation (rivers, mountains)</li>
+        <li>Genetic drift (random changes in small populations)</li>
+        <li>Natural selection (different environments)</li>
+        <li>Mutations accumulate differently</li>
+        <li>Reproductive isolation develops</li>
+      </ul>
+    </div>
+    <div class="b4cc purple">
+      <div class="b4ct">Example — Galapagos Finches</div>
+      <ul>
+        <li>One species of finch reached islands</li>
+        <li>Different islands = different food</li>
+        <li>Beaks evolved differently (seeds/insects/cactus)</li>
+        <li>13+ different species formed</li>
+        <li>Darwin's key observation for natural selection</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 9. HOMOLOGOUS & ANALOGOUS ORGANS ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 9</div>
+  <div class="b4st">Homologous and Analogous Organs</div>
+  <div class="b4cmp">
+    <div class="b4cc left">
+      <div class="b4ct">Homologous Organs</div>
+      <ul>
+        <li>Same basic structure / origin</li>
+        <li>Different functions</li>
+        <li>Evidence of common ancestry</li>
+        <li>Shows <strong>divergent evolution</strong></li>
+        <li><strong>Examples:</strong> Forelimbs of human, whale, bat, horse — all have same bones (humerus, radius, ulna) but different functions (grasping, swimming, flying, running)</li>
+      </ul>
+    </div>
+    <div class="b4cc right">
+      <div class="b4ct">Analogous Organs</div>
+      <ul>
+        <li>Different structure / origin</li>
+        <li>Same function</li>
+        <li>Evidence of similar environment (NOT common ancestor)</li>
+        <li>Shows <strong>convergent evolution</strong></li>
+        <li><strong>Examples:</strong> Wings of birds and insects — same function (flying) but completely different structure</li>
+      </ul>
+    </div>
+  </div>
+  <div class="b4cal fire">
+    <div class="b4ci">🔥</div>
+    <div class="b4cb"><strong>Memory Trick</strong>
+    <strong>Homo</strong>logous = <strong>H</strong>idden same structure · Different function · Common ancestor<br/>
+    <strong>Ana</strong>logous = <strong>A</strong>ppears similar (same function) · Different structure · NO common ancestor</div>
+  </div>
+  <div class="b4def">
+    <div class="b4dt">Vestigial Organs</div>
+    <div class="b4dx">Organs that were functional in ancestors but have become non-functional or reduced in size in modern organisms. They are evidence for evolution. Examples: <strong>Human</strong> — appendix, coccyx (tail bone), wisdom teeth, ear muscles, body hair; <strong>Whale</strong> — hind limb bones (hidden inside body); <strong>Python</strong> — tiny hind limb bones.</div>
+  </div>
+</div>
+
+<!-- ══ 10. FOSSILS ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 10</div>
+  <div class="b4st">Fossils — Evidence for Evolution</div>
+  <div class="b4def">
+    <div class="b4dt">Fossils</div>
+    <div class="b4dx">Fossils are the preserved remains or impressions of organisms that lived in the past, found in rocks. They provide direct evidence for evolution by showing how organisms have changed over time. The study of fossils is called <strong>Palaeontology</strong>.</div>
+  </div>
+  <div class="b4cal green">
+    <div class="b4ci">🦕</div>
+    <div class="b4cb"><strong>How Fossils Form</strong>Organism dies → buried under sediment → soft parts decompose → hard parts (bones, shells) preserved → more sediment layers form over millions of years → fossil found when rock erodes or is excavated.</div>
+  </div>
+  <table class="b4nt">
+    <tr><th>Evidence from Fossils</th><th>What it Tells Us</th></tr>
+    <tr><td>Deeper rock layers = older fossils</td><td>Life forms have changed over time</td></tr>
+    <tr><td>Transitional fossils (e.g., Archaeopteryx)</td><td>Shows links between different groups (reptiles → birds)</td></tr>
+    <tr><td>Similar fossils in different continents</td><td>Continents were once joined (Pangaea)</td></tr>
+    <tr><td>Sequence of fossil horses</td><td>Shows gradual evolution from small to large</td></tr>
+  </table>
+  <div class="b4cal tip">
+    <div class="b4ci">💡</div>
+    <div class="b4cb"><strong>Archaeopteryx — The Famous Transitional Fossil</strong>Had features of both reptiles (teeth, claws on wings, long bony tail) AND birds (feathers, wings, wishbone). Proves birds evolved from reptiles. A classic example of a transitional form.</div>
+  </div>
+  <div class="b4cal blue">
+    <div class="b4ci">🔬</div>
+    <div class="b4cb"><strong>Other Evidence for Evolution</strong>
+    1. <strong>Comparative anatomy</strong> — homologous organs show common ancestry<br/>
+    2. <strong>Comparative embryology</strong> — embryos of fish, frog, bird, human look similar in early stages<br/>
+    3. <strong>Molecular evidence</strong> — similar DNA sequences in related species<br/>
+    4. <strong>Biogeography</strong> — related species found in nearby geographic areas</div>
+  </div>
+</div>
+
+<!-- ══ 11. EVOLUTION & CLASSIFICATION ══ -->
+<div class="b4sc">
+  <div class="b4sn">Section 11</div>
+  <div class="b4st">Evolution and Classification</div>
+  <div class="b4cal tip">
+    <div class="b4ci">💡</div>
+    <div class="b4cb"><strong>The Link</strong>Classification of organisms is based on evolutionary relationships. Organisms that share more recent common ancestors are placed in the same group. The more characteristics two species share, the more closely related they are. Classification reflects the evolutionary tree of life.</div>
+  </div>
+  <div class="b4flow">
+    <div class="b4fbox">All life<br/>shares common ancestor</div>
+    <div class="b4farr">→</div>
+    <div class="b4fbox blue">Evolution produces<br/>new species</div>
+    <div class="b4farr">→</div>
+    <div class="b4fbox green">Related species share<br/>more features</div>
+    <div class="b4farr">→</div>
+    <div class="b4fbox purple">Classification reflects<br/>evolutionary history</div>
+  </div>
+  <div class="b4cal warn">
+    <div class="b4ci">⚠️</div>
+    <div class="b4cb"><strong>Evolution ≠ Progress</strong>Evolution does NOT mean organisms are getting "better" or more complex. It means organisms are becoming better adapted to their current environment. Bacteria are still evolving successfully — they are not "lower" forms of life. Every living organism is equally evolved for its own niche.</div>
+  </div>
+</div>
+
+<!-- ══ BOARD QUESTIONS ══ -->
+<div class="b4board">
+  <div class="bb-head">Important Question · Mendel's Laws <span class="bb-marks">5 Marks</span></div>
+  <div class="bb-q">A tall pea plant (Tt) is crossed with a dwarf pea plant (tt). Draw the Punnett square and find the ratio of tall to dwarf plants in the offspring.</div>
+  <div class="bb-step">
+    <div class="bb-sl">Parents</div>
+    <div class="bb-sc">Tall (Tt) × Dwarf (tt) — this is called a Test Cross</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Gametes</div>
+    <div class="bb-sc">Tall parent produces: T and t gametes · Dwarf parent produces: t and t gametes only</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Punnett Square</div>
+    <div class="bb-sc">Tt × tt → offspring: Tt, Tt, tt, tt<br/>Phenotype: 2 Tall (Tt) : 2 Dwarf (tt) = 1:1 ratio</div>
+  </div>
+  <div class="bb-ans">∴ Phenotypic ratio = 1 Tall : 1 Dwarf · Genotypic ratio = 1 Tt : 1 tt</div>
+</div>
+
+<div class="b4board">
+  <div class="bb-head">Important Question · Sex Determination <span class="bb-marks">3 Marks</span></div>
+  <div class="bb-q">Why is it scientifically incorrect to blame a woman for the sex of her child? Explain with the help of a diagram.</div>
+  <div class="bb-step">
+    <div class="bb-sl">Mother's contribution</div>
+    <div class="bb-sc">All eggs produced by the mother carry only the X chromosome. Mother is XX — both her gametes carry X. She cannot produce Y-carrying eggs. So the mother always contributes X to the child.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Father's contribution</div>
+    <div class="bb-sc">Father is XY. He produces two types of sperm — 50% carry X chromosome and 50% carry Y chromosome.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Determination</div>
+    <div class="bb-sc">If X sperm fertilises the egg → XX → Girl. If Y sperm fertilises the egg → XY → Boy. The sex of the child depends entirely on which type of sperm from the father fertilises the egg.</div>
+  </div>
+  <div class="bb-ans">∴ Father's sperm determines the sex of the child. Blaming the mother is scientifically incorrect.</div>
+</div>
+
+<div class="b4board">
+  <div class="bb-head">Important Question · Evolution <span class="bb-marks">5 Marks</span></div>
+  <div class="bb-q">What are homologous and analogous organs? Give two examples of each. What do they tell us about evolution?</div>
+  <div class="bb-step">
+    <div class="bb-sl">Homologous Organs</div>
+    <div class="bb-sc">Organs with the same basic structure and evolutionary origin but performing different functions. Examples: (1) Forelimbs of human, whale, bat and horse — same bones (humerus, radius, ulna, carpals, metacarpals, phalanges) but used for grasping, swimming, flying and running. (2) Thorns of Bougainvillea and tendrils of Cucurbita — both are modified stems but thorns protect while tendrils help in climbing.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Analogous Organs</div>
+    <div class="bb-sc">Organs that perform the same function but have different structure and origin. Examples: (1) Wings of birds (modified forelimbs with feathers) and wings of insects (outgrowths of exoskeleton) — same function (flying), different structure. (2) Sweet potato (root) and potato (stem) — both store food but are different organs.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Evolutionary Significance</div>
+    <div class="bb-sc">Homologous organs prove common ancestry — organisms with homologous organs share a common ancestor (divergent evolution). Analogous organs show convergent evolution — different organisms independently evolved similar solutions to similar environmental challenges — they do NOT share recent common ancestry.</div>
+  </div>
+  <div class="bb-ans">∴ Homologous = common ancestor (divergent evolution) · Analogous = similar environment (convergent evolution)</div>
+</div>
+
+<div class="b4board">
+  <div class="bb-head">Important Question · Acquired vs Inherited <span class="bb-marks">3 Marks</span></div>
+  <div class="bb-q">A man develops large muscles due to weight training. Will his children be born with large muscles? Give reason.</div>
+  <div class="bb-step">
+    <div class="bb-sl">Answer</div>
+    <div class="bb-sc">No, the children will NOT be born with large muscles.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Reason</div>
+    <div class="bb-sc">Large muscles developed through weight training is an acquired trait. Acquired traits develop during an organism's lifetime due to use, environment or experience. Acquired traits do NOT change the DNA of germ cells (sperm and eggs). Only changes in germ cell DNA can be inherited. Since the man's muscle size is not encoded in his DNA, it cannot be passed to his children.</div>
+  </div>
+  <div class="bb-ans">∴ Acquired traits are not inherited. Only traits encoded in germ cell DNA are passed to offspring.</div>
+</div>
+
+<!-- COMMON MISTAKES -->
+<div class="b4cal warn" style="margin-top:24px;">
+  <div class="b4ci">⚠️</div>
+  <div class="b4cb">
+    <strong>Common Exam Mistakes — Heredity & Evolution</strong>
+    1. Phenotypic ratio (3:1) ≠ Genotypic ratio (1:2:1) — know both<br/>
+    2. F1 are all hybrid (Tt) — NOT pure tall (TT)<br/>
+    3. Father determines sex — NOT mother<br/>
+    4. Homologous ≠ Analogous — structure vs function<br/>
+    5. Acquired traits NOT inherited — Lamarck was wrong<br/>
+    6. Evolution is NOT about becoming "better" — it's adaptation<br/>
+    7. Fossils in deeper layers are OLDER — not newer<br/>
+    8. Natural selection acts on EXISTING variation — does not CREATE variation<br/>
+    9. Speciation requires reproductive isolation — not just separation<br/>
+    10. Vestigial organs are evidence FOR evolution — not against it
+  </div>
+</div>
+
+<!-- EXAM FOCUS -->
+<div class="b4cal fire">
+  <div class="b4ci">🔥</div>
+  <div class="b4cb">
+    <strong>Exam Focus — High Weightage Topics</strong>
+    Mendel's experiments (7 traits table) · Monohybrid cross with Punnett square (3:1 ratio) · Dihybrid cross (9:3:3:1 ratio) · Laws of segregation and independent assortment · Sex determination (XX/XY) with cross diagram · Homologous vs Analogous organs with examples · Acquired vs Inherited traits · Fossils as evidence · Natural selection · Speciation
+  </div>
+</div>
+
+<!-- QUICK REVISION GRID -->
+<h2 style="font-family:var(--serif);font-size:22px;color:var(--text);margin:28px 0 14px;">⚡ Quick Revision — Heredity & Evolution</h2>
+<div class="b4qr">
+  <div class="b4qr-item">Mendel: 7 traits on pea plants<br/>Father of Genetics</div>
+  <div class="b4qr-item">Monohybrid F2: 3:1 phenotypic<br/>1:2:1 genotypic ratio</div>
+  <div class="b4qr-item">Dihybrid F2: 9:3:3:1<br/>Round Yellow : Round Green : Wrinkled Yellow : Wrinkled Green</div>
+  <div class="b4qr-item">Law 1: Segregation (purity of gametes)<br/>Law 2: Independent assortment</div>
+  <div class="b4qr-item">Female: XX · Male: XY<br/>Father determines sex of child</div>
+  <div class="b4qr-item">Acquired traits NOT inherited<br/>Only germ cell DNA changes passed on</div>
+  <div class="b4qr-item">Homologous: same structure, diff function<br/>→ Divergent evolution, common ancestor</div>
+  <div class="b4qr-item">Analogous: diff structure, same function<br/>→ Convergent evolution, NO common ancestor</div>
+  <div class="b4qr-item">Fossils: deeper = older<br/>Archaeopteryx = reptile + bird</div>
+  <div class="b4qr-item">Natural selection: variation → survival<br/>→ reproduction → trait spreads</div>
+  <div class="b4qr-item">Speciation: isolation → different mutations<br/>→ reproductive isolation → new species</div>
+  <div class="b4qr-item">Vestigial organs: appendix, coccyx<br/>Evidence of evolution from ancestors</div>
+</div>`,
   // ── BIO CH5 — last chapter — has hidden password ──
-  'bio-5': ``,
+  'bio-5': `<style>
+/* ── BIO CH5 BASE ─────────────────────────── */
+.b5sc{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 24px 18px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+.b5sn{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bio);font-weight:500;margin-bottom:6px;}
+.b5st{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.b5fb{background:var(--bio-l);border:1px solid var(--bio-b);border-left:4px solid var(--bio);border-radius:10px;padding:14px 18px;margin:14px 0;font-family:var(--mono);font-size:13px;color:#991b1b;font-weight:500;line-height:1.9;}
+.b5eb{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:14px 0;}
+.b5el{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.b5nt{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+.b5nt th{background:var(--bio-l);color:#991b1b;font-weight:700;padding:10px 14px;text-align:left;border-bottom:2px solid var(--bio-b);font-family:var(--mono);font-size:11px;letter-spacing:.5px;}
+.b5nt td{padding:10px 14px;border-bottom:1px solid #f3f4f6;color:var(--text2);font-size:14px;vertical-align:top;}
+.b5nt tr:last-child td{border-bottom:none;}
+.b5cal{border-radius:12px;padding:16px 18px;margin:16px 0;display:flex;gap:12px;align-items:flex-start;}
+.b5cal.fire{background:#fff7ed;border:1px solid #fed7aa;}
+.b5cal.tip{background:#faf5ff;border:1px solid #e9d5ff;}
+.b5cal.green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.b5cal.warn{background:#fefce8;border:1px solid #fde68a;}
+.b5cal.red{background:var(--bio-l);border:1px solid var(--bio-b);}
+.b5cal.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.b5ci{font-size:18px;flex-shrink:0;margin-top:1px;}
+.b5cb{font-size:14px;color:var(--text2);line-height:1.7;}
+.b5cb strong{display:block;margin-bottom:4px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);}
+.b5qr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+.b5qr-item{background:var(--bio-l);border:1px solid var(--bio-b);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:12px;color:#991b1b;line-height:1.7;}
+@media(max-width:520px){.b5qr{grid-template-columns:1fr;}}
+.b5cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.b5cc{border-radius:12px;padding:16px;}
+.b5cc.left{background:#f0fdf4;border:1px solid #bbf7d0;}
+.b5cc.right{background:var(--bio-l);border:1px solid var(--bio-b);}
+.b5cc.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.b5cc.purple{background:#faf5ff;border:1px solid #e9d5ff;}
+.b5cc.orange{background:#fff7ed;border:1px solid #fed7aa;}
+.b5cc.yellow{background:#fefce8;border:1px solid #fde68a;}
+.b5ct{font-weight:700;font-size:14px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.08);}
+.b5cc.left .b5ct{color:#15803d;}
+.b5cc.right .b5ct{color:#991b1b;}
+.b5cc.blue .b5ct{color:#1e40af;}
+.b5cc.purple .b5ct{color:#7e22ce;}
+.b5cc.orange .b5ct{color:#c2410c;}
+.b5cc.yellow .b5ct{color:#92400e;}
+.b5cc ul{margin:0;padding-left:16px;font-size:13px;color:var(--text2);line-height:1.9;}
+@media(max-width:520px){.b5cmp{grid-template-columns:1fr;}}
+.b5def{background:var(--white);border:2px solid var(--bio-b);border-radius:12px;padding:16px 18px;margin:14px 0;}
+.b5dt{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--bio);margin-bottom:6px;font-weight:600;}
+.b5dx{font-size:14px;color:var(--text2);line-height:1.7;}
+.b5flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;}
+.b5fbox{background:var(--bio-l);border:1px solid var(--bio-b);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:#991b1b;text-align:center;line-height:1.5;}
+.b5fbox.blue{background:#eff6ff;border-color:#bfdbfe;color:#1e40af;}
+.b5fbox.green{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;}
+.b5fbox.purple{background:#faf5ff;border-color:#e9d5ff;color:#7e22ce;}
+.b5fbox.orange{background:#fff7ed;border-color:#fed7aa;color:#c2410c;}
+.b5fbox.yellow{background:#fefce8;border-color:#fde68a;color:#92400e;}
+.b5farr{font-size:18px;color:var(--bio);font-weight:700;}
+.b5board{background:#0f172a;border-radius:14px;padding:20px 22px;margin:18px 0;color:#e2e8f0;}
+.b5board .bb-head{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;}
+.b5board .bb-marks{background:#1c2f1a;border:1px solid #16a34a;border-radius:6px;padding:3px 10px;font-family:var(--mono);font-size:11px;color:#86efac;}
+.b5board .bb-q{font-size:15px;font-weight:600;color:#f1f5f9;margin-bottom:14px;line-height:1.6;}
+.b5board .bb-step{border-left:2px solid #dc2626;padding-left:14px;margin-bottom:12px;}
+.b5board .bb-sl{font-family:var(--mono);font-size:10px;color:#f87171;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.b5board .bb-sc{font-size:14px;color:#cbd5e1;line-height:1.8;}
+.b5board .bb-ans{background:#1c2f1a;border:1px solid #16a34a;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px;color:#86efac;font-weight:600;}
+.b5banner{background:linear-gradient(135deg,#15803d 0%,#16a34a 60%,#22c55e 100%);border-radius:16px;padding:28px 24px;margin-bottom:24px;color:white;}
+.b5banner h1{font-family:var(--serif);font-size:28px;font-weight:900;margin:0 0 6px;color:white;}
+.b5banner p{font-size:14px;opacity:.85;margin:0;line-height:1.6;}
+.b5topic-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.b5topic-pill{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:600;color:white;}
+.b5pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.b5pill{border-radius:999px;padding:5px 14px;font-size:12px;font-weight:700;letter-spacing:.5px;}
+.b5pill.red{background:var(--bio-l);color:var(--bio);border:1px solid var(--bio-b);}
+.b5pill.green{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;}
+.b5pill.blue{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;}
+.b5pill.purple{background:#faf5ff;color:#7e22ce;border:1px solid #e9d5ff;}
+.b5pill.orange{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;}
+</style>
+
+<!-- ══ CHAPTER BANNER ══ -->
+<div class="b5banner">
+  <h1>Our Environment</h1>
+  <p>Class 10 Biology · NCERT Chapter 5 · 2025–26</p>
+  <div class="b5topic-pills">
+    <span class="b5topic-pill">Ecosystem</span>
+    <span class="b5topic-pill">Food Chain</span>
+    <span class="b5topic-pill">Food Web</span>
+    <span class="b5topic-pill">Trophic Levels</span>
+    <span class="b5topic-pill">10% Energy Law</span>
+    <span class="b5topic-pill">Biodegradable Waste</span>
+    <span class="b5topic-pill">Ozone Depletion</span>
+    <span class="b5topic-pill">Waste Management</span>
+  </div>
+</div>
+
+<!-- ══ INTRO ══ -->
+<div class="b5sc">
+  <div class="b5sn">Introduction</div>
+  <div class="b5st">What is an Ecosystem?</div>
+  <div class="b5def">
+    <div class="b5dt">Ecosystem</div>
+    <div class="b5dx">All the interacting organisms in an area together with the non-living components of that environment form an ecosystem. It includes both biotic (living) and abiotic (non-living) components functioning together as a unit.</div>
+  </div>
+  <div class="b5cmp">
+    <div class="b5cc left">
+      <div class="b5ct">Biotic Components</div>
+      <ul>
+        <li>Producers (plants, algae)</li>
+        <li>Consumers (animals)</li>
+        <li>Decomposers (bacteria, fungi)</li>
+      </ul>
+    </div>
+    <div class="b5cc right">
+      <div class="b5ct">Abiotic Components</div>
+      <ul>
+        <li>Sunlight, temperature</li>
+        <li>Water, soil, air</li>
+        <li>Minerals and nutrients</li>
+      </ul>
+    </div>
+  </div>
+  <div class="b5cal tip">
+    <div class="b5ci">💡</div>
+    <div class="b5cb"><strong>Key Point</strong>Producers make their own food using sunlight (autotrophs). All consumers depend directly or indirectly on producers. Decomposers break down dead organic matter and return nutrients to the soil — completing the cycle.</div>
+  </div>
+</div>
+
+<!-- ══ FOOD CHAIN ══ -->
+<div class="b5sc">
+  <div class="b5sn">Food Chain & Food Web</div>
+  <div class="b5st">Flow of Energy in an Ecosystem</div>
+  <div class="b5def">
+    <div class="b5dt">Food Chain</div>
+    <div class="b5dx">A sequence showing who eats whom in an ecosystem. Energy flows from producers → herbivores → carnivores. Each step is called a trophic level. Arrows show the direction of energy flow.</div>
+  </div>
+
+  <div class="b5eb">
+    <div class="b5el">Example Food Chains</div>
+    <div class="b5flow">
+      <div class="b5fbox green">Grass</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox">Grasshopper</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox">Frog</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox">Snake</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox purple">Eagle</div>
+    </div>
+    <div class="b5flow" style="margin-top:10px">
+      <div class="b5fbox green">Phytoplankton</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox">Zooplankton</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox">Small Fish</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox purple">Large Fish</div>
+    </div>
+  </div>
+
+  <div class="b5def">
+    <div class="b5dt">Food Web</div>
+    <div class="b5dx">A network of interconnected food chains in an ecosystem. It is more realistic than a single food chain because most organisms eat more than one type of food. If one organism is removed, others are affected — shows interdependence.</div>
+  </div>
+
+  <div class="b5cal warn">
+    <div class="b5ci">⚠️</div>
+    <div class="b5cb"><strong>Common Mistake</strong>Arrows in a food chain show the direction of ENERGY FLOW, not who eats whom. Arrow always points FROM prey TO predator — i.e., from where energy comes FROM to where it goes TO.</div>
+  </div>
+
+  <table class="b5nt">
+    <tr><th>Trophic Level</th><th>Organisms</th><th>Example</th></tr>
+    <tr><td>T1 — Producers</td><td>Green plants, algae</td><td>Grass, Phytoplankton</td></tr>
+    <tr><td>T2 — Primary Consumers</td><td>Herbivores</td><td>Grasshopper, Deer, Rabbit</td></tr>
+    <tr><td>T3 — Secondary Consumers</td><td>Carnivores / Omnivores</td><td>Frog, Fox, Small fish</td></tr>
+    <tr><td>T4 — Tertiary Consumers</td><td>Top carnivores</td><td>Snake, Eagle, Shark</td></tr>
+  </table>
+</div>
+
+<!-- ══ 10% ENERGY LAW ══ -->
+<div class="b5sc">
+  <div class="b5sn">Energy Flow</div>
+  <div class="b5st">The 10% Law — Lindemann's Law</div>
+  <div class="b5def">
+    <div class="b5dt">10% Energy Law</div>
+    <div class="b5dx">Only 10% of the energy available at one trophic level is transferred to the next trophic level. The remaining 90% is lost as heat during life processes (respiration, movement, etc.). This is why food chains rarely have more than 4–5 trophic levels.</div>
+  </div>
+
+  <div class="b5eb">
+    <div class="b5el">Energy Transfer Example</div>
+    <div class="b5flow">
+      <div class="b5fbox green">Plants<br/>1000 J</div>
+      <div class="b5farr">→ 10%</div>
+      <div class="b5fbox">Herbivore<br/>100 J</div>
+      <div class="b5farr">→ 10%</div>
+      <div class="b5fbox">Carnivore<br/>10 J</div>
+      <div class="b5farr">→ 10%</div>
+      <div class="b5fbox purple">Top Carnivore<br/>1 J</div>
+    </div>
+  </div>
+
+  <div class="b5cal fire">
+    <div class="b5ci">🔥</div>
+    <div class="b5cb"><strong>Exam Favourite — Why Vegetarian Diet is Better</strong>If humans eat plants (T2), they get 10% of plant energy. If humans eat animals that eat plants (T3), they get only 1% of plant energy. So eating lower in the food chain is more energy efficient — vegetarian diet supports more people from same land area.</div>
+  </div>
+
+  <div class="b5cal green">
+    <div class="b5ci">✅</div>
+    <div class="b5cb"><strong>Why Short Food Chains?</strong>Because energy is lost at each step. By the time you reach T4 or T5, so little energy remains that it cannot support a large population. This is why top predators are always fewer in number than producers.</div>
+  </div>
+</div>
+
+<!-- ══ BIOLOGICAL MAGNIFICATION ══ -->
+<div class="b5sc">
+  <div class="b5sn">Pollution</div>
+  <div class="b5st">Biological Magnification</div>
+  <div class="b5def">
+    <div class="b5dt">Biological Magnification (Biomagnification)</div>
+    <div class="b5dx">The progressive increase in the concentration of harmful chemicals (like pesticides — DDT) at successive trophic levels in a food chain. Because chemicals are not broken down and accumulate in body fat, top predators have the highest concentration.</div>
+  </div>
+
+  <div class="b5eb">
+    <div class="b5el">Magnification of DDT in a Food Chain</div>
+    <div class="b5flow">
+      <div class="b5fbox green">Water<br/>0.003 ppm</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox blue">Algae<br/>0.04 ppm</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox orange">Small Fish<br/>0.5 ppm</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox">Large Fish<br/>2 ppm</div>
+      <div class="b5farr">→</div>
+      <div class="b5fbox red" style="background:var(--bio-l);border-color:var(--bio-b);color:#991b1b;">Bird<br/>25 ppm</div>
+    </div>
+  </div>
+
+  <div class="b5cal red">
+    <div class="b5ci">🚨</div>
+    <div class="b5cb"><strong>Key Points on Biomagnification</strong>
+      1. Chemicals enter at producer level through contaminated water/soil<br/>
+      2. Each consumer eats many organisms of the level below — concentration multiplies<br/>
+      3. Humans at the top of food chain — most affected<br/>
+      4. DDT causes thinning of bird egg shells → reproductive failure<br/>
+      5. Non-biodegradable chemicals magnify; biodegradable ones do not
+    </div>
+  </div>
+</div>
+
+<!-- ══ WASTE MANAGEMENT ══ -->
+<div class="b5sc">
+  <div class="b5sn">Waste</div>
+  <div class="b5st">Biodegradable &amp; Non-Biodegradable Waste</div>
+
+  <div class="b5cmp">
+    <div class="b5cc left">
+      <div class="b5ct">✅ Biodegradable</div>
+      <ul>
+        <li>Broken down by microorganisms</li>
+        <li>Returns nutrients to soil</li>
+        <li>Causes no long-term pollution</li>
+        <li><strong>Examples:</strong> Food waste, paper, cotton, wood, animal dung, leaves</li>
+      </ul>
+    </div>
+    <div class="b5cc right">
+      <div class="b5ct">❌ Non-Biodegradable</div>
+      <ul>
+        <li>Cannot be broken down naturally</li>
+        <li>Persists in environment for years</li>
+        <li>Causes biomagnification</li>
+        <li><strong>Examples:</strong> Plastic, DDT, glass, metals, synthetic fibres, nuclear waste</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="b5cal tip">
+    <div class="b5ci">💡</div>
+    <div class="b5cb"><strong>Waste Management — 3R Principle</strong>
+      <strong>Reduce</strong> — Use less; avoid unnecessary consumption<br/>
+      <strong>Reuse</strong> — Use items multiple times before discarding<br/>
+      <strong>Recycle</strong> — Process waste into new usable products<br/>
+      This reduces pressure on landfills and decreases pollution.
+    </div>
+  </div>
+
+  <table class="b5nt">
+    <tr><th>Property</th><th>Biodegradable</th><th>Non-Biodegradable</th></tr>
+    <tr><td>Decomposed by microbes</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Environmental persistence</td><td>Short term</td><td>Very long term</td></tr>
+    <tr><td>Biomagnification</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Examples</td><td>Vegetable peels, paper</td><td>Plastic, DDT, glass</td></tr>
+    <tr><td>Disposal</td><td>Composting, landfill</td><td>Special treatment needed</td></tr>
+  </table>
+</div>
+
+<!-- ══ OZONE LAYER ══ -->
+<div class="b5sc">
+  <div class="b5sn">Atmosphere</div>
+  <div class="b5st">Ozone Layer &amp; Its Depletion</div>
+  <div class="b5def">
+    <div class="b5dt">Ozone (O₃)</div>
+    <div class="b5dx">Ozone is a molecule made of three oxygen atoms (O₃). The ozone layer is present in the stratosphere (15–35 km above Earth's surface). It acts as a shield, absorbing harmful ultraviolet (UV) radiation from the Sun before it reaches Earth's surface.</div>
+  </div>
+
+  <div class="b5eb">
+    <div class="b5el">Ozone Formation &amp; Breakdown</div>
+    <div class="b5flow">
+      <div class="b5fbox blue">UV radiation</div>
+      <div class="b5farr">splits</div>
+      <div class="b5fbox">O₂ → 2O</div>
+      <div class="b5farr">combines</div>
+      <div class="b5fbox green">O + O₂ → O₃ (Ozone)</div>
+    </div>
+  </div>
+
+  <div class="b5def">
+    <div class="b5dt">Ozone Depletion</div>
+    <div class="b5dx">Chlorofluorocarbons (CFCs) — used in refrigerators, air conditioners, fire extinguishers, and aerosol sprays — rise into the stratosphere. There, UV radiation breaks CFCs and releases chlorine atoms. Each chlorine atom destroys thousands of ozone molecules, thinning the ozone layer.</div>
+  </div>
+
+  <div class="b5cmp">
+    <div class="b5cc blue">
+      <div class="b5ct">Causes of Ozone Depletion</div>
+      <ul>
+        <li>CFCs (from ACs, refrigerators)</li>
+        <li>Halons (fire extinguishers)</li>
+        <li>Nitrogen oxides (vehicle exhaust)</li>
+        <li>Methane (from cattle, paddy fields)</li>
+      </ul>
+    </div>
+    <div class="b5cc right">
+      <div class="b5ct">Effects of Ozone Depletion</div>
+      <ul>
+        <li>Increased UV-B radiation on Earth</li>
+        <li>Skin cancer in humans</li>
+        <li>Cataract (eye damage)</li>
+        <li>Damage to crops and marine life</li>
+        <li>Weakened immune systems</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="b5cal green">
+    <div class="b5ci">🌍</div>
+    <div class="b5cb"><strong>Montreal Protocol (1987)</strong>An international agreement signed by countries worldwide to phase out the production and use of substances that deplete the ozone layer, especially CFCs. It is considered the most successful environmental treaty in history.</div>
+  </div>
+</div>
+
+<!-- ══ GARBAGE DISPOSAL ══ -->
+<div class="b5sc">
+  <div class="b5sn">Environment Management</div>
+  <div class="b5st">Managing Garbage &amp; Reducing Pollution</div>
+
+  <div class="b5cmp">
+    <div class="b5cc left">
+      <div class="b5ct">Composting</div>
+      <ul>
+        <li>Biodegradable waste decomposed by microbes</li>
+        <li>Produces manure (compost) for soil</li>
+        <li>Reduces landfill burden</li>
+        <li>Eco-friendly and sustainable</li>
+      </ul>
+    </div>
+    <div class="b5cc purple">
+      <div class="b5ct">Sewage Treatment</div>
+      <ul>
+        <li>Wastewater treated before release</li>
+        <li>Removes harmful bacteria and chemicals</li>
+        <li>Prevents water body pollution</li>
+        <li>Treated water can be reused</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="b5cmp">
+    <div class="b5cc orange">
+      <div class="b5ct">Landfill Sites</div>
+      <ul>
+        <li>Non-biodegradable waste dumped</li>
+        <li>Lined to prevent soil contamination</li>
+        <li>Filling up rapidly — unsustainable</li>
+        <li>Methane gas produced (greenhouse gas)</li>
+      </ul>
+    </div>
+    <div class="b5cc yellow">
+      <div class="b5ct">Incineration</div>
+      <ul>
+        <li>Burning of solid waste at high temperatures</li>
+        <li>Reduces volume of waste greatly</li>
+        <li>Releases CO₂ and toxic gases</li>
+        <li>Used for hospital/hazardous waste</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BOARD QUESTIONS ══ -->
+<div class="b5board">
+  <div class="bb-head">Important Board Question <span class="bb-marks">3 Marks</span></div>
+  <div class="bb-q">What is biological magnification? Why are pesticide concentrations highest in organisms at the top of a food chain?</div>
+  <div class="bb-step">
+    <div class="bb-sl">Definition</div>
+    <div class="bb-sc">Biological magnification is the progressive increase in concentration of harmful non-biodegradable chemicals (like DDT) at successive trophic levels in a food chain.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Reason for Accumulation</div>
+    <div class="bb-sc">These chemicals are not broken down by body metabolism — they accumulate in fatty tissues. Each organism at a higher trophic level eats many organisms from the level below. The chemicals from all those organisms concentrate in the predator's body.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Top Predator Effect</div>
+    <div class="bb-sc">Top carnivores (eagles, sharks, humans) consume many prey animals throughout their life — each carrying accumulated chemicals. So the concentration multiplies dramatically at the top. Humans at the top of food chains are most severely affected.</div>
+  </div>
+  <div class="bb-ans">∴ Biomagnification = non-biodegradable chemicals accumulate in fat → multiply at each trophic level → highest at top of food chain.</div>
+</div>
+
+<div class="b5board">
+  <div class="bb-head">Important Board Question <span class="bb-marks">3 Marks</span></div>
+  <div class="bb-q">How does the 10% law of energy flow explain why food chains rarely have more than 4–5 trophic levels?</div>
+  <div class="bb-step">
+    <div class="bb-sl">10% Law</div>
+    <div class="bb-sc">Only 10% of energy at one trophic level is transferred to the next. The remaining 90% is lost as heat during respiration, movement and other life processes. This was stated by Lindemann (1942).</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Energy Calculation</div>
+    <div class="bb-sc">If producers have 1000 J → T2 gets 100 J → T3 gets 10 J → T4 gets 1 J → T5 gets 0.1 J. By the fifth trophic level, the energy available is so small it cannot sustain a viable population of organisms.</div>
+  </div>
+  <div class="bb-ans">∴ 90% energy lost at each step → so little energy reaches T4/T5 → cannot support organisms → food chains limited to 4–5 levels.</div>
+</div>
+
+<div class="b5board">
+  <div class="bb-head">Important Board Question <span class="bb-marks">5 Marks</span></div>
+  <div class="bb-q">What is ozone? How is the ozone layer formed? Explain the harmful effects of ozone layer depletion and what steps have been taken to prevent it.</div>
+  <div class="bb-step">
+    <div class="bb-sl">What is Ozone</div>
+    <div class="bb-sc">Ozone is a molecule with three oxygen atoms (O₃). The ozone layer is in the stratosphere (15–35 km altitude). It absorbs harmful UV-B radiation preventing it from reaching Earth's surface.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Formation</div>
+    <div class="bb-sc">UV radiation from the Sun splits O₂ molecules into individual oxygen atoms (O). These free oxygen atoms combine with O₂ molecules to form O₃ (ozone). Reaction: O₂ → 2O (by UV); O + O₂ → O₃.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Depletion Cause</div>
+    <div class="bb-sc">CFCs (chlorofluorocarbons) from ACs, refrigerators, aerosols rise to stratosphere. UV radiation breaks CFCs → releases Cl atoms. Cl + O₃ → ClO + O₂ (ozone destroyed). One Cl atom can destroy thousands of ozone molecules.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Harmful Effects</div>
+    <div class="bb-sc">Increased UV-B reaches Earth → skin cancer, cataracts in humans; immune suppression; damage to crops, plankton, and marine ecosystems; disruption of food chains.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Prevention — Montreal Protocol</div>
+    <div class="bb-sc">Montreal Protocol (1987) — international agreement to phase out CFC production and use. Countries replaced CFCs with safer alternatives (HFCs, HCFCs). The ozone hole over Antarctica is slowly recovering as a result.</div>
+  </div>
+  <div class="bb-ans">∴ Ozone (O₃) absorbs UV → CFCs destroy it → UV increases → cancer, crop damage. Controlled by Montreal Protocol (1987).</div>
+</div>
+
+<div class="b5board">
+  <div class="bb-head">Important Board Question <span class="bb-marks">3 Marks</span></div>
+  <div class="bb-q">Differentiate between biodegradable and non-biodegradable substances. Give two examples of each. Which type causes biomagnification and why?</div>
+  <div class="bb-step">
+    <div class="bb-sl">Biodegradable</div>
+    <div class="bb-sc">Substances that can be decomposed by microorganisms (bacteria, fungi) into simpler substances. They naturally recycle into the environment. Examples: vegetable peels, paper, cotton, animal dung, leaves.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Non-Biodegradable</div>
+    <div class="bb-sc">Substances that cannot be broken down by natural biological processes. They persist in the environment for decades or centuries. Examples: plastic, DDT, glass, aluminium cans, nuclear waste, synthetic fibres.</div>
+  </div>
+  <div class="bb-step">
+    <div class="bb-sl">Biomagnification</div>
+    <div class="bb-sc">Non-biodegradable substances cause biomagnification because they are not metabolised — they accumulate in fatty tissues and concentrate at each trophic level.</div>
+  </div>
+  <div class="bb-ans">∴ Non-biodegradable → not broken down → accumulates in fat → biomagnification at each trophic level.</div>
+</div>
+
+<!-- COMMON MISTAKES -->
+<div class="b5cal warn" style="margin-top:24px;">
+  <div class="b5ci">⚠️</div>
+  <div class="b5cb">
+    <strong>Common Exam Mistakes — Our Environment</strong>
+    1. Food chain arrows show ENERGY FLOW direction, not "who eats whom"<br/>
+    2. 10% law — only 10% transferred, 90% LOST as heat (not stored)<br/>
+    3. Ozone is O₃ — not O₂. Ozone layer is in STRATOSPHERE not troposphere<br/>
+    4. CFCs destroy ozone — not CO₂ (CO₂ causes global warming, not ozone depletion)<br/>
+    5. Biomagnification happens with NON-biodegradable chemicals only<br/>
+    6. Decomposers are NOT consumers — they are a separate category<br/>
+    7. Montreal Protocol = ozone; Kyoto Protocol = greenhouse gases (different treaties)<br/>
+    8. Energy LOST at each trophic level — it does not disappear, it becomes heat
+  </div>
+</div>
+
+<!-- EXAM FOCUS -->
+<div class="b5cal fire">
+  <div class="b5ci">🔥</div>
+  <div class="b5cb">
+    <strong>Exam Focus — High Weightage Topics</strong>
+    Food chain with trophic levels · 10% energy law with calculation · Biological magnification with DDT example · Biodegradable vs non-biodegradable table · Ozone formation and depletion · CFCs and Montreal Protocol · 3R principle · Ecosystem components
+  </div>
+</div>
+
+<!-- QUICK REVISION -->
+<h2 style="font-family:var(--serif);font-size:22px;color:var(--text);margin:28px 0 14px;">⚡ Quick Revision — Our Environment</h2>
+<div class="b5qr">
+  <div class="b5qr-item">Ecosystem = Biotic + Abiotic<br/>Producers → Consumers → Decomposers</div>
+  <div class="b5qr-item">Food chain arrows = energy flow direction<br/>Always: prey → predator</div>
+  <div class="b5qr-item">10% law: only 10% energy transferred<br/>90% lost as heat at each trophic level</div>
+  <div class="b5qr-item">T1=Producers, T2=Herbivores<br/>T3=Carnivores, T4=Top carnivores</div>
+  <div class="b5qr-item">Biomagnification: DDT concentrates<br/>Highest at TOP of food chain</div>
+  <div class="b5qr-item">Biodegradable: paper, food, cotton<br/>Non-biodegradable: plastic, DDT, glass</div>
+  <div class="b5qr-item">Ozone = O₃, in Stratosphere<br/>Absorbs harmful UV-B radiation</div>
+  <div class="b5qr-item">CFCs → release Cl atoms → destroy O₃<br/>1 Cl atom destroys 1000s of O₃ molecules</div>
+  <div class="b5qr-item">Montreal Protocol (1987)<br/>= Phase out CFCs internationally</div>
+  <div class="b5qr-item">3R: Reduce → Reuse → Recycle<br/>Best way to manage waste</div>
+  <div class="b5qr-item">Decomposers: bacteria + fungi<br/>Return nutrients to soil</div>
+  <div class="b5qr-item">Vegetarian diet more efficient<br/>Gets 10% vs 1% of plant energy</div>
+</div>
+`,
 };
 
 const BACK_PAGE = {
