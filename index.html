@@ -2044,7 +2044,769 @@ const NOTES_CONTENT = {
   <div class="qr-item">Max zeroes = degree</div>
 </div>
 `,
-  'maths-3': ``,
+  'maths-3': `<style>
+/* ── MATHS CH3 BASE — BLUE THEME ─────────── */
+.m3sc{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 24px 18px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+.m3sn{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--maths);font-weight:500;margin-bottom:6px;}
+.m3st{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.m3fb{background:var(--maths-l);border:1px solid var(--maths-b);border-left:4px solid var(--maths);border-radius:10px;padding:14px 18px;margin:14px 0;font-family:var(--mono);font-size:13px;color:#1e40af;font-weight:500;line-height:1.9;}
+.m3eb{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:14px 0;}
+.m3el{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.m3nt{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+.m3nt th{background:var(--maths-l);color:#1e40af;font-weight:700;padding:10px 14px;text-align:left;border-bottom:2px solid var(--maths-b);font-family:var(--mono);font-size:11px;letter-spacing:.5px;}
+.m3nt td{padding:10px 14px;border-bottom:1px solid #f3f4f6;color:var(--text2);font-size:14px;vertical-align:top;}
+.m3nt tr:last-child td{border-bottom:none;}
+.m3cal{border-radius:12px;padding:16px 18px;margin:16px 0;display:flex;gap:12px;align-items:flex-start;}
+.m3cal.fire{background:#fff7ed;border:1px solid #fed7aa;}
+.m3cal.tip{background:#faf5ff;border:1px solid #e9d5ff;}
+.m3cal.green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.m3cal.warn{background:#fefce8;border:1px solid #fde68a;}
+.m3cal.blue{background:var(--maths-l);border:1px solid var(--maths-b);}
+.m3ci{font-size:18px;flex-shrink:0;margin-top:1px;}
+.m3cb{font-size:14px;color:var(--text2);line-height:1.7;}
+.m3cb strong{display:block;margin-bottom:4px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);}
+.m3qr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+.m3qr-item{background:var(--maths-l);border:1px solid var(--maths-b);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:12px;color:#1e40af;line-height:1.7;}
+@media(max-width:520px){.m3qr{grid-template-columns:1fr;}}
+.m3cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.m3cc{border-radius:12px;padding:16px;}
+.m3cc.blue{background:var(--maths-l);border:1px solid var(--maths-b);}
+.m3cc.green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.m3cc.red{background:#fff1f2;border:1px solid #fecdd3;}
+.m3cc.orange{background:#fff7ed;border:1px solid #fed7aa;}
+.m3cc.purple{background:#faf5ff;border:1px solid #e9d5ff;}
+.m3cc.yellow{background:#fefce8;border:1px solid #fde68a;}
+.m3ct{font-weight:700;font-size:14px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.08);}
+.m3cc.blue .m3ct{color:#1e40af;}
+.m3cc.green .m3ct{color:#15803d;}
+.m3cc.red .m3ct{color:#991b1b;}
+.m3cc.orange .m3ct{color:#c2410c;}
+.m3cc.purple .m3ct{color:#7e22ce;}
+.m3cc.yellow .m3ct{color:#92400e;}
+.m3cc ul{margin:0;padding-left:16px;font-size:13px;color:var(--text2);line-height:1.9;}
+@media(max-width:520px){.m3cmp{grid-template-columns:1fr;}}
+.m3def{background:var(--white);border:2px solid var(--maths-b);border-radius:12px;padding:16px 18px;margin:14px 0;}
+.m3dt{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--maths);margin-bottom:6px;font-weight:600;}
+.m3dx{font-size:14px;color:var(--text2);line-height:1.7;}
+.m3flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;}
+.m3fbox{background:var(--maths-l);border:1px solid var(--maths-b);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:#1e40af;text-align:center;line-height:1.5;}
+.m3fbox.green{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;}
+.m3fbox.orange{background:#fff7ed;border-color:#fed7aa;color:#c2410c;}
+.m3fbox.purple{background:#faf5ff;border-color:#e9d5ff;color:#7e22ce;}
+.m3fbox.red{background:#fff1f2;border-color:#fecdd3;color:#991b1b;}
+.m3farr{font-size:18px;color:var(--maths);font-weight:700;}
+
+/* Board question — blue accent */
+.m3board{background:#0f172a;border-radius:14px;padding:20px 22px;margin:18px 0;color:#e2e8f0;}
+.m3board .mb-head{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;}
+.m3board .mb-marks{background:#1c2538;border:1px solid #2563eb;border-radius:6px;padding:3px 10px;font-family:var(--mono);font-size:11px;color:#93c5fd;}
+.m3board .mb-q{font-size:15px;font-weight:600;color:#f1f5f9;margin-bottom:14px;line-height:1.6;}
+.m3board .mb-step{border-left:2px solid #2563eb;padding-left:14px;margin-bottom:12px;}
+.m3board .mb-sl{font-family:var(--mono);font-size:10px;color:#60a5fa;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.m3board .mb-sc{font-size:14px;color:#cbd5e1;line-height:1.9;font-family:var(--mono);}
+.m3board .mb-ans{background:#1c2538;border:1px solid #2563eb;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px;color:#93c5fd;font-weight:600;font-family:var(--mono);}
+
+/* Chapter banner — blue gradient */
+.m3banner{background:linear-gradient(135deg,#1e40af 0%,#2563eb 60%,#3b82f6 100%);border-radius:16px;padding:28px 24px;margin-bottom:24px;color:white;}
+.m3banner h1{font-family:var(--serif);font-size:28px;font-weight:900;margin:0 0 6px;color:white;}
+.m3banner p{font-size:14px;opacity:.85;margin:0;line-height:1.6;}
+.m3topic-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.m3topic-pill{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:600;color:white;}
+
+/* Condition boxes — 3 types */
+.cond-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0;}
+.cond-box{border-radius:12px;padding:16px;text-align:center;}
+.cond-box.unique{background:#f0fdf4;border:2px solid #16a34a;}
+.cond-box.infinite{background:#eff6ff;border:2px solid #2563eb;}
+.cond-box.none{background:#fff1f2;border:2px solid #dc2626;}
+.cond-box .cond-icon{font-size:24px;margin-bottom:8px;}
+.cond-box .cond-title{font-weight:700;font-size:14px;margin-bottom:6px;}
+.cond-box.unique .cond-title{color:#15803d;}
+.cond-box.infinite .cond-title{color:#1e40af;}
+.cond-box.none .cond-title{color:#991b1b;}
+.cond-box .cond-ratio{font-family:var(--mono);font-size:12px;margin-bottom:8px;padding:6px 10px;border-radius:6px;font-weight:600;}
+.cond-box.unique .cond-ratio{background:#dcfce7;color:#166534;}
+.cond-box.infinite .cond-ratio{background:var(--maths-l);color:#1e40af;}
+.cond-box.none .cond-ratio{background:#fee2e2;color:#991b1b;}
+.cond-box .cond-desc{font-size:12px;color:var(--text3);line-height:1.5;}
+@media(max-width:520px){.cond-grid{grid-template-columns:1fr;}}
+
+/* Steps list */
+.m3steps{list-style:none;padding:0;margin:0 0 14px;counter-reset:m3step;}
+.m3steps li{counter-increment:m3step;display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #f3f4f6;margin:0;}
+.m3steps li:last-child{border-bottom:none;}
+.m3steps li::before{content:counter(m3step);background:var(--maths);color:white;font-family:var(--mono);font-size:11px;font-weight:600;width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.m3steps li span{font-size:14px;color:var(--text2);line-height:1.7;}
+
+/* Method card */
+.method-card{background:var(--white);border:1px solid var(--maths-b);border-radius:14px;padding:20px;margin:14px 0;border-top:4px solid var(--maths);}
+.method-card .mc-title{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--maths);margin-bottom:14px;}
+</style>
+
+<!-- ══ CHAPTER BANNER ══ -->
+<div class="m3banner">
+  <h1>Pair of Linear Equations in Two Variables</h1>
+  <p>Class 10 Mathematics · Chapter 3 · NCERT 2025–26</p>
+  <div class="m3topic-pills">
+    <span class="m3topic-pill">Linear Equations</span>
+    <span class="m3topic-pill">Graphical Method</span>
+    <span class="m3topic-pill">Substitution</span>
+    <span class="m3topic-pill">Elimination</span>
+    <span class="m3topic-pill">Cross Multiplication</span>
+    <span class="m3topic-pill">Word Problems</span>
+    <span class="m3topic-pill">Reducible Equations</span>
+  </div>
+</div>
+
+<!-- ══ SECTION 1: INTRO ══ -->
+<div class="m3sc">
+  <div class="m3sn">Section 01</div>
+  <div class="m3st">Linear Equation in Two Variables</div>
+  <div class="m3def">
+    <div class="m3dt">Definition</div>
+    <div class="m3dx">An equation of the form <strong>ax + by + c = 0</strong> is called a linear equation in two variables x and y, where a, b, c are real numbers and <strong>a and b are not both zero</strong> (at least one of a, b must be non-zero).</div>
+  </div>
+  <div class="m3fb">General form: ax + by + c = 0 &nbsp;&nbsp; where a ≠ 0 or b ≠ 0</div>
+
+  <h3>Examples</h3>
+  <table class="m3nt">
+    <tr><th>Equation</th><th>Linear?</th><th>Values of a, b, c</th></tr>
+    <tr><td style="font-family:var(--mono)">2x + 3y − 5 = 0</td><td>✅ Yes</td><td style="font-family:var(--mono)">a=2, b=3, c=−5</td></tr>
+    <tr><td style="font-family:var(--mono)">x − 4y = 0</td><td>✅ Yes</td><td style="font-family:var(--mono)">a=1, b=−4, c=0</td></tr>
+    <tr><td style="font-family:var(--mono)">x² + y = 3</td><td>❌ No</td><td>Power of x is 2, not 1</td></tr>
+    <tr><td style="font-family:var(--mono)">x + 1/y = 4</td><td>❌ No</td><td>y is in denominator</td></tr>
+  </table>
+
+  <div class="m3def" style="margin-top:18px;">
+    <div class="m3dt">Solution of a Linear Equation</div>
+    <div class="m3dx">Any pair (x, y) that satisfies the equation is called a solution. A single linear equation in two variables has <strong>infinitely many solutions</strong> — they all lie on a straight line when plotted on a graph.</div>
+  </div>
+
+  <div class="m3eb">
+    <div class="m3el">👉 Example — Solutions of x + y = 5</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;">
+      <div style="background:var(--maths-l);border:1px solid var(--maths-b);border-radius:8px;padding:8px 16px;font-family:var(--mono);font-size:13px;color:#1e40af;">(1, 4)</div>
+      <div style="background:var(--maths-l);border:1px solid var(--maths-b);border-radius:8px;padding:8px 16px;font-family:var(--mono);font-size:13px;color:#1e40af;">(2, 3)</div>
+      <div style="background:var(--maths-l);border:1px solid var(--maths-b);border-radius:8px;padding:8px 16px;font-family:var(--mono);font-size:13px;color:#1e40af;">(0, 5)</div>
+      <div style="background:var(--maths-l);border:1px solid var(--maths-b);border-radius:8px;padding:8px 16px;font-family:var(--mono);font-size:13px;color:#1e40af;">(5, 0)</div>
+      <div style="background:var(--maths-l);border:1px solid var(--maths-b);border-radius:8px;padding:8px 16px;font-family:var(--mono);font-size:13px;color:#1e40af;">(−1, 6)</div>
+      <span style="font-size:13px;color:var(--text3);align-self:center;">… and infinitely more</span>
+    </div>
+    <p style="font-size:13px;color:var(--text3);margin:10px 0 0;">All these points lie on a single straight line when plotted on a graph.</p>
+  </div>
+</div>
+
+<!-- ══ SECTION 2: PAIR OF LINEAR EQUATIONS ══ -->
+<div class="m3sc">
+  <div class="m3sn">Section 02</div>
+  <div class="m3st">Pair of Linear Equations</div>
+  <p>Two linear equations in two variables considered together form a <strong>pair of linear equations</strong>:</p>
+  <div class="m3fb">a₁x + b₁y + c₁ = 0<br/>a₂x + b₂y + c₂ = 0</div>
+  <p>The solution of the pair is a point (x, y) that satisfies <strong>both</strong> equations simultaneously. Geometrically each equation represents a line — the solution is where the lines meet.</p>
+</div>
+
+<!-- ══ SECTION 3: GRAPHICAL — VISUAL ══ -->
+<div class="m3sc">
+  <div class="m3sn">Section 03 — ⭐ Very Important</div>
+  <div class="m3st">Graphical Representation — 3 Cases</div>
+  <p>When two lines are drawn on a graph, exactly one of three things can happen:</p>
+
+  <!-- Three cases visual diagram -->
+  <svg width="100%" viewBox="0 0 680 300" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="m3arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="300" fill="#f8fafc" rx="12"/>
+
+    <!-- CASE 1: Intersecting Lines -->
+    <rect x="20" y="20" width="195" height="240" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="117" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d" font-family="sans-serif">Case 1</text>
+    <text x="117" y="58" text-anchor="middle" font-size="11" fill="#15803d" font-family="sans-serif">Intersecting Lines</text>
+    <!-- Graph area -->
+    <line x1="60" y1="200" x2="175" y2="200" stroke="#9ca3af" stroke-width="1" marker-end="url(#m3arr)"/>
+    <line x1="117" y1="230" x2="117" y2="75" stroke="#9ca3af" stroke-width="1" marker-end="url(#m3arr)"/>
+    <!-- Line 1 (blue) -->
+    <line x1="55" y1="185" x2="180" y2="95" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+    <!-- Line 2 (orange) -->
+    <line x1="55" y1="100" x2="180" y2="185" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+    <!-- Intersection point -->
+    <circle cx="117" cy="142" r="5" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+    <text x="130" y="138" font-size="10" fill="#dc2626" font-family="sans-serif">(x, y)</text>
+    <!-- Labels -->
+    <rect x="30" y="205" width="175" height="46" rx="6" fill="white" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="117" y="220" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d" font-family="sans-serif">✅ Unique Solution</text>
+    <text x="117" y="235" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Lines cross at exactly 1 point</text>
+    <text x="117" y="247" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Consistent (independent)</text>
+
+    <!-- CASE 2: Coincident Lines -->
+    <rect x="242" y="20" width="195" height="240" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="339" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af" font-family="sans-serif">Case 2</text>
+    <text x="339" y="58" text-anchor="middle" font-size="11" fill="#1e40af" font-family="sans-serif">Coincident Lines</text>
+    <!-- Graph area -->
+    <line x1="278" y1="200" x2="396" y2="200" stroke="#9ca3af" stroke-width="1" marker-end="url(#m3arr)"/>
+    <line x1="339" y1="230" x2="339" y2="75" stroke="#9ca3af" stroke-width="1" marker-end="url(#m3arr)"/>
+    <!-- Two lines on top of each other (offset slightly for visibility) -->
+    <line x1="268" y1="175" x2="400" y2="110" stroke="#2563eb" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <line x1="268" y1="178" x2="400" y2="113" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 3"/>
+    <text x="380" y="108" font-size="9" fill="#7c3aed" font-family="sans-serif">L₂</text>
+    <text x="380" y="120" font-size="9" fill="#2563eb" font-family="sans-serif">L₁</text>
+    <!-- Label -->
+    <rect x="252" y="205" width="175" height="46" rx="6" fill="white" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="339" y="220" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">♾ Infinite Solutions</text>
+    <text x="339" y="235" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Lines overlap completely</text>
+    <text x="339" y="247" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Consistent (dependent)</text>
+
+    <!-- CASE 3: Parallel Lines -->
+    <rect x="464" y="20" width="195" height="240" rx="10" fill="#fff1f2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="561" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#991b1b" font-family="sans-serif">Case 3</text>
+    <text x="561" y="58" text-anchor="middle" font-size="11" fill="#991b1b" font-family="sans-serif">Parallel Lines</text>
+    <!-- Graph area -->
+    <line x1="500" y1="200" x2="618" y2="200" stroke="#9ca3af" stroke-width="1" marker-end="url(#m3arr)"/>
+    <line x1="561" y1="230" x2="561" y2="75" stroke="#9ca3af" stroke-width="1" marker-end="url(#m3arr)"/>
+    <!-- Two parallel lines -->
+    <line x1="488" y1="165" x2="620" y2="105" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+    <line x1="488" y1="195" x2="620" y2="135" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+    <!-- Gap indicator -->
+    <line x1="554" y1="141" x2="554" y2="163" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 2"/>
+    <text x="558" y="156" font-size="9" fill="#9ca3af" font-family="sans-serif">gap</text>
+    <!-- Label -->
+    <rect x="474" y="205" width="175" height="46" rx="6" fill="white" stroke="#fecdd3" stroke-width="1"/>
+    <text x="561" y="220" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" font-family="sans-serif">❌ No Solution</text>
+    <text x="561" y="235" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Lines never meet</text>
+    <text x="561" y="247" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Inconsistent</text>
+
+    <text x="340" y="284" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">Each linear equation represents a straight line on the graph. Solution = point of intersection.</text>
+  </svg>
+
+  <!-- ALGEBRAIC CONDITIONS — the most important part -->
+  <h3>Algebraic Conditions for Type of Solution</h3>
+  <p>For the pair: a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0, compare the ratios of coefficients:</p>
+  <div class="cond-grid">
+    <div class="cond-box unique">
+      <div class="cond-icon">✅</div>
+      <div class="cond-title">Unique Solution</div>
+      <div class="cond-ratio">a₁/a₂ ≠ b₁/b₂</div>
+      <div class="cond-desc">Lines are intersecting. Exactly one solution exists. System is consistent &amp; independent.</div>
+    </div>
+    <div class="cond-box infinite">
+      <div class="cond-icon">♾</div>
+      <div class="cond-title">Infinite Solutions</div>
+      <div class="cond-ratio">a₁/a₂ = b₁/b₂ = c₁/c₂</div>
+      <div class="cond-desc">Lines are coincident (same line). Infinitely many solutions. Consistent &amp; dependent.</div>
+    </div>
+    <div class="cond-box none">
+      <div class="cond-icon">❌</div>
+      <div class="cond-title">No Solution</div>
+      <div class="cond-ratio">a₁/a₂ = b₁/b₂ ≠ c₁/c₂</div>
+      <div class="cond-desc">Lines are parallel. No solution exists. System is inconsistent.</div>
+    </div>
+  </div>
+
+  <div class="m3cal tip">
+    <div class="m3ci">💡</div>
+    <div class="m3cb"><strong>5-Second Trick to Check Solution Type</strong>Step 1: Find a₁/a₂ and b₁/b₂. Step 2: If they are NOT equal → Unique solution (done!). If they ARE equal → also check c₁/c₂. Equal → Infinite. Not equal → No solution.</div>
+  </div>
+
+  <!-- Visual worked example for conditions -->
+  <div class="m3eb">
+    <div class="m3el">👉 Example — Determine type of solution</div>
+    <p style="font-size:14px;margin:8px 0 4px;font-weight:600;">2x + 3y − 5 = 0 and 4x + 6y − 10 = 0</p>
+    <div class="m3fb">a₁/a₂ = 2/4 = 1/2 &nbsp;&nbsp;·&nbsp;&nbsp; b₁/b₂ = 3/6 = 1/2 &nbsp;&nbsp;·&nbsp;&nbsp; c₁/c₂ = −5/−10 = 1/2<br/>Since a₁/a₂ = b₁/b₂ = c₁/c₂ → Infinite Solutions (coincident lines)</div>
+  </div>
+  <div class="m3eb">
+    <div class="m3el">👉 Example — Determine type of solution</div>
+    <p style="font-size:14px;margin:8px 0 4px;font-weight:600;">x + 2y − 3 = 0 and 2x + 4y − 7 = 0</p>
+    <div class="m3fb">a₁/a₂ = 1/2 &nbsp;&nbsp;·&nbsp;&nbsp; b₁/b₂ = 2/4 = 1/2 &nbsp;&nbsp;·&nbsp;&nbsp; c₁/c₂ = −3/−7 = 3/7<br/>a₁/a₂ = b₁/b₂ but ≠ c₁/c₂ → No Solution (parallel lines)</div>
+  </div>
+</div>
+
+<!-- ══ SECTION 4: METHODS ══ -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--maths);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--maths-b);">Methods of Solving</h2>
+
+<!-- METHOD 1: SUBSTITUTION -->
+<div class="m3sc">
+  <div class="m3sn">Method 01 — Important</div>
+  <div class="m3st">Substitution Method</div>
+  <div class="method-card">
+    <div class="mc-title">Steps to Follow</div>
+    <ol class="m3steps">
+      <li><span>From one equation, express one variable in terms of the other (e.g. x = ... or y = ...)</span></li>
+      <li><span>Substitute this expression into the second equation (now it has only one variable)</span></li>
+      <li><span>Solve the single-variable equation to get one value</span></li>
+      <li><span>Substitute back to find the other variable</span></li>
+      <li><span>Verify by putting both values into both original equations</span></li>
+    </ol>
+  </div>
+
+  <!-- Full worked example -->
+  <div class="m3eb">
+    <div class="m3el">👉 Solved Example</div>
+    <p style="font-size:14px;font-weight:600;margin:8px 0 6px;">Solve: x + y = 5 and x − y = 1</p>
+  </div>
+
+  <div class="m3board">
+    <div class="mb-head">Substitution Method <span class="mb-marks">3 Marks</span></div>
+    <div class="mb-q">Solve: x + y = 5 ... (i) &nbsp;&nbsp; and &nbsp;&nbsp; x − y = 1 ... (ii)</div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 1 — Express x from equation (i)</div>
+      <div class="mb-sc">From (i): x = 5 − y</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 2 — Substitute into equation (ii)</div>
+      <div class="mb-sc">(5 − y) − y = 1<br/>5 − 2y = 1<br/>2y = 4<br/>y = 2</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 3 — Find x</div>
+      <div class="mb-sc">x = 5 − y = 5 − 2 = 3</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 4 — Verify</div>
+      <div class="mb-sc">Eq (i): 3 + 2 = 5 ✓ &nbsp;&nbsp;&nbsp; Eq (ii): 3 − 2 = 1 ✓</div>
+    </div>
+    <div class="mb-ans">∴ x = 3, y = 2</div>
+  </div>
+
+  <div class="m3cal tip">
+    <div class="m3ci">💡</div>
+    <div class="m3cb"><strong>When to use Substitution</strong>Best when one equation has a variable with coefficient 1 or −1 (e.g. x + 2y = 5, or x − y = 3). This makes the expression clean with no fractions. Avoid if both variables have large coefficients — use elimination instead.</div>
+  </div>
+</div>
+
+<!-- METHOD 2: ELIMINATION -->
+<div class="m3sc">
+  <div class="m3sn">Method 02 — ⭐ Most Important</div>
+  <div class="m3st">Elimination Method</div>
+  <div class="method-card">
+    <div class="mc-title">Steps to Follow</div>
+    <ol class="m3steps">
+      <li><span>Choose which variable you want to eliminate (pick the one with easier coefficients)</span></li>
+      <li><span>Multiply one or both equations by suitable numbers to make that variable's coefficients equal</span></li>
+      <li><span>Add or subtract the equations to eliminate that variable</span></li>
+      <li><span>Solve the resulting single-variable equation</span></li>
+      <li><span>Substitute back into any original equation to find the other variable</span></li>
+    </ol>
+  </div>
+
+  <div class="m3board">
+    <div class="mb-head">Elimination Method <span class="mb-marks">3 Marks</span></div>
+    <div class="mb-q">Solve: 2x + 3y = 13 ... (i) &nbsp;&nbsp; and &nbsp;&nbsp; 5x − 2y = 4 ... (ii)</div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 1 — Make coefficients of y equal</div>
+      <div class="mb-sc">Multiply (i) by 2: &nbsp; 4x + 6y = 26 &nbsp;...(iii)<br/>Multiply (ii) by 3: &nbsp; 15x − 6y = 12 &nbsp;...(iv)</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 2 — Add equations (iii) and (iv)</div>
+      <div class="mb-sc">4x + 6y + 15x − 6y = 26 + 12<br/>19x = 38<br/>x = 2</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 3 — Substitute x = 2 in equation (i)</div>
+      <div class="mb-sc">2(2) + 3y = 13<br/>4 + 3y = 13<br/>3y = 9<br/>y = 3</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 4 — Verify</div>
+      <div class="mb-sc">Eq (i): 2(2)+3(3) = 4+9 = 13 ✓ &nbsp;&nbsp; Eq (ii): 5(2)−2(3) = 10−6 = 4 ✓</div>
+    </div>
+    <div class="mb-ans">∴ x = 2, y = 3</div>
+  </div>
+
+  <div class="m3cal fire">
+    <div class="m3ci">🔥</div>
+    <div class="m3cb"><strong>Add or Subtract?</strong>If the equal coefficients have the SAME sign → subtract the equations. If they have OPPOSITE signs → add the equations. This eliminates the variable cleanly.</div>
+  </div>
+
+  <!-- Second elimination example with subtraction -->
+  <div class="m3board">
+    <div class="mb-head">Elimination — Subtract Case <span class="mb-marks">3 Marks</span></div>
+    <div class="mb-q">Solve: 3x + 2y = 11 ... (i) &nbsp;&nbsp; and &nbsp;&nbsp; 3x − y = 5 ... (ii)</div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 1 — Coefficients of x already equal (both 3)</div>
+      <div class="mb-sc">Since signs are same → SUBTRACT (ii) from (i)</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 2 — Subtract</div>
+      <div class="mb-sc">(3x + 2y) − (3x − y) = 11 − 5<br/>3x + 2y − 3x + y = 6<br/>3y = 6 &nbsp;⟹&nbsp; y = 2</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 3 — Find x from (ii)</div>
+      <div class="mb-sc">3x − 2 = 5 &nbsp;⟹&nbsp; 3x = 7 &nbsp;⟹&nbsp; x = 7/3</div>
+    </div>
+    <div class="mb-ans">∴ x = 7/3, y = 2</div>
+  </div>
+</div>
+<!-- ══ METHOD 3: CROSS MULTIPLICATION ══ -->
+<div class="m3sc">
+  <div class="m3sn">Method 03 — Important Formula</div>
+  <div class="m3st">Cross Multiplication Method</div>
+  <div class="m3def">
+    <div class="m3dt">Formula</div>
+    <div class="m3dx">For the pair a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0, the solution is given directly by:</div>
+  </div>
+  <div class="m3fb">x / (b₁c₂ − b₂c₁) = y / (c₁a₂ − c₂a₁) = 1 / (a₁b₂ − a₂b₁)</div>
+
+  <!-- Visual cross multiplication diagram -->
+  <svg width="100%" viewBox="0 0 680 200" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="cm3arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="200" fill="var(--maths-l, #eff6ff)" rx="12"/>
+    <text x="340" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af" font-family="sans-serif">CROSS MULTIPLICATION — HOW TO REMEMBER</text>
+
+    <!-- Equation row 1 -->
+    <text x="80" y="75" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af" font-family="sans-serif">a₁</text>
+    <text x="160" y="75" text-anchor="middle" font-size="14" font-weight="700" fill="#dc2626" font-family="sans-serif">b₁</text>
+    <text x="240" y="75" text-anchor="middle" font-size="14" font-weight="700" fill="#059669" font-family="sans-serif">c₁</text>
+    <text x="340" y="75" text-anchor="middle" font-size="13" fill="#6b7280" font-family="sans-serif">← row 1</text>
+
+    <!-- Equation row 2 -->
+    <text x="80" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af" font-family="sans-serif">a₂</text>
+    <text x="160" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#dc2626" font-family="sans-serif">b₂</text>
+    <text x="240" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#059669" font-family="sans-serif">c₂</text>
+    <text x="340" y="115" text-anchor="middle" font-size="13" fill="#6b7280" font-family="sans-serif">← row 2</text>
+
+    <!-- Cross arrows for x: b1c2 - b2c1 -->
+    <line x1="152" y1="82" x2="232" y2="108" stroke="#dc2626" stroke-width="2" marker-end="url(#cm3arr)"/>
+    <line x1="232" y1="82" x2="152" y2="108" stroke="#dc2626" stroke-width="2" marker-end="url(#cm3arr)"/>
+    <text x="192" y="98" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">x numerator</text>
+    <text x="192" y="145" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">b₁c₂ − b₂c₁</text>
+
+    <!-- Cross arrows for y: c1a2 - c2a1 -->
+    <line x1="72" y1="82" x2="232" y2="108" stroke="#059669" stroke-width="1.5" stroke-dasharray="4 2" marker-end="url(#cm3arr)"/>
+    <line x1="232" y1="82" x2="72" y2="108" stroke="#059669" stroke-width="1.5" stroke-dasharray="4 2" marker-end="url(#cm3arr)"/>
+    <text x="152" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#059669" font-family="sans-serif">c₁a₂ − c₂a₁ (for y)</text>
+
+    <!-- denominator -->
+    <line x1="72" y1="82" x2="152" y2="108" stroke="#1e40af" stroke-width="1.5" marker-end="url(#cm3arr)"/>
+    <line x1="152" y1="82" x2="72" y2="108" stroke="#1e40af" stroke-width="1.5" marker-end="url(#cm3arr)"/>
+    <text x="112" y="145" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">denominator</text>
+    <text x="112" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">a₁b₂ − a₂b₁</text>
+
+    <!-- Shortcut note -->
+    <rect x="420" y="55" width="240" height="110" rx="8" fill="white" stroke="var(--maths-b, #bfdbfe)" stroke-width="1"/>
+    <text x="540" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">Once you have the ratios:</text>
+    <text x="540" y="96" text-anchor="middle" font-size="12" fill="#1e40af" font-family="sans-serif" font-family="monospace">x = (b₁c₂ − b₂c₁)</text>
+    <text x="540" y="113" text-anchor="middle" font-size="12" fill="#1e40af" font-family="sans-serif">      ──────────────</text>
+    <text x="540" y="130" text-anchor="middle" font-size="12" fill="#1e40af" font-family="sans-serif">      (a₁b₂ − a₂b₁)</text>
+    <text x="540" y="152" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">Similarly for y</text>
+  </svg>
+
+  <div class="m3board">
+    <div class="mb-head">Cross Multiplication Method <span class="mb-marks">4 Marks</span></div>
+    <div class="mb-q">Solve by cross multiplication: 2x + y = 5 and 3x + 2y = 8</div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 1 — Write in standard form (ax + by + c = 0)</div>
+      <div class="mb-sc">2x + y − 5 = 0 &nbsp;&nbsp; → a₁=2, b₁=1, c₁=−5<br/>3x + 2y − 8 = 0 &nbsp;&nbsp; → a₂=3, b₂=2, c₂=−8</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 2 — Apply formula</div>
+      <div class="mb-sc">x / (b₁c₂ − b₂c₁) = y / (c₁a₂ − c₂a₁) = 1 / (a₁b₂ − a₂b₁)</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 3 — Calculate each part</div>
+      <div class="mb-sc">b₁c₂ − b₂c₁ = (1)(−8) − (2)(−5) = −8 + 10 = 2<br/>c₁a₂ − c₂a₁ = (−5)(3) − (−8)(2) = −15 + 16 = 1<br/>a₁b₂ − a₂b₁ = (2)(2) − (3)(1) = 4 − 3 = 1</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 4 — Find x and y</div>
+      <div class="mb-sc">x/2 = y/1 = 1/1<br/>x = 2/1 = 2 &nbsp;&nbsp;&nbsp; y = 1/1 = 1</div>
+    </div>
+    <div class="mb-ans">∴ x = 2, y = 1</div>
+  </div>
+
+  <div class="m3cal warn">
+    <div class="m3ci">⚠️</div>
+    <div class="m3cb"><strong>Common Mistake</strong>The equations MUST be in the form ax + by + c = 0 before applying cross multiplication. Always rearrange and move everything to the left side first. Missing the negative signs on c is the most common error.</div>
+  </div>
+</div>
+
+<!-- ══ METHOD 4: REDUCIBLE TO LINEAR FORM ══ -->
+<div class="m3sc">
+  <div class="m3sn">Method 04 — Tricky but Important</div>
+  <div class="m3st">Equations Reducible to Linear Form</div>
+  <div class="m3def">
+    <div class="m3dt">Concept</div>
+    <div class="m3dx">Some equations are not linear in x and y but can be <strong>reduced to a pair of linear equations</strong> by a suitable substitution. This is one of the most common tricky question types in board exams.</div>
+  </div>
+
+  <!-- Visual explanation -->
+  <div class="m3flow">
+    <div class="m3fbox red">Non-linear equation<br/><span style="font-size:11px;font-weight:400">e.g. 1/x + 1/y = 5</span></div>
+    <div class="m3farr">→</div>
+    <div class="m3fbox orange">Substitute<br/><span style="font-size:11px;font-weight:400">u = 1/x, v = 1/y</span></div>
+    <div class="m3farr">→</div>
+    <div class="m3fbox">Linear equation<br/><span style="font-size:11px;font-weight:400">u + v = 5</span></div>
+    <div class="m3farr">→</div>
+    <div class="m3fbox green">Solve for u, v<br/><span style="font-size:11px;font-weight:400">then find x, y</span></div>
+  </div>
+
+  <h3>Common Substitutions</h3>
+  <table class="m3nt">
+    <tr><th>If equation contains</th><th>Substitute</th><th>Result</th></tr>
+    <tr><td style="font-family:var(--mono)">1/x, 1/y</td><td style="font-family:var(--mono)">u = 1/x, v = 1/y</td><td>Linear in u and v</td></tr>
+    <tr><td style="font-family:var(--mono)">1/(x+a), 1/(y+b)</td><td style="font-family:var(--mono)">u = 1/(x+a), v = 1/(y+b)</td><td>Linear in u and v</td></tr>
+    <tr><td style="font-family:var(--mono)">(ax+by), (cx+dy)</td><td style="font-family:var(--mono)">p = ax+by, q = cx+dy</td><td>Linear in p and q</td></tr>
+  </table>
+
+  <div class="m3board">
+    <div class="mb-head">Reducible Equations <span class="mb-marks">4 Marks</span></div>
+    <div class="mb-q">Solve: 2/x + 3/y = 13 &nbsp;&nbsp; and &nbsp;&nbsp; 5/x − 4/y = −2</div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 1 — Substitute to reduce</div>
+      <div class="mb-sc">Let u = 1/x and v = 1/y<br/>Equations become:<br/>2u + 3v = 13 &nbsp;...(i)<br/>5u − 4v = −2 &nbsp;...(ii)</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 2 — Solve by Elimination</div>
+      <div class="mb-sc">Multiply (i) by 4: &nbsp; 8u + 12v = 52 &nbsp;...(iii)<br/>Multiply (ii) by 3: &nbsp; 15u − 12v = −6 &nbsp;...(iv)<br/>Add (iii) + (iv): 23u = 46 &nbsp;⟹&nbsp; u = 2</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 3 — Find v</div>
+      <div class="mb-sc">From (i): 2(2) + 3v = 13 &nbsp;⟹&nbsp; 3v = 9 &nbsp;⟹&nbsp; v = 3</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 4 — Convert back to x and y</div>
+      <div class="mb-sc">u = 1/x = 2 &nbsp;⟹&nbsp; x = 1/2<br/>v = 1/y = 3 &nbsp;⟹&nbsp; y = 1/3</div>
+    </div>
+    <div class="mb-ans">∴ x = 1/2, y = 1/3</div>
+  </div>
+</div>
+
+<!-- ══ WORD PROBLEMS ══ -->
+<div class="m3sc">
+  <div class="m3sn">Section 05 — ⭐⭐ Board Exam Favourite</div>
+  <div class="m3st">Word Problems — Full Approach</div>
+
+  <div class="method-card">
+    <div class="mc-title">Strategy for ALL Word Problems</div>
+    <ol class="m3steps">
+      <li><span>Read the problem carefully. Identify the two unknown quantities.</span></li>
+      <li><span>Assign variables: let first unknown = x, second = y</span></li>
+      <li><span>Form two equations from the two given conditions</span></li>
+      <li><span>Solve using any method (elimination is usually fastest)</span></li>
+      <li><span>Write the final answer in words — don't just write x = ... and stop!</span></li>
+    </ol>
+  </div>
+
+  <!-- Word problem types -->
+  <h3>Types of Word Problems</h3>
+  <div class="m3cmp" style="grid-template-columns:1fr 1fr 1fr;">
+    <div class="m3cc blue">
+      <div class="m3ct">Number Problems</div>
+      <ul>
+        <li>Sum and difference given</li>
+        <li>Digit problems (tens &amp; units)</li>
+        <li>Ratio-based problems</li>
+      </ul>
+    </div>
+    <div class="m3cc green">
+      <div class="m3ct">Age Problems</div>
+      <ul>
+        <li>Present ages</li>
+        <li>Ages after/before n years</li>
+        <li>Ratio of ages</li>
+      </ul>
+    </div>
+    <div class="m3cc orange">
+      <div class="m3ct">Speed/Distance</div>
+      <ul>
+        <li>Upstream/downstream</li>
+        <li>Distance = Speed × Time</li>
+        <li>Same time/distance problems</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Word problem 1: Number -->
+  <div class="m3board">
+    <div class="mb-head">Word Problem · Numbers <span class="mb-marks">3 Marks</span></div>
+    <div class="mb-q">The sum of two numbers is 20 and their difference is 4. Find the numbers.</div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 1 — Assign Variables</div>
+      <div class="mb-sc">Let the two numbers be x and y (where x &gt; y)</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 2 — Form Equations</div>
+      <div class="mb-sc">Condition 1 (sum): x + y = 20 &nbsp;...(i)<br/>Condition 2 (difference): x − y = 4 &nbsp;...(ii)</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 3 — Solve by Addition</div>
+      <div class="mb-sc">Adding (i) and (ii): 2x = 24 &nbsp;⟹&nbsp; x = 12<br/>From (i): 12 + y = 20 &nbsp;⟹&nbsp; y = 8</div>
+    </div>
+    <div class="mb-ans">∴ The two numbers are 12 and 8.</div>
+  </div>
+
+  <!-- Word problem 2: Digit problem -->
+  <div class="m3board">
+    <div class="mb-head">Word Problem · Digits ⭐ <span class="mb-marks">4 Marks</span></div>
+    <div class="mb-q">A two-digit number is 3 more than 4 times the sum of its digits. If 18 is added to the number, the digits interchange. Find the number.</div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 1 — Set up variables</div>
+      <div class="mb-sc">Let tens digit = x, units digit = y<br/>Original number = 10x + y<br/>Reversed number = 10y + x</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 2 — Form equations from conditions</div>
+      <div class="mb-sc">Condition 1: number = 4(sum of digits) + 3<br/>10x + y = 4(x + y) + 3<br/>10x + y = 4x + 4y + 3<br/>6x − 3y = 3 &nbsp;⟹&nbsp; 2x − y = 1 &nbsp;...(i)<br/><br/>Condition 2: adding 18 interchanges digits<br/>10x + y + 18 = 10y + x<br/>9x − 9y = −18 &nbsp;⟹&nbsp; x − y = −2 &nbsp;...(ii)</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 3 — Solve: Subtract (ii) from (i)</div>
+      <div class="mb-sc">(2x − y) − (x − y) = 1 − (−2)<br/>x = 3<br/>From (ii): 3 − y = −2 &nbsp;⟹&nbsp; y = 5</div>
+    </div>
+    <div class="mb-ans">∴ Number = 10(3) + 5 = 35. &nbsp; Check: 35 + 18 = 53 (digits interchanged) ✓</div>
+  </div>
+
+  <!-- Word problem 3: Age -->
+  <div class="m3board">
+    <div class="mb-head">Word Problem · Ages <span class="mb-marks">3 Marks</span></div>
+    <div class="mb-q">5 years hence, the age of a father will be 3 times that of his son. 5 years ago, the father was 7 times as old as his son. Find their present ages.</div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 1 — Variables</div>
+      <div class="mb-sc">Let present age of father = x years, son = y years</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 2 — Form equations</div>
+      <div class="mb-sc">5 years HENCE (future):<br/>(x + 5) = 3(y + 5) &nbsp;⟹&nbsp; x + 5 = 3y + 15 &nbsp;⟹&nbsp; x − 3y = 10 &nbsp;...(i)<br/><br/>5 years AGO (past):<br/>(x − 5) = 7(y − 5) &nbsp;⟹&nbsp; x − 5 = 7y − 35 &nbsp;⟹&nbsp; x − 7y = −30 &nbsp;...(ii)</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 3 — Subtract (ii) from (i)</div>
+      <div class="mb-sc">(x − 3y) − (x − 7y) = 10 − (−30)<br/>4y = 40 &nbsp;⟹&nbsp; y = 10<br/>From (i): x − 3(10) = 10 &nbsp;⟹&nbsp; x = 40</div>
+    </div>
+    <div class="mb-ans">∴ Father's present age = 40 years, Son's present age = 10 years.</div>
+  </div>
+
+  <!-- Word problem 4: Speed upstream/downstream -->
+  <div class="m3board">
+    <div class="mb-head">Word Problem · Speed ⭐ <span class="mb-marks">4 Marks</span></div>
+    <div class="mb-q">A boat goes 30 km upstream and 44 km downstream in 10 hours. In 13 hours, it goes 40 km upstream and 55 km downstream. Find the speed of the boat in still water and speed of the stream.</div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 1 — Variables &amp; Key Relations</div>
+      <div class="mb-sc">Let speed of boat = x km/h, speed of stream = y km/h<br/>Speed upstream = (x − y) km/h<br/>Speed downstream = (x + y) km/h<br/>Time = Distance / Speed</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 2 — Substitute: u = 1/(x−y), v = 1/(x+y)</div>
+      <div class="mb-sc">Condition 1: 30/(x−y) + 44/(x+y) = 10 &nbsp;⟹&nbsp; 30u + 44v = 10 &nbsp;...(i)<br/>Condition 2: 40/(x−y) + 55/(x+y) = 13 &nbsp;⟹&nbsp; 40u + 55v = 13 &nbsp;...(ii)</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 3 — Solve by Elimination</div>
+      <div class="mb-sc">Multiply (i) by 4: 120u + 176v = 40 &nbsp;...(iii)<br/>Multiply (ii) by 3: 120u + 165v = 39 &nbsp;...(iv)<br/>Subtract (iv) from (iii): 11v = 1 &nbsp;⟹&nbsp; v = 1/11<br/>From (i): 30u + 44(1/11) = 10 &nbsp;⟹&nbsp; 30u + 4 = 10 &nbsp;⟹&nbsp; u = 1/5</div>
+    </div>
+    <div class="mb-step">
+      <div class="mb-sl">Step 4 — Convert back</div>
+      <div class="mb-sc">u = 1/(x−y) = 1/5 &nbsp;⟹&nbsp; x − y = 5 &nbsp;...(A)<br/>v = 1/(x+y) = 1/11 &nbsp;⟹&nbsp; x + y = 11 &nbsp;...(B)<br/>Adding (A) and (B): 2x = 16 &nbsp;⟹&nbsp; x = 8<br/>y = 11 − 8 = 3</div>
+    </div>
+    <div class="mb-ans">∴ Speed of boat in still water = 8 km/h · Speed of stream = 3 km/h</div>
+  </div>
+</div>
+
+<!-- ══ MORE BOARD QUESTIONS ══ -->
+<h2 style="font-family:var(--serif);font-size:22px;color:var(--text);margin:32px 0 16px;">📋 Additional Board Questions</h2>
+
+<div class="m3board">
+  <div class="mb-head">Type of Solution Question <span class="mb-marks">2 Marks</span></div>
+  <div class="mb-q">For what value of k will the pair 3x + ky = 1 and 6x + 4y = 2 have infinite solutions?</div>
+  <div class="mb-step">
+    <div class="mb-sl">Condition for infinite solutions</div>
+    <div class="mb-sc">a₁/a₂ = b₁/b₂ = c₁/c₂<br/>3/6 = k/4 = (−1)/(−2)<br/>1/2 = k/4<br/>k = 4 × (1/2) = 2</div>
+  </div>
+  <div class="mb-ans">∴ k = 2</div>
+</div>
+
+<div class="m3board">
+  <div class="mb-head">Type of Solution Question <span class="mb-marks">2 Marks</span></div>
+  <div class="mb-q">Show graphically that the pair 2x + y = 6 and 4x + 2y = 4 is inconsistent.</div>
+  <div class="mb-step">
+    <div class="mb-sl">Check ratios</div>
+    <div class="mb-sc">a₁/a₂ = 2/4 = 1/2<br/>b₁/b₂ = 1/2<br/>c₁/c₂ = −6/−4 = 3/2<br/>Since a₁/a₂ = b₁/b₂ ≠ c₁/c₂ (1/2 ≠ 3/2)</div>
+  </div>
+  <div class="mb-step">
+    <div class="mb-sl">Conclusion</div>
+    <div class="mb-sc">The pair represents parallel lines → No solution → Inconsistent pair.</div>
+  </div>
+  <div class="mb-ans">∴ Parallel lines → No solution → System is inconsistent.</div>
+</div>
+
+<div class="m3board">
+  <div class="mb-head">Word Problem · Fractions <span class="mb-marks">4 Marks</span></div>
+  <div class="mb-q">The sum of a fraction and its reciprocal is 10/3. Also twice the fraction minus its reciprocal is 5/3. Find the fraction.</div>
+  <div class="mb-step">
+    <div class="mb-sl">Step 1 — Variables</div>
+    <div class="mb-sc">Let the fraction = x, its reciprocal = 1/x<br/>Let u = x (the fraction itself)</div>
+  </div>
+  <div class="mb-step">
+    <div class="mb-sl">Step 2 — Form equations</div>
+    <div class="mb-sc">Condition 1: x + 1/x = 10/3 &nbsp;...(i)<br/>Condition 2: 2x − 1/x = 5/3 &nbsp;...(ii)</div>
+  </div>
+  <div class="mb-step">
+    <div class="mb-sl">Step 3 — Add equations</div>
+    <div class="mb-sc">Adding (i) and (ii): 3x = 10/3 + 5/3 = 15/3 = 5<br/>x = 5/3</div>
+  </div>
+  <div class="mb-step">
+    <div class="mb-sl">Step 4 — Verify</div>
+    <div class="mb-sc">5/3 + 3/5 = 25/15 + 9/15 = 34/15 ≠ 10/3... let u=x, v=1/x directly<br/>u + v = 10/3 &nbsp;&nbsp; 2u − v = 5/3 → Adding: 3u = 15/3 = 5, u = 5/3<br/>v = 10/3 − 5/3 = 5/3 &nbsp;⟹&nbsp; 1/x = 5/3 &nbsp;⟹&nbsp; x = 3/5</div>
+  </div>
+  <div class="mb-ans">∴ The fraction is 3/5 (and its reciprocal is 5/3)</div>
+</div>
+
+<!-- COMPARISON OF METHODS -->
+<div class="m3sc">
+  <div class="m3sn">Section 06 — Strategy Guide</div>
+  <div class="m3st">Which Method to Use When?</div>
+  <table class="m3nt">
+    <tr><th>Method</th><th>Best When</th><th>Avoid When</th><th>Speed</th></tr>
+    <tr><td><strong>Graphical</strong></td><td>Asked to verify/show geometrically</td><td>Precise fractional answers needed</td><td>Slow</td></tr>
+    <tr><td><strong>Substitution</strong></td><td>One variable has coefficient 1</td><td>Both variables have large coefficients</td><td>Medium</td></tr>
+    <tr><td><strong>Elimination</strong></td><td>Coefficients are easy to match. General purpose — works always</td><td>—</td><td>Fast ⭐</td></tr>
+    <tr><td><strong>Cross Multiplication</strong></td><td>Formula-based direct answer needed</td><td>Learning the formula is trouble</td><td>Very fast</td></tr>
+    <tr><td><strong>Reducible</strong></td><td>Equations have 1/x, 1/y, or (ax+b)</td><td>Simple linear equations</td><td>Medium</td></tr>
+  </table>
+
+  <div class="m3cal fire">
+    <div class="m3ci">🔥</div>
+    <div class="m3cb"><strong>Topper Strategy</strong>In board exams, elimination method is the safest and fastest for almost every question. Master elimination first. Use substitution only when one coefficient is 1. Always verify your answer — 1 mark is often awarded for verification alone!</div>
+  </div>
+</div>
+
+<!-- COMMON MISTAKES -->
+<div class="m3cal warn" style="margin-top:8px;">
+  <div class="m3ci">⚠️</div>
+  <div class="m3cb">
+    <strong>Common Mistakes — Pair of Linear Equations</strong>
+    1. Sign mistakes when multiplying equations (especially with negative c values)<br/>
+    2. Forgetting to rearrange to ax + by + c = 0 before cross multiplication<br/>
+    3. Checking ratio condition wrong: a₁/a₂ = b₁/b₂ but forgetting to check c₁/c₂<br/>
+    4. In digit problems: number is 10x + y NOT x + y<br/>
+    5. In age problems: "5 years ago" → subtract 5; "5 years hence" → add 5<br/>
+    6. Not writing final answer as a sentence in word problems<br/>
+    7. Not verifying the answer — always substitute back!
+  </div>
+</div>
+
+<!-- EXAM FOCUS -->
+<div class="m3cal fire">
+  <div class="m3ci">🔥</div>
+  <div class="m3cb">
+    <strong>Exam Focus — High Weightage Topics</strong>
+    Type of solution from ratios (2 marks, very common) · Elimination method (3 marks) · Word problems — digits, age, speed (4–5 marks) · Reducible equations (4 marks) · Finding k for given solution type (2 marks)
+  </div>
+</div>
+
+<!-- QUICK REVISION -->
+<h2 style="font-family:var(--serif);font-size:22px;color:var(--text);margin:28px 0 14px;">⚡ Quick Revision — Chapter 3</h2>
+<div class="m3qr">
+  <div class="m3qr-item">General form:<br/>ax + by + c = 0</div>
+  <div class="m3qr-item">Unique solution:<br/>a₁/a₂ ≠ b₁/b₂</div>
+  <div class="m3qr-item">Infinite solutions:<br/>a₁/a₂ = b₁/b₂ = c₁/c₂</div>
+  <div class="m3qr-item">No solution:<br/>a₁/a₂ = b₁/b₂ ≠ c₁/c₂</div>
+  <div class="m3qr-item">Substitution:<br/>Express x or y, substitute</div>
+  <div class="m3qr-item">Elimination:<br/>Make coefficients equal, add/subtract</div>
+  <div class="m3qr-item">Cross mult:<br/>x/(b₁c₂−b₂c₁) = y/(c₁a₂−c₂a₁) = 1/(a₁b₂−a₂b₁)</div>
+  <div class="m3qr-item">Reducible:<br/>Substitute u=1/x, v=1/y</div>
+  <div class="m3qr-item">Digit problem:<br/>Number = 10x + y</div>
+  <div class="m3qr-item">Age problem:<br/>n years ago = subtract n</div>
+  <div class="m3qr-item">Speed upstream:<br/>= (boat speed − stream speed)</div>
+  <div class="m3qr-item">Always verify<br/>by substituting back!</div>
+</div>
+`,
   'maths-4': ``,
   'maths-5': ``,
   'maths-6': ``,
@@ -2057,7 +2819,1784 @@ const NOTES_CONTENT = {
   'maths-13': ``,
   'maths-14': ``,
   // ── PHYSICS ───────────────────────────
-  'phy-1': ``,
+  'phy-1': `<style>
+/* ── PHYSICS CH1 BASE — PURPLE THEME ─────── */
+.p1sc{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 24px 18px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+.p1sn{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--phy);font-weight:500;margin-bottom:6px;}
+.p1st{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.p1fb{background:var(--phy-l);border:1px solid var(--phy-b);border-left:4px solid var(--phy);border-radius:10px;padding:14px 18px;margin:14px 0;font-family:var(--mono);font-size:13px;color:#4c1d95;font-weight:500;line-height:1.9;}
+.p1eb{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:14px 0;}
+.p1el{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.p1nt{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+.p1nt th{background:var(--phy-l);color:#4c1d95;font-weight:700;padding:10px 14px;text-align:left;border-bottom:2px solid var(--phy-b);font-family:var(--mono);font-size:11px;letter-spacing:.5px;}
+.p1nt td{padding:10px 14px;border-bottom:1px solid #f3f4f6;color:var(--text2);font-size:14px;vertical-align:top;}
+.p1nt tr:last-child td{border-bottom:none;}
+.p1cal{border-radius:12px;padding:16px 18px;margin:16px 0;display:flex;gap:12px;align-items:flex-start;}
+.p1cal.fire{background:#fff7ed;border:1px solid #fed7aa;}
+.p1cal.tip{background:var(--phy-l);border:1px solid var(--phy-b);}
+.p1cal.green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.p1cal.warn{background:#fefce8;border:1px solid #fde68a;}
+.p1cal.red{background:#fff1f2;border:1px solid #fecdd3;}
+.p1cal.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.p1ci{font-size:18px;flex-shrink:0;margin-top:1px;}
+.p1cb{font-size:14px;color:var(--text2);line-height:1.7;}
+.p1cb strong{display:block;margin-bottom:4px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);}
+.p1qr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+.p1qr-item{background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:12px;color:#4c1d95;line-height:1.7;}
+@media(max-width:520px){.p1qr{grid-template-columns:1fr;}}
+.p1cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.p1cc{border-radius:12px;padding:16px;}
+.p1cc.phy{background:var(--phy-l);border:1px solid var(--phy-b);}
+.p1cc.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.p1cc.green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.p1cc.red{background:#fff1f2;border:1px solid #fecdd3;}
+.p1cc.orange{background:#fff7ed;border:1px solid #fed7aa;}
+.p1cc.yellow{background:#fefce8;border:1px solid #fde68a;}
+.p1ct{font-weight:700;font-size:14px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.08);}
+.p1cc.phy .p1ct{color:#4c1d95;}
+.p1cc.blue .p1ct{color:#1e40af;}
+.p1cc.green .p1ct{color:#15803d;}
+.p1cc.red .p1ct{color:#991b1b;}
+.p1cc.orange .p1ct{color:#c2410c;}
+.p1cc.yellow .p1ct{color:#92400e;}
+.p1cc ul{margin:0;padding-left:16px;font-size:13px;color:var(--text2);line-height:1.9;}
+@media(max-width:520px){.p1cmp{grid-template-columns:1fr;}}
+.p1def{background:var(--white);border:2px solid var(--phy-b);border-radius:12px;padding:16px 18px;margin:14px 0;}
+.p1dt{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--phy);margin-bottom:6px;font-weight:600;}
+.p1dx{font-size:14px;color:var(--text2);line-height:1.7;}
+.p1flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;}
+.p1fbox{background:var(--phy-l);border:1px solid var(--phy-b);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:#4c1d95;text-align:center;line-height:1.5;}
+.p1fbox.green{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;}
+.p1fbox.blue{background:#eff6ff;border-color:#bfdbfe;color:#1e40af;}
+.p1fbox.orange{background:#fff7ed;border-color:#fed7aa;color:#c2410c;}
+.p1fbox.red{background:#fff1f2;border-color:#fecdd3;color:#991b1b;}
+.p1farr{font-size:18px;color:var(--phy);font-weight:700;}
+
+/* Board question — purple accent */
+.p1board{background:#0f172a;border-radius:14px;padding:20px 22px;margin:18px 0;color:#e2e8f0;}
+.p1board .pb-head{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;}
+.p1board .pb-marks{background:#1e1b38;border:1px solid #7c3aed;border-radius:6px;padding:3px 10px;font-family:var(--mono);font-size:11px;color:#c4b5fd;}
+.p1board .pb-q{font-size:15px;font-weight:600;color:#f1f5f9;margin-bottom:14px;line-height:1.6;}
+.p1board .pb-step{border-left:2px solid #7c3aed;padding-left:14px;margin-bottom:12px;}
+.p1board .pb-sl{font-family:var(--mono);font-size:10px;color:#a78bfa;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.p1board .pb-sc{font-size:14px;color:#cbd5e1;line-height:1.9;font-family:var(--mono);}
+.p1board .pb-ans{background:#1e1b38;border:1px solid #7c3aed;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px;color:#c4b5fd;font-weight:600;font-family:var(--mono);}
+
+/* Chapter banner — purple gradient */
+.p1banner{background:linear-gradient(135deg,#4c1d95 0%,#7c3aed 60%,#a78bfa 100%);border-radius:16px;padding:28px 24px;margin-bottom:24px;color:white;}
+.p1banner h1{font-family:var(--serif);font-size:28px;font-weight:900;margin:0 0 6px;color:white;}
+.p1banner p{font-size:14px;opacity:.85;margin:0;line-height:1.6;}
+.p1topic-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.p1topic-pill{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:600;color:white;}
+
+/* Formula box special */
+.p1formula-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+.p1fg{background:var(--white);border:1px solid var(--phy-b);border-radius:12px;padding:14px 16px;text-align:center;}
+.p1fg .fg-label{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.p1fg .fg-formula{font-family:var(--mono);font-size:15px;font-weight:700;color:#4c1d95;margin-bottom:6px;}
+.p1fg .fg-words{font-size:12px;color:var(--text3);line-height:1.5;}
+@media(max-width:520px){.p1formula-grid{grid-template-columns:1fr;}}
+
+/* Sign convention visual */
+.sign-visual{background:#0f172a;border-radius:12px;padding:20px;margin:14px 0;}
+.sign-visual text{font-family:sans-serif;}
+
+/* Ray diagram label */
+.ray-label{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--phy);margin-bottom:8px;margin-top:18px;}
+
+/* Image table rows colored */
+.img-real{background:#fff1f2;}
+.img-virtual{background:#f0fdf4;}
+</style>
+
+<!-- ══ CHAPTER BANNER ══ -->
+<div class="p1banner">
+  <h1>Light — Reflection and Refraction</h1>
+  <p>Class 10 Physics · Chapter 1 · NCERT 2025–26</p>
+  <div class="p1topic-pills">
+    <span class="p1topic-pill">Laws of Reflection</span>
+    <span class="p1topic-pill">Concave Mirror</span>
+    <span class="p1topic-pill">Convex Mirror</span>
+    <span class="p1topic-pill">Mirror Formula</span>
+    <span class="p1topic-pill">Refraction</span>
+    <span class="p1topic-pill">Convex Lens</span>
+    <span class="p1topic-pill">Concave Lens</span>
+    <span class="p1topic-pill">Lens Formula</span>
+    <span class="p1topic-pill">Power of Lens</span>
+  </div>
+</div>
+
+<!-- ══ INTRO ══ -->
+<div class="p1sc">
+  <div class="p1sn">Introduction</div>
+  <div class="p1st">Nature of Light</div>
+  <div class="p1def">
+    <div class="p1dt">Light</div>
+    <div class="p1dx">Light is a form of energy that makes objects visible to us. It travels in straight lines called <strong>rays</strong>. A bundle of rays is called a <strong>beam</strong>. Light travels at approximately <strong>3 × 10⁸ m/s</strong> in vacuum (fastest speed in the universe).</div>
+  </div>
+  <table class="p1nt">
+    <tr><th>Property</th><th>Details</th></tr>
+    <tr><td><strong>Speed in vacuum</strong></td><td>3 × 10⁸ m/s (c)</td></tr>
+    <tr><td><strong>Speed in medium</strong></td><td>Less than c — depends on optical density</td></tr>
+    <tr><td><strong>Travel</strong></td><td>Straight lines (rectilinear propagation)</td></tr>
+    <tr><td><strong>Phenomena</strong></td><td>Reflection (bouncing), Refraction (bending)</td></tr>
+  </table>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PART 1: REFLECTION OF LIGHT
+══════════════════════════════════════════ -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--phy);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--phy-b);">Part 1 — Reflection of Light</h2>
+
+<div class="p1sc">
+  <div class="p1sn">Section 1.1</div>
+  <div class="p1st">Laws of Reflection</div>
+  <div class="p1def">
+    <div class="p1dt">Reflection</div>
+    <div class="p1dx">When light falls on a smooth polished surface, it bounces back. This phenomenon is called <strong>reflection of light</strong>. The surface that reflects light is called a mirror.</div>
+  </div>
+
+  <!-- Reflection diagram -->
+  <svg width="100%" viewBox="0 0 680 260" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="ra1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="260" fill="#faf5ff" rx="12"/>
+    <text x="340" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95" font-family="sans-serif">LAWS OF REFLECTION</text>
+
+    <!-- Mirror surface -->
+    <line x1="120" y1="180" x2="560" y2="180" stroke="#4c1d95" stroke-width="3" stroke-linecap="round"/>
+    <!-- Hatching below mirror -->
+    <line x1="130" y1="180" x2="115" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="160" y1="180" x2="145" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="190" y1="180" x2="175" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="220" y1="180" x2="205" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="250" y1="180" x2="235" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="280" y1="180" x2="265" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="310" y1="180" x2="295" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="340" y1="180" x2="325" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="370" y1="180" x2="355" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="400" y1="180" x2="385" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="430" y1="180" x2="415" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="460" y1="180" x2="445" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="490" y1="180" x2="475" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="520" y1="180" x2="505" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <line x1="550" y1="180" x2="535" y2="196" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+
+    <!-- Normal (dashed vertical) -->
+    <line x1="340" y1="50" x2="340" y2="220" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 3"/>
+    <text x="348" y="48" font-size="11" fill="#6b7280" font-family="sans-serif">Normal (N)</text>
+
+    <!-- Incident ray -->
+    <line x1="160" y1="60" x2="340" y2="180" stroke="#f97316" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ra1)"/>
+    <text x="180" y="70" font-size="12" font-weight="700" fill="#f97316" font-family="sans-serif">Incident ray</text>
+
+    <!-- Reflected ray -->
+    <line x1="340" y1="180" x2="520" y2="60" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ra1)"/>
+    <text x="460" y="70" font-size="12" font-weight="700" fill="#7c3aed" font-family="sans-serif">Reflected ray</text>
+
+    <!-- Angle of incidence arc -->
+    <path d="M 322 155 A 28 28 0 0 1 340 148" fill="none" stroke="#f97316" stroke-width="1.5"/>
+    <text x="280" y="155" font-size="11" fill="#f97316" font-family="sans-serif">∠i</text>
+
+    <!-- Angle of reflection arc -->
+    <path d="M 340 148 A 28 28 0 0 1 358 155" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="358" y="155" font-size="11" fill="#7c3aed" font-family="sans-serif">∠r</text>
+
+    <!-- Point of incidence -->
+    <circle cx="340" cy="180" r="4" fill="#4c1d95"/>
+    <text x="340" y="215" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Point of incidence (O)</text>
+
+    <!-- Laws -->
+    <rect x="20" y="220" width="640" height="32" rx="6" fill="white" stroke="#ddd6fe" stroke-width="1"/>
+    <text x="340" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#4c1d95" font-family="sans-serif">Law 1: ∠i = ∠r (Angle of incidence = Angle of reflection)</text>
+    <text x="340" y="247" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Law 2: Incident ray, normal and reflected ray all lie in the same plane</text>
+  </svg>
+
+  <div class="p1cal tip">
+    <div class="p1ci">💡</div>
+    <div class="p1cb"><strong>Key Terms</strong>Normal = perpendicular to mirror surface at point of incidence. All angles are measured from the Normal — NEVER from the mirror surface itself.</div>
+  </div>
+
+  <h3>Types of Reflection</h3>
+  <div class="p1cmp">
+    <div class="p1cc green">
+      <div class="p1ct">Regular (Specular) Reflection</div>
+      <ul>
+        <li>Smooth, polished surface</li>
+        <li>Parallel incident rays → parallel reflected rays</li>
+        <li>Forms clear image</li>
+        <li>Example: mirror, calm water</li>
+      </ul>
+    </div>
+    <div class="p1cc orange">
+      <div class="p1ct">Diffuse (Irregular) Reflection</div>
+      <ul>
+        <li>Rough, uneven surface</li>
+        <li>Parallel incident rays → scattered reflected rays</li>
+        <li>No clear image formed</li>
+        <li>Example: paper, wall, rough wood</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SPHERICAL MIRRORS ══ -->
+<div class="p1sc">
+  <div class="p1sn">Section 1.2 — Very Important</div>
+  <div class="p1st">Spherical Mirrors — Introduction</div>
+  <p>A mirror whose reflecting surface is part of a hollow sphere is called a <strong>spherical mirror</strong>. There are two types:</p>
+
+  <!-- Mirror comparison diagram -->
+  <svg width="100%" viewBox="0 0 680 260" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <rect width="680" height="260" fill="#faf5ff" rx="12"/>
+    <text x="340" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95" font-family="sans-serif">TYPES OF SPHERICAL MIRRORS</text>
+
+    <!-- CONCAVE mirror (left) -->
+    <rect x="20" y="35" width="300" height="210" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="170" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d" font-family="sans-serif">CONCAVE MIRROR</text>
+    <text x="170" y="70" text-anchor="middle" font-size="10" fill="#15803d" font-family="sans-serif">(Converging mirror)</text>
+    <!-- Concave shape -->
+    <path d="M 80 100 Q 170 145 80 190" fill="none" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
+    <!-- Hatching on back -->
+    <path d="M 74 105 Q 60 145 74 185" fill="none" stroke="#bbf7d0" stroke-width="8" stroke-linecap="round"/>
+    <!-- Reflecting surface indicator -->
+    <text x="90" y="148" font-size="11" fill="#15803d" font-family="sans-serif">Reflecting</text>
+    <text x="90" y="162" font-size="11" fill="#15803d" font-family="sans-serif">surface is</text>
+    <text x="90" y="176" font-size="11" fill="#15803d" font-family="sans-serif">INWARD (cave)</text>
+    <!-- Center -->
+    <circle cx="225" cy="145" r="4" fill="#15803d"/>
+    <text x="232" y="148" font-size="10" fill="#6b7280" font-family="sans-serif">Centre of sphere</text>
+    <!-- Light converges -->
+    <line x1="240" y1="110" x2="140" y2="145" stroke="#15803d" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <line x1="240" y1="145" x2="140" y2="145" stroke="#15803d" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <line x1="240" y1="180" x2="140" y2="145" stroke="#15803d" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <circle cx="140" cy="145" r="4" fill="#dc2626"/>
+    <text x="140" y="213" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">Rays CONVERGE at focus</text>
+    <text x="170" y="230" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Uses: Torch, shaving mirror, doctor's mirror</text>
+
+    <!-- CONVEX mirror (right) -->
+    <rect x="360" y="35" width="300" height="210" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+    <text x="510" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c" font-family="sans-serif">CONVEX MIRROR</text>
+    <text x="510" y="70" text-anchor="middle" font-size="10" fill="#c2410c" font-family="sans-serif">(Diverging mirror)</text>
+    <!-- Convex shape -->
+    <path d="M 500 100 Q 410 145 500 190" fill="none" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+    <!-- Hatching on back -->
+    <path d="M 506 105 Q 522 145 506 185" fill="none" stroke="#fed7aa" stroke-width="8" stroke-linecap="round"/>
+    <text x="420" y="148" font-size="11" fill="#c2410c" font-family="sans-serif">Reflecting</text>
+    <text x="420" y="162" font-size="11" fill="#c2410c" font-family="sans-serif">surface is</text>
+    <text x="420" y="176" font-size="11" fill="#c2410c" font-family="sans-serif">OUTWARD (bulge)</text>
+    <!-- Light diverges -->
+    <line x1="380" y1="115" x2="500" y2="145" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <line x1="380" y1="145" x2="500" y2="145" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <line x1="380" y1="175" x2="500" y2="145" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <!-- Diverging after reflection -->
+    <line x1="500" y1="145" x2="640" y2="100" stroke="#c2410c" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+    <line x1="500" y1="145" x2="640" y2="145" stroke="#c2410c" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+    <line x1="500" y1="145" x2="640" y2="190" stroke="#c2410c" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+    <text x="510" y="213" text-anchor="middle" font-size="10" fill="#c2410c" font-family="sans-serif">Rays DIVERGE after reflection</text>
+    <text x="510" y="230" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Uses: Rear-view mirror, shop security mirror</text>
+  </svg>
+</div>
+
+<!-- IMPORTANT TERMS -->
+<div class="p1sc">
+  <div class="p1sn">Section 1.3 — Must Know</div>
+  <div class="p1st">Important Terms for Spherical Mirrors</div>
+
+  <!-- Full labeled diagram -->
+  <svg width="100%" viewBox="0 0 680 280" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="tmarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="280" fill="#faf5ff" rx="12"/>
+    <text x="340" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95" font-family="sans-serif">TERMS — CONCAVE MIRROR</text>
+
+    <!-- Mirror arc (concave) -->
+    <path d="M 200 50 Q 280 140 200 230" fill="none" stroke="#4c1d95" stroke-width="3" stroke-linecap="round"/>
+    <!-- Hatching -->
+    <path d="M 194 55 Q 272 140 194 225" fill="none" stroke="#ddd6fe" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Principal axis (horizontal) -->
+    <line x1="200" y1="140" x2="630" y2="140" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#tmarr)"/>
+    <text x="638" y="144" font-size="11" fill="#6b7280" font-family="sans-serif">Principal axis</text>
+
+    <!-- Pole P -->
+    <circle cx="200" cy="140" r="4" fill="#4c1d95"/>
+    <text x="190" y="128" font-size="12" font-weight="700" fill="#4c1d95" font-family="sans-serif">P</text>
+    <text x="160" y="115" font-size="10" fill="#6b7280" font-family="sans-serif">Pole</text>
+
+    <!-- Centre of Curvature C -->
+    <circle cx="480" cy="140" r="6" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+    <text x="480" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626" font-family="sans-serif">C</text>
+    <text x="480" y="115" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">Centre of Curvature</text>
+    <text x="480" y="103" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="sans-serif">(R = 2f away from P)</text>
+
+    <!-- Focus F -->
+    <circle cx="340" cy="140" r="6" fill="#f97316" stroke="white" stroke-width="1.5"/>
+    <text x="340" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="#f97316" font-family="sans-serif">F</text>
+    <text x="340" y="115" text-anchor="middle" font-size="10" fill="#f97316" font-family="sans-serif">Principal Focus</text>
+
+    <!-- Radius of Curvature arrow -->
+    <line x1="200" y1="168" x2="480" y2="168" stroke="#dc2626" stroke-width="1.5" marker-end="url(#tmarr)"/>
+    <line x1="480" y1="168" x2="200" y2="168" stroke="#dc2626" stroke-width="1.5" marker-end="url(#tmarr)"/>
+    <text x="340" y="183" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">R = Radius of Curvature</text>
+
+    <!-- Focal length arrow -->
+    <line x1="200" y1="200" x2="340" y2="200" stroke="#f97316" stroke-width="1.5" marker-end="url(#tmarr)"/>
+    <line x1="340" y1="200" x2="200" y2="200" stroke="#f97316" stroke-width="1.5" marker-end="url(#tmarr)"/>
+    <text x="270" y="215" text-anchor="middle" font-size="11" font-weight="700" fill="#f97316" font-family="sans-serif">f = Focal length</text>
+
+    <!-- Aperture arrow -->
+    <line x1="168" y1="53" x2="168" y2="227" stroke="#7c3aed" stroke-width="1.5"/>
+    <line x1="162" y1="53" x2="174" y2="53" stroke="#7c3aed" stroke-width="1.5"/>
+    <line x1="162" y1="227" x2="174" y2="227" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="90" y="145" text-anchor="middle" font-size="10" fill="#7c3aed" font-family="sans-serif" transform="rotate(-90 90 145)">Aperture</text>
+
+    <!-- Key relation -->
+    <rect x="490" y="200" width="180" height="50" rx="8" fill="white" stroke="#ddd6fe" stroke-width="1.5"/>
+    <text x="580" y="222" text-anchor="middle" font-size="12" font-weight="700" fill="#4c1d95" font-family="sans-serif">R = 2f</text>
+    <text x="580" y="240" text-anchor="middle" font-size="11" fill="#6d28d9" font-family="sans-serif">f = R/2</text>
+  </svg>
+
+  <table class="p1nt">
+    <tr><th>Term</th><th>Symbol</th><th>Definition</th><th>Key Fact</th></tr>
+    <tr><td><strong>Pole</strong></td><td>P</td><td>Midpoint of the reflecting surface of the mirror</td><td>Origin for all measurements</td></tr>
+    <tr><td><strong>Centre of Curvature</strong></td><td>C</td><td>Centre of the sphere of which the mirror is a part</td><td>Distance PC = R</td></tr>
+    <tr><td><strong>Radius of Curvature</strong></td><td>R</td><td>Radius of the sphere of which mirror is a part</td><td>R = 2f always</td></tr>
+    <tr><td><strong>Principal Focus</strong></td><td>F</td><td>Point where rays parallel to principal axis meet after reflection</td><td>Midpoint of PC</td></tr>
+    <tr><td><strong>Focal Length</strong></td><td>f</td><td>Distance from pole to focus (PF)</td><td>f = R/2</td></tr>
+    <tr><td><strong>Principal Axis</strong></td><td>—</td><td>Straight line through P and C</td><td>Reference line</td></tr>
+    <tr><td><strong>Aperture</strong></td><td>—</td><td>Diameter of the reflecting surface</td><td>Larger aperture = more light</td></tr>
+  </table>
+
+  <div class="p1cal fire">
+    <div class="p1ci">🔥</div>
+    <div class="p1cb"><strong>Most Important Relation — R = 2f</strong>The radius of curvature is always TWICE the focal length. If f = 10 cm → R = 20 cm. If R = 30 cm → f = 15 cm. This comes up in almost every numerical!</div>
+  </div>
+</div>
+
+<!-- SIGN CONVENTION -->
+<div class="p1sc">
+  <div class="p1sn">Section 1.4 — ⭐⭐ Critical</div>
+  <div class="p1st">New Cartesian Sign Convention</div>
+  <div class="p1def">
+    <div class="p1dt">Rules</div>
+    <div class="p1dx">All distances are measured from the <strong>Pole (P)</strong> of the mirror. Distances measured in the direction of incident light (left to right normally) are <strong>positive</strong>. Distances measured against the direction of incident light are <strong>negative</strong>.</div>
+  </div>
+
+  <!-- Sign convention diagram -->
+  <svg width="100%" viewBox="0 0 680 220" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="sc1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="220" fill="#0f172a" rx="12"/>
+    <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#e2e8f0" font-family="sans-serif">NEW CARTESIAN SIGN CONVENTION</text>
+
+    <!-- Mirror at centre -->
+    <path d="M 340 50 Q 360 110 340 170" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 340 50 Q 320 110 340 170" fill="none" stroke="#a78bfa" stroke-width="1" stroke-linecap="round" stroke-dasharray="4 3" opacity="0.5"/>
+
+    <!-- Horizontal axis -->
+    <line x1="60" y1="110" x2="610" y2="110" stroke="#475569" stroke-width="1.5"/>
+    <!-- Pole dot -->
+    <circle cx="340" cy="110" r="5" fill="#a78bfa"/>
+    <text x="340" y="98" text-anchor="middle" font-size="11" fill="#a78bfa" font-family="sans-serif">P (Origin)</text>
+
+    <!-- Negative X direction (left) — where object is and where light comes from right to left for mirror -->
+    <line x1="60" y1="110" x2="180" y2="110" stroke="#ef4444" stroke-width="2" marker-end="url(#sc1)"/>
+    <text x="120" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="#ef4444" font-family="sans-serif">−ve direction</text>
+    <text x="120" y="130" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">Object, u (always −ve)</text>
+    <text x="120" y="145" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">Concave: f, R (−ve)</text>
+    <text x="120" y="160" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">Real image v (−ve)</text>
+
+    <!-- Positive X direction (right) — behind mirror -->
+    <line x1="500" y1="110" x2="610" y2="110" stroke="#22c55e" stroke-width="2" marker-end="url(#sc1)"/>
+    <text x="555" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="#22c55e" font-family="sans-serif">+ve direction</text>
+    <text x="555" y="130" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">Behind mirror</text>
+    <text x="555" y="145" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">Convex: f, R (+ve)</text>
+    <text x="555" y="160" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">Virtual image v (+ve)</text>
+
+    <!-- Vertical direction -->
+    <line x1="340" y1="50" x2="340" y2="20" stroke="#22c55e" stroke-width="1.5" marker-end="url(#sc1)"/>
+    <text x="358" y="36" font-size="10" fill="#22c55e" font-family="sans-serif">+ve (above axis)</text>
+    <line x1="340" y1="170" x2="340" y2="200" stroke="#ef4444" stroke-width="1.5" marker-end="url(#sc1)"/>
+    <text x="358" y="192" font-size="10" fill="#ef4444" font-family="sans-serif">−ve (below axis)</text>
+
+    <!-- Incident light direction -->
+    <line x1="560" y1="80" x2="420" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#sc1)"/>
+    <text x="490" y="70" text-anchor="middle" font-size="10" fill="#fbbf24" font-family="sans-serif">Incident light direction →</text>
+  </svg>
+
+  <h3>Sign Convention Summary Table</h3>
+  <table class="p1nt">
+    <tr><th>Quantity</th><th>Concave Mirror</th><th>Convex Mirror</th><th>Why</th></tr>
+    <tr><td><strong>Object distance (u)</strong></td><td>Always −ve</td><td>Always −ve</td><td>Object always in front of mirror</td></tr>
+    <tr><td><strong>Focal length (f)</strong></td><td>−ve</td><td>+ve</td><td>Focus: concave=front, convex=behind</td></tr>
+    <tr><td><strong>Radius (R)</strong></td><td>−ve</td><td>+ve</td><td>Same side as focus</td></tr>
+    <tr><td><strong>Real image (v)</strong></td><td>−ve (in front)</td><td>Never forms real image</td><td>Real image = in front of mirror</td></tr>
+    <tr><td><strong>Virtual image (v)</strong></td><td>+ve (behind)</td><td>+ve (behind)</td><td>Virtual image = behind mirror</td></tr>
+    <tr><td><strong>Height above axis (h)</strong></td><td>+ve</td><td>+ve</td><td>Erect object/image above axis</td></tr>
+    <tr><td><strong>Height below axis (h)</strong></td><td>−ve</td><td>−ve</td><td>Inverted image below axis</td></tr>
+  </table>
+
+  <div class="p1cal tip">
+    <div class="p1ci">💡</div>
+    <div class="p1cb"><strong>Quick Memory Aid — Signs for Mirrors</strong>Think of the mirror facing left. Everything to its LEFT (where the object is) = NEGATIVE. Everything to its RIGHT (behind it) = POSITIVE. Concave focus is to the LEFT = negative. Convex focus is to the RIGHT = positive.</div>
+  </div>
+</div>
+
+<!-- RULES FOR RAY DIAGRAMS -->
+<div class="p1sc">
+  <div class="p1sn">Section 1.5 — ⭐ Must Know for Diagrams</div>
+  <div class="p1st">3 Rules for Drawing Ray Diagrams (Mirrors)</div>
+  <p>To locate images in mirrors, we use any <strong>two of these three standard rays</strong>. Where the reflected rays (or their extensions) meet = position of image.</p>
+
+  <!-- Rule 1 -->
+  <div class="ray-label">Rule 1 — Ray parallel to principal axis</div>
+  <svg width="100%" viewBox="0 0 680 120" style="margin:4px 0 14px;border-radius:10px;overflow:hidden;">
+    <defs>
+      <marker id="rr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="120" fill="#f0fdf4" rx="10"/>
+    <!-- Mirror -->
+    <path d="M 320 20 Q 350 60 320 100" fill="none" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 320 20 Q 292 60 320 100" fill="none" stroke="#bbf7d0" stroke-width="6" stroke-linecap="round"/>
+    <!-- Axis -->
+    <line x1="100" y1="60" x2="600" y2="60" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 2"/>
+    <!-- Focus F -->
+    <circle cx="230" cy="60" r="4" fill="#dc2626"/>
+    <text x="230" y="50" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F</text>
+    <!-- Incident ray (parallel to axis) -->
+    <line x1="100" y1="35" x2="320" y2="35" stroke="#f97316" stroke-width="2" stroke-linecap="round" marker-end="url(#rr1)"/>
+    <!-- Reflected ray (through F) -->
+    <line x1="320" y1="35" x2="140" y2="90" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" marker-end="url(#rr1)"/>
+    <!-- Explanation -->
+    <text x="430" y="45" font-size="12" font-weight="700" fill="#15803d" font-family="sans-serif">Incident: parallel to axis</text>
+    <text x="430" y="62" font-size="11" fill="#374151" font-family="sans-serif">↓ After reflection:</text>
+    <text x="430" y="78" font-size="12" font-weight="700" fill="#7c3aed" font-family="sans-serif">Reflected ray passes through F</text>
+  </svg>
+
+  <!-- Rule 2 -->
+  <div class="ray-label">Rule 2 — Ray passing through Centre of Curvature C</div>
+  <svg width="100%" viewBox="0 0 680 120" style="margin:4px 0 14px;border-radius:10px;overflow:hidden;">
+    <defs>
+      <marker id="rr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="120" fill="#eff6ff" rx="10"/>
+    <path d="M 320 20 Q 350 60 320 100" fill="none" stroke="#1e40af" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 320 20 Q 292 60 320 100" fill="none" stroke="#bfdbfe" stroke-width="6" stroke-linecap="round"/>
+    <line x1="100" y1="60" x2="600" y2="60" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 2"/>
+    <circle cx="230" cy="60" r="4" fill="#dc2626"/>
+    <text x="230" y="50" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F</text>
+    <circle cx="140" cy="60" r="4" fill="#1e40af"/>
+    <text x="140" y="50" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">C</text>
+    <!-- Ray through C hits mirror and reflects back through C -->
+    <line x1="100" y1="25" x2="310" y2="55" stroke="#f97316" stroke-width="2" stroke-linecap="round" marker-end="url(#rr2)"/>
+    <line x1="310" y1="55" x2="100" y2="85" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" marker-end="url(#rr2)"/>
+    <text x="430" y="45" font-size="12" font-weight="700" fill="#1e40af" font-family="sans-serif">Incident: passes through C</text>
+    <text x="430" y="62" font-size="11" fill="#374151" font-family="sans-serif">↓ After reflection:</text>
+    <text x="430" y="78" font-size="12" font-weight="700" fill="#7c3aed" font-family="sans-serif">Reflects back through C (same path)</text>
+  </svg>
+
+  <!-- Rule 3 -->
+  <div class="ray-label">Rule 3 — Ray passing through Focus F</div>
+  <svg width="100%" viewBox="0 0 680 120" style="margin:4px 0 14px;border-radius:10px;overflow:hidden;">
+    <defs>
+      <marker id="rr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="120" fill="var(--phy-l,#f5f3ff)" rx="10"/>
+    <path d="M 320 20 Q 350 60 320 100" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 320 20 Q 292 60 320 100" fill="none" stroke="#ddd6fe" stroke-width="6" stroke-linecap="round"/>
+    <line x1="100" y1="60" x2="600" y2="60" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 2"/>
+    <circle cx="230" cy="60" r="4" fill="#dc2626"/>
+    <text x="230" y="50" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F</text>
+    <!-- Ray through F then reflects parallel -->
+    <line x1="100" y1="85" x2="310" y2="65" stroke="#f97316" stroke-width="2" stroke-linecap="round" marker-end="url(#rr3)"/>
+    <line x1="310" y1="65" x2="600" y2="65" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" marker-end="url(#rr3)"/>
+    <text x="430" y="45" font-size="12" font-weight="700" fill="#7c3aed" font-family="sans-serif">Incident: passes through F</text>
+    <text x="430" y="62" font-size="11" fill="#374151" font-family="sans-serif">↓ After reflection:</text>
+    <text x="430" y="78" font-size="12" font-weight="700" fill="#7c3aed" font-family="sans-serif">Reflected ray is parallel to axis</text>
+  </svg>
+
+  <div class="p1cal tip">
+    <div class="p1ci">💡</div>
+    <div class="p1cb"><strong>Rule for Convex Mirror</strong>Same 3 rules but rays appear to come FROM F or C (since they are behind the mirror). Draw the reflected ray as if it came from the virtual F or C — then extend it behind the mirror to find the virtual image.</div>
+  </div>
+</div>
+
+<!-- ══ CONCAVE MIRROR RAY DIAGRAMS ══ -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--phy);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--phy-b);">Concave Mirror — All 6 Image Positions</h2>
+
+<!-- Position 1: Object at Infinity -->
+<div class="p1sc">
+  <div class="p1sn">Concave Mirror · Case 1</div>
+  <div class="p1st">Object at Infinity (u = ∞)</div>
+  <svg width="100%" viewBox="0 0 680 180" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="c1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="180" fill="#faf5ff" rx="12"/>
+    <!-- Mirror -->
+    <path d="M 400 20 Q 440 90 400 160" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 400 20 Q 364 90 400 160" fill="none" stroke="#ede9fe" stroke-width="8" stroke-linecap="round"/>
+    <!-- Axis -->
+    <line x1="40" y1="90" x2="620" y2="90" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <!-- F and C -->
+    <circle cx="280" cy="90" r="5" fill="#dc2626"/><text x="280" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F</text>
+    <circle cx="160" cy="90" r="5" fill="#1e40af"/><text x="160" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">C</text>
+    <!-- Pole P -->
+    <circle cx="400" cy="90" r="4" fill="#4c1d95"/><text x="410" y="84" font-size="11" fill="#4c1d95" font-family="sans-serif">P</text>
+    <!-- Parallel rays from infinity (horizontal) -->
+    <line x1="60" y1="40" x2="400" y2="40" stroke="#f97316" stroke-width="2" marker-end="url(#c1a)"/>
+    <line x1="60" y1="60" x2="400" y2="60" stroke="#f97316" stroke-width="2" marker-end="url(#c1a)"/>
+    <line x1="60" y1="90" x2="400" y2="90" stroke="#f97316" stroke-width="2" marker-end="url(#c1a)"/>
+    <!-- Reflected rays converge at F -->
+    <line x1="400" y1="40" x2="280" y2="90" stroke="#7c3aed" stroke-width="2" marker-end="url(#c1a)"/>
+    <line x1="400" y1="60" x2="280" y2="90" stroke="#7c3aed" stroke-width="2" marker-end="url(#c1a)"/>
+    <line x1="400" y1="90" x2="280" y2="90" stroke="#7c3aed" stroke-width="2" marker-end="url(#c1a)"/>
+    <!-- Image at F (point) -->
+    <line x1="280" y1="82" x2="280" y2="98" stroke="#dc2626" stroke-width="3"/>
+    <text x="280" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626" font-family="sans-serif">Image at F</text>
+    <!-- Label -->
+    <text x="80" y="20" font-size="10" fill="#f97316" font-family="sans-serif">Rays from ∞ (parallel)</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:14px 18px;margin:10px 0;">
+    <table class="p1nt" style="margin:0;">
+      <tr><th>Position</th><th>Size</th><th>Nature</th><th>Where</th></tr>
+      <tr><td>At F</td><td>Point-sized (highly diminished)</td><td class="img-real">Real, Inverted</td><td>At focus F</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Position 2: Object beyond C -->
+<div class="p1sc">
+  <div class="p1sn">Concave Mirror · Case 2</div>
+  <div class="p1st">Object beyond C (u &gt; 2f)</div>
+  <svg width="100%" viewBox="0 0 680 200" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="c2a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="200" fill="#faf5ff" rx="12"/>
+    <path d="M 500 20 Q 540 100 500 180" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 500 20 Q 462 100 500 180" fill="none" stroke="#ede9fe" stroke-width="8" stroke-linecap="round"/>
+    <line x1="40" y1="100" x2="620" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="360" cy="100" r="5" fill="#dc2626"/><text x="360" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F</text>
+    <circle cx="220" cy="100" r="5" fill="#1e40af"/><text x="220" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">C</text>
+    <circle cx="500" cy="100" r="4" fill="#4c1d95"/><text x="510" y="95" font-size="11" fill="#4c1d95" font-family="sans-serif">P</text>
+    <!-- Object beyond C (left side far) -->
+    <line x1="90" y1="100" x2="90" y2="42" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="90,42 86,54 94,54" fill="#059669"/>
+    <text x="90" y="168" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Object (beyond C)</text>
+    <!-- Ray 1: parallel to axis → through F -->
+    <line x1="90" y1="42" x2="500" y2="42" stroke="#f97316" stroke-width="1.5" marker-end="url(#c2a)"/>
+    <line x1="500" y1="42" x2="290" y2="130" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#c2a)"/>
+    <!-- Ray 2: through C → reflects back through C -->
+    <line x1="90" y1="42" x2="500" y2="82" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c2a)"/>
+    <line x1="500" y1="82" x2="220" y2="122" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c2a)"/>
+    <!-- Image (between F and C, inverted, small) -->
+    <line x1="290" y1="100" x2="290" y2="130" stroke="#dc2626" stroke-width="2.5"/>
+    <polygon points="290,130 286,118 294,118" fill="#dc2626"/>
+    <text x="290" y="155" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626" font-family="sans-serif">Image (between F &amp; C)</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:14px 18px;margin:10px 0;">
+    <table class="p1nt" style="margin:0;">
+      <tr><th>Position</th><th>Size</th><th>Nature</th><th>Where</th></tr>
+      <tr><td>Object beyond C</td><td>Diminished (smaller than object)</td><td class="img-real">Real, Inverted</td><td>Between F and C</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Position 3: Object at C -->
+<div class="p1sc">
+  <div class="p1sn">Concave Mirror · Case 3</div>
+  <div class="p1st">Object at C (u = 2f)</div>
+  <svg width="100%" viewBox="0 0 680 200" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="c3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="200" fill="#faf5ff" rx="12"/>
+    <path d="M 500 20 Q 540 100 500 180" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 500 20 Q 462 100 500 180" fill="none" stroke="#ede9fe" stroke-width="8" stroke-linecap="round"/>
+    <line x1="40" y1="100" x2="620" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="360" cy="100" r="5" fill="#dc2626"/><text x="360" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F</text>
+    <circle cx="220" cy="100" r="5" fill="#1e40af"/><text x="220" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">C</text>
+    <circle cx="500" cy="100" r="4" fill="#4c1d95"/><text x="510" y="95" font-size="11" fill="#4c1d95" font-family="sans-serif">P</text>
+    <!-- Object AT C -->
+    <line x1="220" y1="100" x2="220" y2="42" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="220,42 216,54 224,54" fill="#059669"/>
+    <text x="220" y="175" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Object AT C</text>
+    <!-- Ray 1 -->
+    <line x1="220" y1="42" x2="500" y2="42" stroke="#f97316" stroke-width="1.5" marker-end="url(#c3a)"/>
+    <line x1="500" y1="42" x2="300" y2="130" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#c3a)"/>
+    <!-- Ray 2 through C reflects back through C -->
+    <line x1="220" y1="42" x2="500" y2="90" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c3a)"/>
+    <line x1="500" y1="90" x2="220" y2="138" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c3a)"/>
+    <!-- Image at C same size inverted -->
+    <line x1="220" y1="100" x2="220" y2="138" stroke="#dc2626" stroke-width="2.5"/>
+    <polygon points="220,138 216,126 224,126" fill="#dc2626"/>
+    <text x="160" y="155" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626" font-family="sans-serif">Image also at C</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:14px 18px;margin:10px 0;">
+    <table class="p1nt" style="margin:0;">
+      <tr><th>Position</th><th>Size</th><th>Nature</th><th>Where</th></tr>
+      <tr><td>Object at C</td><td>Same size as object</td><td class="img-real">Real, Inverted</td><td>At C (same position)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Position 4: Object between F and C -->
+<div class="p1sc">
+  <div class="p1sn">Concave Mirror · Case 4</div>
+  <div class="p1st">Object between F and C (f &lt; u &lt; 2f)</div>
+  <svg width="100%" viewBox="0 0 680 200" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="c4a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="200" fill="#faf5ff" rx="12"/>
+    <path d="M 500 20 Q 540 100 500 180" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 500 20 Q 462 100 500 180" fill="none" stroke="#ede9fe" stroke-width="8" stroke-linecap="round"/>
+    <line x1="40" y1="100" x2="620" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="360" cy="100" r="5" fill="#dc2626"/><text x="360" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F</text>
+    <circle cx="220" cy="100" r="5" fill="#1e40af"/><text x="220" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">C</text>
+    <circle cx="500" cy="100" r="4" fill="#4c1d95"/><text x="510" y="95" font-size="11" fill="#4c1d95" font-family="sans-serif">P</text>
+    <!-- Object between F and C -->
+    <line x1="300" y1="100" x2="300" y2="50" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="300,50 296,62 304,62" fill="#059669"/>
+    <text x="300" y="175" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Object between F &amp; C</text>
+    <!-- Ray 1: parallel → through F -->
+    <line x1="300" y1="50" x2="500" y2="50" stroke="#f97316" stroke-width="1.5" marker-end="url(#c4a)"/>
+    <line x1="500" y1="50" x2="80" y2="148" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#c4a)"/>
+    <!-- Ray 2: through C -->
+    <line x1="300" y1="50" x2="500" y2="86" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c4a)"/>
+    <line x1="500" y1="86" x2="80" y2="130" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c4a)"/>
+    <!-- Image beyond C (large, inverted) -->
+    <line x1="80" y1="100" x2="80" y2="148" stroke="#dc2626" stroke-width="3"/>
+    <polygon points="80,148 76,136 84,136" fill="#dc2626"/>
+    <text x="80" y="170" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626" font-family="sans-serif">Image beyond C (enlarged)</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:14px 18px;margin:10px 0;">
+    <table class="p1nt" style="margin:0;">
+      <tr><th>Position</th><th>Size</th><th>Nature</th><th>Where</th></tr>
+      <tr><td>Between F and C</td><td>Enlarged (magnified)</td><td class="img-real">Real, Inverted</td><td>Beyond C</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Position 5: Object at F -->
+<div class="p1sc">
+  <div class="p1sn">Concave Mirror · Case 5</div>
+  <div class="p1st">Object at F (u = f)</div>
+  <svg width="100%" viewBox="0 0 680 180" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="c5a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="180" fill="#faf5ff" rx="12"/>
+    <path d="M 460 20 Q 500 90 460 160" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 460 20 Q 422 90 460 160" fill="none" stroke="#ede9fe" stroke-width="8" stroke-linecap="round"/>
+    <line x1="40" y1="90" x2="620" y2="90" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="320" cy="90" r="5" fill="#dc2626"/><text x="320" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F</text>
+    <circle cx="180" cy="90" r="5" fill="#1e40af"/><text x="180" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">C</text>
+    <circle cx="460" cy="90" r="4" fill="#4c1d95"/><text x="470" y="85" font-size="11" fill="#4c1d95" font-family="sans-serif">P</text>
+    <!-- Object at F -->
+    <line x1="320" y1="90" x2="320" y2="45" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="320,45 316,57 324,57" fill="#059669"/>
+    <text x="320" y="155" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Object AT F</text>
+    <!-- Ray 1: parallel → reflects through F → parallel on other side (goes to infinity) -->
+    <line x1="320" y1="45" x2="460" y2="45" stroke="#f97316" stroke-width="1.5" marker-end="url(#c5a)"/>
+    <line x1="460" y1="45" x2="620" y2="90" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- actually after passing F rays become parallel -->
+    <line x1="460" y1="45" x2="40" y2="45" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#c5a)"/>
+    <text x="80" y="35" font-size="10" fill="#7c3aed" font-family="sans-serif">Parallel reflected rays → meet at ∞</text>
+    <!-- Ray 2 through C -->
+    <line x1="320" y1="45" x2="460" y2="75" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c5a)"/>
+    <line x1="460" y1="75" x2="40" y2="75" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c5a)"/>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:14px 18px;margin:10px 0;">
+    <table class="p1nt" style="margin:0;">
+      <tr><th>Position</th><th>Size</th><th>Nature</th><th>Where</th></tr>
+      <tr><td>At F</td><td>Highly enlarged (infinite)</td><td class="img-real">Real, Inverted</td><td>At infinity (∞)</td></tr>
+    </table>
+  </div>
+  <div class="p1cal green">
+    <div class="p1ci">🔦</div>
+    <div class="p1cb"><strong>Real-life Use!</strong>This is exactly how a torch/flashlight works. A bright bulb is placed at the focus of a concave mirror → reflected rays come out as a parallel beam (goes far without spreading).</div>
+  </div>
+</div>
+
+<!-- Position 6: Object between P and F -->
+<div class="p1sc">
+  <div class="p1sn">Concave Mirror · Case 6</div>
+  <div class="p1st">Object between P and F (u &lt; f)</div>
+  <svg width="100%" viewBox="0 0 680 200" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="c6a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="200" fill="#faf5ff" rx="12"/>
+    <path d="M 460 20 Q 500 100 460 180" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 460 20 Q 422 100 460 180" fill="none" stroke="#ede9fe" stroke-width="8" stroke-linecap="round"/>
+    <line x1="40" y1="100" x2="620" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="320" cy="100" r="5" fill="#dc2626"/><text x="320" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F</text>
+    <circle cx="180" cy="100" r="5" fill="#1e40af"/><text x="180" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" font-family="sans-serif">C</text>
+    <circle cx="460" cy="100" r="4" fill="#4c1d95"/><text x="468" y="94" font-size="11" fill="#4c1d95" font-family="sans-serif">P</text>
+    <!-- Object between P and F -->
+    <line x1="410" y1="100" x2="410" y2="58" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="410,58 406,70 414,70" fill="#059669"/>
+    <text x="410" y="170" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Object between P &amp; F</text>
+    <!-- Ray 1: parallel → reflects through F (diverges) -->
+    <line x1="410" y1="58" x2="460" y2="58" stroke="#f97316" stroke-width="1.5" marker-end="url(#c6a)"/>
+    <line x1="460" y1="58" x2="340" y2="128" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#c6a)"/>
+    <!-- Extension of reflected ray behind mirror -->
+    <line x1="460" y1="58" x2="560" y2="18" stroke="#7c3aed" stroke-width="1" stroke-dasharray="4 2"/>
+    <!-- Ray 2 from tip toward C, reflects back (diverges) -->
+    <line x1="410" y1="58" x2="460" y2="86" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c6a)"/>
+    <line x1="460" y1="86" x2="280" y2="130" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#c6a)"/>
+    <!-- Extension of 2nd ray behind mirror -->
+    <line x1="460" y1="86" x2="560" y2="52" stroke="#7c3aed" stroke-width="1" stroke-dasharray="4 2"/>
+    <!-- Virtual image behind mirror (extensions meet behind) -->
+    <line x1="560" y1="22" x2="560" y2="58" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="5 3"/>
+    <polygon points="560,22 556,34 564,34" fill="#22c55e" opacity="0.7"/>
+    <text x="580" y="40" font-size="10" font-weight="700" fill="#22c55e" font-family="sans-serif">Virtual image</text>
+    <text x="580" y="54" font-size="10" fill="#22c55e" font-family="sans-serif">(behind mirror)</text>
+    <text x="580" y="68" font-size="10" fill="#22c55e" font-family="sans-serif">Enlarged, Erect</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:14px 18px;margin:10px 0;">
+    <table class="p1nt" style="margin:0;">
+      <tr><th>Position</th><th>Size</th><th>Nature</th><th>Where</th></tr>
+      <tr class="img-virtual"><td>Between P and F</td><td>Enlarged (magnified)</td><td>Virtual, Erect</td><td>Behind the mirror</td></tr>
+    </table>
+  </div>
+  <div class="p1cal green">
+    <div class="p1ci">🪒</div>
+    <div class="p1cb"><strong>Real-life Use!</strong>Shaving/makeup mirror. When your face is between P and F, the concave mirror shows a magnified, erect, virtual image. That's why you can see your face enlarged clearly!</div>
+  </div>
+</div>
+
+<!-- CONCAVE MIRROR SUMMARY TABLE -->
+<div class="p1sc">
+  <div class="p1sn">Summary — Concave Mirror</div>
+  <div class="p1st">All 6 Positions — Quick Reference</div>
+  <table class="p1nt">
+    <tr><th>Object Position</th><th>Image Position</th><th>Size</th><th>Nature</th></tr>
+    <tr class="img-real"><td>At infinity (∞)</td><td>At F</td><td>Highly diminished (point)</td><td>Real, Inverted</td></tr>
+    <tr class="img-real"><td>Beyond C (u &gt; 2f)</td><td>Between F and C</td><td>Diminished</td><td>Real, Inverted</td></tr>
+    <tr class="img-real"><td>At C (u = 2f)</td><td>At C</td><td>Same size</td><td>Real, Inverted</td></tr>
+    <tr class="img-real"><td>Between F and C (f &lt; u &lt; 2f)</td><td>Beyond C</td><td>Enlarged</td><td>Real, Inverted</td></tr>
+    <tr class="img-real"><td>At F (u = f)</td><td>At infinity (∞)</td><td>Highly enlarged</td><td>Real, Inverted</td></tr>
+    <tr class="img-virtual"><td>Between P and F (u &lt; f)</td><td>Behind mirror</td><td>Enlarged</td><td>Virtual, Erect</td></tr>
+  </table>
+  <div class="p1cal fire">
+    <div class="p1ci">🔥</div>
+    <div class="p1cb"><strong>Pattern to Remember</strong>As object moves from ∞ toward mirror: image starts at F, moves beyond C, and becomes larger. The ONLY virtual image is when object is between P and F. All other positions → Real, Inverted image.</div>
+  </div>
+</div>
+
+<!-- CONVEX MIRROR RAY DIAGRAMS -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--phy);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--phy-b);">Convex Mirror — Image Formation</h2>
+
+<div class="p1sc">
+  <div class="p1sn">Convex Mirror · Case 1</div>
+  <div class="p1st">Object at Infinity</div>
+  <svg width="100%" viewBox="0 0 680 180" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="cv1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="180" fill="#fff7ed" rx="12"/>
+    <!-- Convex mirror (bulges toward object/left) -->
+    <path d="M 300 20 Q 260 90 300 160" fill="none" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 300 20 Q 336 90 300 160" fill="none" stroke="#fed7aa" stroke-width="8" stroke-linecap="round"/>
+    <line x1="40" y1="90" x2="560" y2="90" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <!-- Virtual focus F (behind mirror) -->
+    <circle cx="420" cy="90" r="5" fill="#dc2626" stroke="white" stroke-width="1.5" stroke-dasharray="3 1"/>
+    <text x="420" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F (virtual)</text>
+    <circle cx="300" cy="90" r="4" fill="#c2410c"/><text x="308" y="84" font-size="11" fill="#c2410c" font-family="sans-serif">P</text>
+    <!-- Parallel incident rays -->
+    <line x1="60" y1="50" x2="300" y2="50" stroke="#f97316" stroke-width="2" marker-end="url(#cv1a)"/>
+    <line x1="60" y1="90" x2="300" y2="90" stroke="#f97316" stroke-width="2" marker-end="url(#cv1a)"/>
+    <!-- Reflected diverging rays -->
+    <line x1="300" y1="50" x2="60" y2="80" stroke="#c2410c" stroke-width="2" marker-end="url(#cv1a)"/>
+    <line x1="300" y1="90" x2="60" y2="110" stroke="#c2410c" stroke-width="2" marker-end="url(#cv1a)"/>
+    <!-- Extension lines (dashed, going behind mirror to virtual F) -->
+    <line x1="300" y1="50" x2="420" y2="90" stroke="#dc2626" stroke-width="1" stroke-dasharray="4 2"/>
+    <line x1="300" y1="90" x2="420" y2="90" stroke="#dc2626" stroke-width="1" stroke-dasharray="4 2"/>
+    <!-- Virtual image at F -->
+    <circle cx="420" cy="90" r="4" fill="#22c55e"/>
+    <text x="420" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="#22c55e" font-family="sans-serif">Image at F (behind mirror)</text>
+  </svg>
+  <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px 18px;margin:10px 0;">
+    <table class="p1nt" style="margin:0;">
+      <tr><th>Position</th><th>Size</th><th>Nature</th><th>Where</th></tr>
+      <tr class="img-virtual"><td>At infinity</td><td>Point-sized (highly diminished)</td><td>Virtual, Erect</td><td>At F (behind mirror)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="p1sc">
+  <div class="p1sn">Convex Mirror · Case 2</div>
+  <div class="p1st">Object anywhere in front of mirror</div>
+  <svg width="100%" viewBox="0 0 680 200" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="cv2a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="200" fill="#fff7ed" rx="12"/>
+    <path d="M 380 20 Q 340 100 380 180" fill="none" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 380 20 Q 416 100 380 180" fill="none" stroke="#fed7aa" stroke-width="8" stroke-linecap="round"/>
+    <line x1="40" y1="100" x2="620" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="500" cy="100" r="5" fill="#dc2626" opacity="0.7"/>
+    <text x="500" y="88" text-anchor="middle" font-size="11" fill="#dc2626" font-family="sans-serif">F (virtual)</text>
+    <circle cx="380" cy="100" r="4" fill="#c2410c"/><text x="388" y="94" font-size="11" fill="#c2410c" font-family="sans-serif">P</text>
+    <!-- Object (in front of convex mirror) -->
+    <line x1="140" y1="100" x2="140" y2="48" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="140,48 136,60 144,60" fill="#059669"/>
+    <text x="140" y="170" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Object (anywhere in front)</text>
+    <!-- Ray 1: parallel → appears to come from F -->
+    <line x1="140" y1="48" x2="380" y2="48" stroke="#f97316" stroke-width="1.5" marker-end="url(#cv2a)"/>
+    <line x1="380" y1="48" x2="80" y2="90" stroke="#c2410c" stroke-width="1.5" marker-end="url(#cv2a)"/>
+    <line x1="380" y1="48" x2="500" y2="100" stroke="#dc2626" stroke-width="1" stroke-dasharray="4 2"/>
+    <!-- Ray 2: toward C (center behind) → reflects straight back -->
+    <line x1="140" y1="48" x2="380" y2="82" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#cv2a)"/>
+    <line x1="380" y1="82" x2="80" y2="110" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#cv2a)"/>
+    <!-- Virtual image (small, behind mirror, erect) -->
+    <line x1="438" y1="100" x2="438" y2="74" stroke="#22c55e" stroke-width="2" stroke-dasharray="5 3"/>
+    <polygon points="438,74 434,86 442,86" fill="#22c55e" opacity="0.7"/>
+    <text x="438" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#22c55e" font-family="sans-serif">Virtual image (small, erect)</text>
+    <text x="438" y="163" text-anchor="middle" font-size="10" fill="#22c55e" font-family="sans-serif">behind mirror, between P and F</text>
+  </svg>
+  <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px 18px;margin:10px 0;">
+    <table class="p1nt" style="margin:0;">
+      <tr><th>Position</th><th>Size</th><th>Nature</th><th>Where</th></tr>
+      <tr class="img-virtual"><td>Anywhere in front</td><td>Diminished (smaller)</td><td>Virtual, Erect</td><td>Between P and F (behind mirror)</td></tr>
+    </table>
+  </div>
+  <div class="p1cal fire">
+    <div class="p1ci">🚗</div>
+    <div class="p1cb"><strong>Real-life Use — Rear-view mirrors!</strong>Convex mirrors always give a virtual, erect, diminished image regardless of object position. This gives a wider field of view — you can see more of the road behind you. That's why vehicles use convex mirrors as rear-view mirrors.</div>
+  </div>
+</div>
+
+<!-- CONVEX MIRROR SUMMARY -->
+<div class="p1sc">
+  <div class="p1sn">Summary — Convex Mirror</div>
+  <div class="p1st">Key Facts About Convex Mirror</div>
+  <div class="p1cmp">
+    <div class="p1cc phy">
+      <div class="p1ct">Always True for Convex Mirror</div>
+      <ul>
+        <li>Image is ALWAYS virtual and erect</li>
+        <li>Image is ALWAYS diminished (smaller)</li>
+        <li>Image is ALWAYS between P and F (behind mirror)</li>
+        <li>As object moves closer → image moves toward P and grows larger (but still smaller than object)</li>
+        <li>As object moves to ∞ → image shrinks to a point at F</li>
+      </ul>
+    </div>
+    <div class="p1cc orange">
+      <div class="p1ct">Uses of Convex Mirror</div>
+      <ul>
+        <li>Rear-view mirrors in vehicles (wide field of view)</li>
+        <li>Security mirrors in shops/banks</li>
+        <li>Street light reflectors</li>
+        <li>ATM security cameras</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- ══ MIRROR FORMULA ══ -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--phy);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--phy-b);">Mirror Formula &amp; Magnification</h2>
+
+<div class="p1sc">
+  <div class="p1sn">Section 2.1 — ⭐⭐ Most Important</div>
+  <div class="p1st">Mirror Formula</div>
+  <div class="p1def">
+    <div class="p1dt">Mirror Formula</div>
+    <div class="p1dx">The relationship between object distance (u), image distance (v) and focal length (f) of a spherical mirror is given by the mirror formula. This is valid for both concave and convex mirrors when sign convention is correctly applied.</div>
+  </div>
+
+  <!-- Big formula display -->
+  <div style="background:var(--phy-l);border:2px solid var(--phy);border-radius:14px;padding:24px;margin:16px 0;text-align:center;">
+    <div style="font-family:var(--mono);font-size:26px;font-weight:700;color:#4c1d95;margin-bottom:8px;">1/v + 1/u = 1/f</div>
+    <div style="font-size:13px;color:var(--text3);margin-top:6px;">v = image distance · u = object distance · f = focal length</div>
+    <div style="font-size:13px;color:var(--text3);">All measured from Pole (P). Apply sign convention before substituting!</div>
+  </div>
+
+  <!-- Formula rearrangements -->
+  <h3>Rearrangements — Find Any Unknown Quickly</h3>
+  <div class="p1formula-grid">
+    <div class="p1fg">
+      <div class="fg-label">Find f</div>
+      <div class="fg-formula">1/f = 1/v + 1/u</div>
+      <div class="fg-words">f = uv / (u + v)</div>
+    </div>
+    <div class="p1fg">
+      <div class="fg-label">Find v (image distance)</div>
+      <div class="fg-formula">1/v = 1/f − 1/u</div>
+      <div class="fg-words">v = uf / (u − f)</div>
+    </div>
+    <div class="p1fg">
+      <div class="fg-label">Find u (object distance)</div>
+      <div class="fg-formula">1/u = 1/f − 1/v</div>
+      <div class="fg-words">u = vf / (v − f)</div>
+    </div>
+    <div class="p1fg">
+      <div class="fg-label">Key Relation</div>
+      <div class="fg-formula">R = 2f</div>
+      <div class="fg-words">Always use this to convert between R and f</div>
+    </div>
+  </div>
+
+  <div class="p1cal tip">
+    <div class="p1ci">💡</div>
+    <div class="p1cb"><strong>Pro Trick — Solve Mirror Numericals in 3 Steps</strong>Step 1: Write down given values with CORRECT signs (u always −ve; concave f = −ve, convex f = +ve). Step 2: Apply 1/v = 1/f − 1/u. Step 3: Calculate and check sign of v (−ve = real image, +ve = virtual image).</div>
+  </div>
+</div>
+
+<!-- MAGNIFICATION -->
+<div class="p1sc">
+  <div class="p1sn">Section 2.2 — Important</div>
+  <div class="p1st">Magnification (m)</div>
+  <div class="p1def">
+    <div class="p1dt">Magnification</div>
+    <div class="p1dx">Magnification produced by a spherical mirror is the ratio of the height of the image to the height of the object. It also equals the ratio of image distance to object distance.</div>
+  </div>
+
+  <div style="background:var(--phy-l);border:2px solid var(--phy);border-radius:14px;padding:20px;margin:16px 0;text-align:center;">
+    <div style="font-family:var(--mono);font-size:22px;font-weight:700;color:#4c1d95;margin-bottom:8px;">m = h'/h = −v/u</div>
+    <div style="font-size:13px;color:var(--text3);">h' = height of image · h = height of object (always +ve)</div>
+  </div>
+
+  <h3>Interpreting the Sign of m</h3>
+  <table class="p1nt">
+    <tr><th>Value of m</th><th>Meaning</th><th>Type of Image</th></tr>
+    <tr><td style="font-family:var(--mono)">m &lt; 0 (negative)</td><td>Image is INVERTED (upside down)</td><td>Real image</td></tr>
+    <tr><td style="font-family:var(--mono)">m &gt; 0 (positive)</td><td>Image is ERECT (same way up)</td><td>Virtual image</td></tr>
+    <tr><td style="font-family:var(--mono)">|m| &gt; 1</td><td>Image is ENLARGED (bigger than object)</td><td>—</td></tr>
+    <tr><td style="font-family:var(--mono)">|m| = 1</td><td>Image is SAME SIZE as object</td><td>Object at C (concave)</td></tr>
+    <tr><td style="font-family:var(--mono)">|m| &lt; 1</td><td>Image is DIMINISHED (smaller than object)</td><td>—</td></tr>
+  </table>
+
+  <div class="p1cal fire">
+    <div class="p1ci">🔥</div>
+    <div class="p1cb"><strong>Magnification Quick Check</strong>After solving a numerical, always check magnification sign: if m is negative → real image → consistent with concave mirror forming real image. If m is positive → virtual image → could be concave mirror with object between P&amp;F, or any position in convex mirror.</div>
+  </div>
+</div>
+
+<!-- BOARD NUMERICALS — MIRRORS -->
+<div class="p1sc">
+  <div class="p1sn">Board Numericals — Mirrors</div>
+  <div class="p1st">Solved Examples</div>
+
+  <div class="p1board">
+    <div class="pb-head">Mirror Numerical · Concave <span class="pb-marks">3 Marks</span></div>
+    <div class="pb-q">An object is placed at a distance of 10 cm in front of a concave mirror of focal length 15 cm. Find the image distance and nature of image.</div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 1 — Write values with signs</div>
+      <div class="pb-sc">u = −10 cm (object in front → always −ve)<br/>f = −15 cm (concave mirror → −ve)</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 2 — Apply mirror formula</div>
+      <div class="pb-sc">1/v = 1/f − 1/u<br/>1/v = 1/(−15) − 1/(−10)<br/>1/v = −1/15 + 1/10<br/>1/v = (−2 + 3)/30 = 1/30<br/>v = +30 cm</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 3 — Find magnification</div>
+      <div class="pb-sc">m = −v/u = −(30)/(−10) = +3</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 4 — Interpret</div>
+      <div class="pb-sc">v = +30 cm → image is behind mirror → Virtual<br/>m = +3 → erect, magnified 3 times</div>
+    </div>
+    <div class="pb-ans">∴ Image is 30 cm behind mirror. Virtual, Erect, 3× magnified. (Object was between P and F)</div>
+  </div>
+
+  <div class="p1board">
+    <div class="pb-head">Mirror Numerical · Convex <span class="pb-marks">3 Marks</span></div>
+    <div class="pb-q">A convex mirror of focal length 20 cm forms an image of an object placed 30 cm in front of it. Find the image position and magnification.</div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 1 — Write values with signs</div>
+      <div class="pb-sc">u = −30 cm (always −ve)<br/>f = +20 cm (convex mirror → focus is behind → +ve)</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 2 — Apply mirror formula</div>
+      <div class="pb-sc">1/v = 1/f − 1/u<br/>1/v = 1/20 − 1/(−30)<br/>1/v = 1/20 + 1/30<br/>1/v = (3 + 2)/60 = 5/60 = 1/12<br/>v = +12 cm</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 3 — Magnification</div>
+      <div class="pb-sc">m = −v/u = −(12)/(−30) = +0.4</div>
+    </div>
+    <div class="pb-ans">∴ Image is 12 cm behind convex mirror. Virtual, Erect, diminished (0.4× = 2/5 of object size).</div>
+  </div>
+
+  <div class="p1board">
+    <div class="pb-head">Mirror Numerical — Find f <span class="pb-marks">3 Marks</span></div>
+    <div class="pb-q">An object 4 cm tall is placed at 15 cm from a concave mirror. The image is real, inverted and 12 cm tall. Find the focal length.</div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 1 — Find v using magnification</div>
+      <div class="pb-sc">m = h'/h = −12/4 = −3 (negative because real, inverted)<br/>Also m = −v/u<br/>−3 = −v/(−15) &nbsp;⟹&nbsp; −3 = v/15 &nbsp;⟹&nbsp; v = −45 cm</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 2 — Apply mirror formula</div>
+      <div class="pb-sc">1/f = 1/v + 1/u = 1/(−45) + 1/(−15)<br/>1/f = −1/45 − 3/45 = −4/45<br/>f = −45/4 = −11.25 cm</div>
+    </div>
+    <div class="pb-ans">∴ Focal length = 11.25 cm (concave, hence −ve sign)</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PART 2: REFRACTION OF LIGHT
+══════════════════════════════════════════ -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--phy);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--phy-b);">Part 2 — Refraction of Light</h2>
+
+<div class="p1sc">
+  <div class="p1sn">Section 3.1</div>
+  <div class="p1st">What is Refraction?</div>
+  <div class="p1def">
+    <div class="p1dt">Refraction</div>
+    <div class="p1dx">The bending of light when it passes from one transparent medium to another is called <strong>refraction</strong>. It occurs because light travels at different speeds in different media. The speed changes → direction changes (unless it hits the surface perpendicularly).</div>
+  </div>
+
+  <!-- Refraction diagram -->
+  <svg width="100%" viewBox="0 0 680 280" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="rfr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="280" fill="#faf5ff" rx="12"/>
+    <!-- Two media -->
+    <rect x="0" y="0" width="680" height="130" rx="12" fill="#eff6ff" opacity="0.6"/>
+    <rect x="0" y="130" width="680" height="150" rx="12" fill="#f0fdf4" opacity="0.6"/>
+    <text x="60" y="50" font-size="13" font-weight="700" fill="#1e40af" font-family="sans-serif">Medium 1 (Air/Less dense)</text>
+    <text x="60" y="180" font-size="13" font-weight="700" fill="#15803d" font-family="sans-serif">Medium 2 (Glass/Denser)</text>
+    <!-- Interface line -->
+    <line x1="40" y1="130" x2="640" y2="130" stroke="#374151" stroke-width="2" stroke-dasharray="8 4"/>
+    <text x="340" y="122" text-anchor="middle" font-size="11" fill="#6b7280" font-family="sans-serif">Interface / Boundary</text>
+    <!-- Normal -->
+    <line x1="340" y1="30" x2="340" y2="260" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 3"/>
+    <text x="352" y="28" font-size="11" fill="#6b7280" font-family="sans-serif">Normal</text>
+    <!-- Incident ray -->
+    <line x1="160" y1="30" x2="340" y2="130" stroke="#f97316" stroke-width="2.5" stroke-linecap="round" marker-end="url(#rfr)"/>
+    <text x="180" y="50" font-size="12" font-weight="700" fill="#f97316" font-family="sans-serif">Incident ray</text>
+    <!-- Refracted ray (bends toward normal in denser medium) -->
+    <line x1="340" y1="130" x2="430" y2="260" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" marker-end="url(#rfr)"/>
+    <text x="450" y="220" font-size="12" font-weight="700" fill="#7c3aed" font-family="sans-serif">Refracted ray</text>
+    <!-- Angle of incidence arc -->
+    <path d="M 322 110 A 24 24 0 0 1 340 102" fill="none" stroke="#f97316" stroke-width="1.5"/>
+    <text x="286" y="112" font-size="11" fill="#f97316" font-family="sans-serif">∠i</text>
+    <!-- Angle of refraction arc -->
+    <path d="M 340 158 A 24 24 0 0 0 356 152" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="358" y="162" font-size="11" fill="#7c3aed" font-family="sans-serif">∠r</text>
+    <!-- Note about bending -->
+    <text x="520" y="70" text-anchor="middle" font-size="11" fill="#1e40af" font-family="sans-serif">Air → Glass:</text>
+    <text x="520" y="85" text-anchor="middle" font-size="11" fill="#1e40af" font-family="sans-serif">Light SLOWS DOWN</text>
+    <text x="520" y="100" text-anchor="middle" font-size="11" fill="#1e40af" font-family="sans-serif">Bends TOWARD normal</text>
+    <text x="520" y="115" text-anchor="middle" font-size="11" fill="#1e40af" font-family="sans-serif">∠i &gt; ∠r</text>
+    <text x="520" y="180" text-anchor="middle" font-size="11" fill="#15803d" font-family="sans-serif">Glass → Air:</text>
+    <text x="520" y="195" text-anchor="middle" font-size="11" fill="#15803d" font-family="sans-serif">Light SPEEDS UP</text>
+    <text x="520" y="210" text-anchor="middle" font-size="11" fill="#15803d" font-family="sans-serif">Bends AWAY from normal</text>
+    <text x="520" y="225" text-anchor="middle" font-size="11" fill="#15803d" font-family="sans-serif">∠i &lt; ∠r</text>
+    <text x="340" y="270" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">Light bends TOWARD normal when entering denser medium · AWAY when entering rarer medium</text>
+  </svg>
+
+  <h3>Laws of Refraction (Snell's Laws)</h3>
+  <div class="p1cmp">
+    <div class="p1cc phy">
+      <div class="p1ct">Law 1</div>
+      <ul>
+        <li>Incident ray, refracted ray and normal at the point of incidence all lie in the same plane</li>
+      </ul>
+    </div>
+    <div class="p1cc blue">
+      <div class="p1ct">Law 2 (Snell's Law)</div>
+      <ul>
+        <li>n₁ sin∠i = n₂ sin∠r</li>
+        <li>Ratio sin i / sin r = constant = n₂/n₁</li>
+        <li>This constant is the refractive index</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Refractive Index (n)</h3>
+  <div style="background:var(--phy-l);border:2px solid var(--phy);border-radius:14px;padding:20px;margin:14px 0;text-align:center;">
+    <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:#4c1d95;margin-bottom:8px;">n = c/v = sin i / sin r</div>
+    <div style="font-size:13px;color:var(--text3);">n = refractive index · c = speed of light in vacuum · v = speed in medium</div>
+  </div>
+
+  <table class="p1nt">
+    <tr><th>Medium</th><th>Refractive Index (n)</th><th>Speed of Light</th></tr>
+    <tr><td>Vacuum / Air</td><td>1.00 (approximately)</td><td>3 × 10⁸ m/s</td></tr>
+    <tr><td>Water</td><td>1.33</td><td>~2.25 × 10⁸ m/s</td></tr>
+    <tr><td>Glass</td><td>~1.50</td><td>~2 × 10⁸ m/s</td></tr>
+    <tr><td>Diamond</td><td>2.42</td><td>~1.24 × 10⁸ m/s</td></tr>
+  </table>
+
+  <div class="p1cal tip">
+    <div class="p1ci">💡</div>
+    <div class="p1cb"><strong>Why do things look bent in water?</strong>A spoon in water appears bent because light rays from the submerged part change direction when leaving water and entering air — your brain traces the rays back in a straight line and perceives the spoon at a different position.</div>
+  </div>
+</div>
+
+<!-- ══ LENSES ══ -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--phy);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--phy-b);">Part 3 — Lenses</h2>
+
+<div class="p1sc">
+  <div class="p1sn">Section 4.1</div>
+  <div class="p1st">Types of Lenses</div>
+  <p>A lens is a transparent material (usually glass) bounded by two curved surfaces. There are two main types:</p>
+
+  <!-- Lens comparison diagram -->
+  <svg width="100%" viewBox="0 0 680 260" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="lsa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="260" fill="#faf5ff" rx="12"/>
+
+    <!-- CONVEX LENS left -->
+    <rect x="20" y="25" width="300" height="215" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="170" y="48" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d" font-family="sans-serif">CONVEX LENS (Biconvex)</text>
+    <text x="170" y="62" text-anchor="middle" font-size="10" fill="#15803d" font-family="sans-serif">Converging lens</text>
+    <!-- Convex lens shape -->
+    <path d="M 140 80 Q 175 130 140 180" fill="none" stroke="#15803d" stroke-width="2.5"/>
+    <path d="M 170 80 Q 135 130 170 180" fill="none" stroke="#15803d" stroke-width="2.5"/>
+    <path d="M 140 80 Q 175 130 140 180 Q 135 130 170 180 Q 175 130 140 80" fill="#d1fae5" opacity="0.5" stroke="none"/>
+    <line x1="80" y1="130" x2="240" y2="130" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5 3"/>
+    <!-- Light converges -->
+    <line x1="60" y1="95" x2="140" y2="95" stroke="#f97316" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <line x1="60" y1="130" x2="140" y2="130" stroke="#f97316" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <line x1="60" y1="165" x2="140" y2="165" stroke="#f97316" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <!-- Refracted converging -->
+    <line x1="170" y1="95" x2="220" y2="130" stroke="#15803d" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <line x1="170" y1="130" x2="220" y2="130" stroke="#15803d" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <line x1="170" y1="165" x2="220" y2="130" stroke="#15803d" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <circle cx="220" cy="130" r="5" fill="#dc2626"/>
+    <text x="220" y="120" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F</text>
+    <text x="170" y="205" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">Thicker in middle, thinner at edges</text>
+    <text x="170" y="222" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Uses: Magnifying glass, camera, spectacles for far-sight</text>
+
+    <!-- CONCAVE LENS right -->
+    <rect x="360" y="25" width="300" height="215" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+    <text x="510" y="48" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c" font-family="sans-serif">CONCAVE LENS (Biconcave)</text>
+    <text x="510" y="62" text-anchor="middle" font-size="10" fill="#c2410c" font-family="sans-serif">Diverging lens</text>
+    <!-- Concave lens shape -->
+    <path d="M 480 80 Q 510 130 480 180" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+    <path d="M 510 80 Q 480 130 510 180" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+    <path d="M 480 80 Q 510 130 480 180 Q 480 130 510 180 Q 480 130 510 80" fill="#fff7ed" opacity="0.8" stroke="none"/>
+    <line x1="420" y1="130" x2="590" y2="130" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5 3"/>
+    <!-- Light diverges -->
+    <line x1="400" y1="95" x2="480" y2="95" stroke="#f97316" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <line x1="400" y1="130" x2="480" y2="130" stroke="#f97316" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <line x1="400" y1="165" x2="480" y2="165" stroke="#f97316" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <!-- Refracted diverging -->
+    <line x1="510" y1="95" x2="600" y2="80" stroke="#c2410c" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <line x1="510" y1="130" x2="600" y2="130" stroke="#c2410c" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <line x1="510" y1="165" x2="600" y2="182" stroke="#c2410c" stroke-width="1.5" marker-end="url(#lsa)"/>
+    <!-- Virtual F behind lens -->
+    <circle cx="420" cy="130" r="4" fill="#dc2626" opacity="0.7"/>
+    <text x="420" y="120" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F (virtual)</text>
+    <text x="510" y="205" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">Thinner in middle, thicker at edges</text>
+    <text x="510" y="222" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Uses: Spectacles for short-sight, peepholes</text>
+  </svg>
+</div>
+
+<!-- LENS TERMS -->
+<div class="p1sc">
+  <div class="p1sn">Section 4.2</div>
+  <div class="p1st">Important Terms for Lenses</div>
+  <svg width="100%" viewBox="0 0 680 200" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs>
+      <marker id="lta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <rect width="680" height="200" fill="#faf5ff" rx="12"/>
+    <!-- Convex lens -->
+    <path d="M 320 20 Q 360 100 320 180" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <path d="M 360 20 Q 320 100 360 180" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <!-- Principal axis -->
+    <line x1="40" y1="100" x2="620" y2="100" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#lta)"/>
+    <!-- Optical centre O -->
+    <circle cx="340" cy="100" r="5" fill="#4c1d95"/>
+    <text x="340" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#4c1d95" font-family="sans-serif">O</text>
+    <text x="340" y="73" text-anchor="middle" font-size="10" fill="#6b7280" font-family="sans-serif">Optical centre</text>
+    <!-- F1 (left focus) -->
+    <circle cx="200" cy="100" r="5" fill="#dc2626"/>
+    <text x="200" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F₁</text>
+    <!-- F2 (right focus) -->
+    <circle cx="480" cy="100" r="5" fill="#dc2626"/>
+    <text x="480" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F₂</text>
+    <!-- 2F1 and 2F2 -->
+    <circle cx="60" cy="100" r="4" fill="#1e40af"/>
+    <text x="60" y="88" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">2F₁</text>
+    <circle cx="620" cy="100" r="4" fill="#1e40af"/>
+    <text x="620" y="88" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">2F₂</text>
+    <!-- Focal length arrows -->
+    <line x1="340" y1="150" x2="200" y2="150" stroke="#dc2626" stroke-width="1.5" marker-end="url(#lta)"/>
+    <line x1="340" y1="150" x2="480" y2="150" stroke="#dc2626" stroke-width="1.5" marker-end="url(#lta)"/>
+    <text x="270" y="165" text-anchor="middle" font-size="11" fill="#dc2626" font-family="sans-serif">f</text>
+    <text x="410" y="165" text-anchor="middle" font-size="11" fill="#dc2626" font-family="sans-serif">f</text>
+    <!-- Labels -->
+    <text x="60" y="130" text-anchor="middle" font-size="9" fill="#6b7280" font-family="sans-serif">Object side</text>
+    <text x="620" y="130" text-anchor="middle" font-size="9" fill="#6b7280" font-family="sans-serif">Image side</text>
+    <text x="340" y="186" text-anchor="middle" font-size="11" fill="#9ca3af" font-family="sans-serif">Lens has TWO focal points (F₁ and F₂), equidistant from optical centre O</text>
+  </svg>
+
+  <table class="p1nt">
+    <tr><th>Term</th><th>Symbol</th><th>Definition</th></tr>
+    <tr><td><strong>Optical Centre</strong></td><td>O</td><td>Midpoint of the lens. A ray passing through O does not deviate.</td></tr>
+    <tr><td><strong>Principal Focus (F)</strong></td><td>F₁, F₂</td><td>Convex lens: point where parallel rays converge after refraction. Concave lens: point from which rays appear to diverge.</td></tr>
+    <tr><td><strong>Focal Length</strong></td><td>f</td><td>Distance from optical centre to principal focus.</td></tr>
+    <tr><td><strong>Principal Axis</strong></td><td>—</td><td>Horizontal straight line through optical centre.</td></tr>
+  </table>
+</div>
+
+<!-- SIGN CONVENTION FOR LENSES -->
+<div class="p1sc">
+  <div class="p1sn">Section 4.3 — Critical</div>
+  <div class="p1st">Sign Convention for Lenses</div>
+  <p>Same Cartesian sign convention — all distances measured from <strong>Optical Centre (O)</strong>:</p>
+  <table class="p1nt">
+    <tr><th>Quantity</th><th>Convex Lens</th><th>Concave Lens</th><th>Rule</th></tr>
+    <tr><td><strong>Object distance (u)</strong></td><td>−ve</td><td>−ve</td><td>Object always on same side as incident light (left)</td></tr>
+    <tr><td><strong>Focal length (f)</strong></td><td>+ve</td><td>−ve</td><td>Convex = converging = positive; Concave = diverging = negative</td></tr>
+    <tr><td><strong>Real image (v)</strong></td><td>+ve (right side)</td><td>Never forms real image</td><td>Real image on opposite side of lens from object</td></tr>
+    <tr><td><strong>Virtual image (v)</strong></td><td>−ve (left side)</td><td>−ve (left side)</td><td>Virtual image on same side as object</td></tr>
+  </table>
+  <div class="p1cal tip">
+    <div class="p1ci">💡</div>
+    <div class="p1cb"><strong>Key Difference — Lens vs Mirror Sign</strong>For MIRRORS: real image → v is −ve (same side as object). For LENSES: real image → v is +ve (opposite side from object). This is the most common confusion — remember: mirrors reflect, lenses transmit!</div>
+  </div>
+</div>
+
+<!-- RULES FOR RAY DIAGRAMS — LENSES -->
+<div class="p1sc">
+  <div class="p1sn">Section 4.4 — Must Know</div>
+  <div class="p1st">3 Rules for Drawing Ray Diagrams (Lenses)</div>
+
+  <div class="ray-label">Rule 1 — Ray parallel to principal axis</div>
+  <svg width="100%" viewBox="0 0 680 110" style="margin:4px 0 14px;border-radius:10px;overflow:hidden;">
+    <defs><marker id="lr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="110" fill="#f0fdf4" rx="10"/>
+    <path d="M 340 10 Q 370 55 340 100" fill="none" stroke="#15803d" stroke-width="2.5"/>
+    <path d="M 370 10 Q 340 55 370 100" fill="none" stroke="#15803d" stroke-width="2.5"/>
+    <line x1="60" y1="55" x2="600" y2="55" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 2"/>
+    <circle cx="480" cy="55" r="4" fill="#dc2626"/><text x="480" y="44" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₂</text>
+    <circle cx="200" cy="55" r="4" fill="#dc2626"/><text x="200" y="44" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₁</text>
+    <line x1="80" y1="30" x2="355" y2="30" stroke="#f97316" stroke-width="2" marker-end="url(#lr1)"/>
+    <line x1="355" y1="30" x2="480" y2="55" stroke="#7c3aed" stroke-width="2" marker-end="url(#lr1)"/>
+    <text x="560" y="30" font-size="11" fill="#15803d" font-family="sans-serif">Parallel to axis →</text>
+    <text x="560" y="46" font-size="11" fill="#7c3aed" font-family="sans-serif">Passes through F₂</text>
+  </svg>
+
+  <div class="ray-label">Rule 2 — Ray through Optical Centre O</div>
+  <svg width="100%" viewBox="0 0 680 110" style="margin:4px 0 14px;border-radius:10px;overflow:hidden;">
+    <defs><marker id="lr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="110" fill="#eff6ff" rx="10"/>
+    <path d="M 340 10 Q 370 55 340 100" fill="none" stroke="#1e40af" stroke-width="2.5"/>
+    <path d="M 370 10 Q 340 55 370 100" fill="none" stroke="#1e40af" stroke-width="2.5"/>
+    <line x1="60" y1="55" x2="600" y2="55" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 2"/>
+    <circle cx="355" cy="55" r="4" fill="#4c1d95"/>
+    <line x1="80" y1="30" x2="600" y2="80" stroke="#f97316" stroke-width="2" marker-end="url(#lr2)"/>
+    <text x="560" y="30" font-size="11" fill="#1e40af" font-family="sans-serif">Through O →</text>
+    <text x="560" y="46" font-size="11" fill="#f97316" font-family="sans-serif">Goes straight, NO bending</text>
+  </svg>
+
+  <div class="ray-label">Rule 3 — Ray through F₁ (on same side as object)</div>
+  <svg width="100%" viewBox="0 0 680 110" style="margin:4px 0 14px;border-radius:10px;overflow:hidden;">
+    <defs><marker id="lr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="110" fill="var(--phy-l,#f5f3ff)" rx="10"/>
+    <path d="M 340 10 Q 370 55 340 100" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <path d="M 370 10 Q 340 55 370 100" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <line x1="60" y1="55" x2="600" y2="55" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 2"/>
+    <circle cx="200" cy="55" r="4" fill="#dc2626"/><text x="200" y="44" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₁</text>
+    <line x1="80" y1="80" x2="355" y2="45" stroke="#f97316" stroke-width="2" marker-end="url(#lr3)"/>
+    <line x1="355" y1="45" x2="600" y2="45" stroke="#7c3aed" stroke-width="2" marker-end="url(#lr3)"/>
+    <text x="555" y="35" font-size="11" fill="#7c3aed" font-family="sans-serif">Emerges parallel to axis</text>
+  </svg>
+</div>
+
+<!-- CONVEX LENS — ALL IMAGE POSITIONS -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--phy);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--phy-b);">Convex Lens — All 6 Image Positions</h2>
+
+<!-- Each position as a card with diagram + table -->
+<div class="p1sc">
+  <div class="p1sn">Convex Lens · Case 1</div>
+  <div class="p1st">Object at Infinity</div>
+  <svg width="100%" viewBox="0 0 680 170" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="cl1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="170" fill="#faf5ff" rx="12"/>
+    <path d="M 340 15 Q 375 85 340 155" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <path d="M 375 15 Q 340 85 375 155" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <line x1="40" y1="85" x2="620" y2="85" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="480" cy="85" r="5" fill="#dc2626"/><text x="480" y="73" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626" font-family="sans-serif">F₂</text>
+    <circle cx="357" cy="85" r="3" fill="#4c1d95"/>
+    <!-- Parallel rays from infinity -->
+    <line x1="60" y1="45" x2="357" y2="45" stroke="#f97316" stroke-width="2" marker-end="url(#cl1)"/>
+    <line x1="60" y1="85" x2="357" y2="85" stroke="#f97316" stroke-width="2" marker-end="url(#cl1)"/>
+    <line x1="60" y1="125" x2="357" y2="125" stroke="#f97316" stroke-width="2" marker-end="url(#cl1)"/>
+    <!-- Converge at F2 -->
+    <line x1="357" y1="45" x2="480" y2="85" stroke="#7c3aed" stroke-width="2" marker-end="url(#cl1)"/>
+    <line x1="357" y1="85" x2="480" y2="85" stroke="#7c3aed" stroke-width="2" marker-end="url(#cl1)"/>
+    <line x1="357" y1="125" x2="480" y2="85" stroke="#7c3aed" stroke-width="2" marker-end="url(#cl1)"/>
+    <line x1="480" y1="78" x2="480" y2="92" stroke="#dc2626" stroke-width="3"/>
+    <text x="480" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626" font-family="sans-serif">Image at F₂ (point)</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:12px 18px;margin:8px 0;"><table class="p1nt" style="margin:0;"><tr><th>Object</th><th>Image Position</th><th>Size</th><th>Nature</th></tr><tr class="img-real"><td>At ∞</td><td>At F₂</td><td>Point-sized</td><td>Real, Inverted</td></tr></table></div>
+</div>
+
+<div class="p1sc">
+  <div class="p1sn">Convex Lens · Case 2</div>
+  <div class="p1st">Object beyond 2F₁</div>
+  <svg width="100%" viewBox="0 0 680 190" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="cl2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="190" fill="#faf5ff" rx="12"/>
+    <path d="M 360 15 Q 395 95 360 175" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <path d="M 395 15 Q 360 95 395 175" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <line x1="40" y1="95" x2="640" y2="95" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="500" cy="95" r="5" fill="#dc2626"/><text x="500" y="83" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₂</text>
+    <circle cx="220" cy="95" r="5" fill="#dc2626"/><text x="220" y="83" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₁</text>
+    <circle cx="640" cy="95" r="4" fill="#1e40af"/><text x="630" y="83" font-size="9" fill="#1e40af" font-family="sans-serif">2F₂</text>
+    <circle cx="80" cy="95" r="4" fill="#1e40af"/><text x="80" y="83" text-anchor="middle" font-size="9" fill="#1e40af" font-family="sans-serif">2F₁</text>
+    <!-- Object beyond 2F1 (very left) -->
+    <line x1="60" y1="95" x2="60" y2="48" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="60,48 56,60 64,60" fill="#059669"/>
+    <!-- Ray 1: parallel → through F2 -->
+    <line x1="60" y1="48" x2="377" y2="48" stroke="#f97316" stroke-width="1.5" marker-end="url(#cl2)"/>
+    <line x1="377" y1="48" x2="500" y2="95" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#cl2)"/>
+    <!-- Ray 2: through O straight -->
+    <line x1="60" y1="48" x2="600" y2="125" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#cl2)"/>
+    <!-- Image between F2 and 2F2 -->
+    <line x1="560" y1="95" x2="560" y2="120" stroke="#dc2626" stroke-width="2.5"/>
+    <polygon points="560,120 556,108 564,108" fill="#dc2626"/>
+    <text x="560" y="160" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626" font-family="sans-serif">Image between F₂ &amp; 2F₂</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:12px 18px;margin:8px 0;"><table class="p1nt" style="margin:0;"><tr><th>Object</th><th>Image Position</th><th>Size</th><th>Nature</th></tr><tr class="img-real"><td>Beyond 2F₁</td><td>Between F₂ and 2F₂</td><td>Diminished</td><td>Real, Inverted</td></tr></table></div>
+</div>
+
+<div class="p1sc">
+  <div class="p1sn">Convex Lens · Case 3</div>
+  <div class="p1st">Object at 2F₁</div>
+  <svg width="100%" viewBox="0 0 680 190" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="cl3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="190" fill="#faf5ff" rx="12"/>
+    <path d="M 340 15 Q 375 95 340 175" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <path d="M 375 15 Q 340 95 375 175" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <line x1="40" y1="95" x2="630" y2="95" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="480" cy="95" r="5" fill="#dc2626"/><text x="480" y="83" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₂</text>
+    <circle cx="200" cy="95" r="5" fill="#dc2626"/><text x="200" y="83" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₁</text>
+    <circle cx="620" cy="95" r="4" fill="#1e40af"/><text x="610" y="83" font-size="9" fill="#1e40af" font-family="sans-serif">2F₂</text>
+    <circle cx="60" cy="95" r="4" fill="#1e40af"/><text x="60" y="83" text-anchor="middle" font-size="9" fill="#1e40af" font-family="sans-serif">2F₁</text>
+    <!-- Object at 2F1 -->
+    <line x1="60" y1="95" x2="60" y2="50" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="60,50 56,62 64,62" fill="#059669"/>
+    <!-- Ray 1 parallel → F2 -->
+    <line x1="60" y1="50" x2="357" y2="50" stroke="#f97316" stroke-width="1.5" marker-end="url(#cl3)"/>
+    <line x1="357" y1="50" x2="480" y2="95" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#cl3)"/>
+    <line x1="480" y1="95" x2="620" y2="135" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3 2"/>
+    <!-- Ray 2 through O -->
+    <line x1="60" y1="50" x2="620" y2="140" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#cl3)"/>
+    <!-- Image at 2F2 same size -->
+    <line x1="620" y1="95" x2="620" y2="137" stroke="#dc2626" stroke-width="2.5"/>
+    <polygon points="620,137 616,125 624,125" fill="#dc2626"/>
+    <text x="610" y="165" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626" font-family="sans-serif">Image at 2F₂ (same size)</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:12px 18px;margin:8px 0;"><table class="p1nt" style="margin:0;"><tr><th>Object</th><th>Image Position</th><th>Size</th><th>Nature</th></tr><tr class="img-real"><td>At 2F₁</td><td>At 2F₂</td><td>Same size</td><td>Real, Inverted</td></tr></table></div>
+</div>
+
+<div class="p1sc">
+  <div class="p1sn">Convex Lens · Case 4</div>
+  <div class="p1st">Object between F₁ and 2F₁</div>
+  <svg width="100%" viewBox="0 0 680 190" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="cl4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="190" fill="#faf5ff" rx="12"/>
+    <path d="M 330 15 Q 365 95 330 175" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <path d="M 365 15 Q 330 95 365 175" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <line x1="40" y1="95" x2="640" y2="95" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="470" cy="95" r="5" fill="#dc2626"/><text x="470" y="83" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₂</text>
+    <circle cx="190" cy="95" r="5" fill="#dc2626"/><text x="190" y="83" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₁</text>
+    <circle cx="50" cy="95" r="4" fill="#1e40af"/><text x="50" y="83" text-anchor="middle" font-size="9" fill="#1e40af" font-family="sans-serif">2F₁</text>
+    <!-- Object between F1 and 2F1 -->
+    <line x1="110" y1="95" x2="110" y2="52" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="110,52 106,64 114,64" fill="#059669"/>
+    <!-- Ray 1 parallel → F2 -->
+    <line x1="110" y1="52" x2="347" y2="52" stroke="#f97316" stroke-width="1.5" marker-end="url(#cl4)"/>
+    <line x1="347" y1="52" x2="470" y2="95" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#cl4)"/>
+    <line x1="470" y1="95" x2="620" y2="152" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3 2"/>
+    <!-- Ray 2 through O -->
+    <line x1="110" y1="52" x2="620" y2="155" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#cl4)"/>
+    <!-- Image beyond 2F2 (enlarged) -->
+    <line x1="618" y1="95" x2="618" y2="153" stroke="#dc2626" stroke-width="3"/>
+    <polygon points="618,153 614,141 622,141" fill="#dc2626"/>
+    <text x="610" y="170" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626" font-family="sans-serif">Image beyond 2F₂ (enlarged)</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:12px 18px;margin:8px 0;"><table class="p1nt" style="margin:0;"><tr><th>Object</th><th>Image Position</th><th>Size</th><th>Nature</th></tr><tr class="img-real"><td>Between F₁ and 2F₁</td><td>Beyond 2F₂</td><td>Enlarged</td><td>Real, Inverted</td></tr></table></div>
+</div>
+
+<div class="p1sc">
+  <div class="p1sn">Convex Lens · Case 5</div>
+  <div class="p1st">Object at F₁</div>
+  <svg width="100%" viewBox="0 0 680 170" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="cl5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="170" fill="#faf5ff" rx="12"/>
+    <path d="M 330 10 Q 365 85 330 160" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <path d="M 365 10 Q 330 85 365 160" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <line x1="40" y1="85" x2="620" y2="85" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="190" cy="85" r="5" fill="#dc2626"/><text x="190" y="73" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₁</text>
+    <!-- Object AT F1 -->
+    <line x1="190" y1="85" x2="190" y2="45" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="190,45 186,57 194,57" fill="#059669"/>
+    <!-- Ray 1 parallel → becomes parallel after passing through lens (goes to infinity) -->
+    <line x1="190" y1="45" x2="347" y2="45" stroke="#f97316" stroke-width="1.5" marker-end="url(#cl5)"/>
+    <line x1="347" y1="45" x2="620" y2="45" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#cl5)"/>
+    <!-- Ray 2 through O -->
+    <line x1="190" y1="45" x2="620" y2="108" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#cl5)"/>
+    <text x="550" y="35" font-size="11" fill="#7c3aed" font-family="sans-serif">Rays emerge parallel → meet at ∞</text>
+    <text x="340" y="148" text-anchor="middle" font-size="11" fill="#dc2626" font-family="sans-serif">Image at infinity (∞) — Highly enlarged</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:12px 18px;margin:8px 0;"><table class="p1nt" style="margin:0;"><tr><th>Object</th><th>Image Position</th><th>Size</th><th>Nature</th></tr><tr class="img-real"><td>At F₁</td><td>At infinity (∞)</td><td>Highly enlarged</td><td>Real, Inverted</td></tr></table></div>
+</div>
+
+<div class="p1sc">
+  <div class="p1sn">Convex Lens · Case 6</div>
+  <div class="p1st">Object between O and F₁ (u &lt; f)</div>
+  <svg width="100%" viewBox="0 0 680 200" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="cl6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="200" fill="#faf5ff" rx="12"/>
+    <path d="M 380 10 Q 415 100 380 190" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <path d="M 415 10 Q 380 100 415 190" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <line x1="40" y1="100" x2="640" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="240" cy="100" r="5" fill="#dc2626"/><text x="240" y="88" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₁</text>
+    <circle cx="520" cy="100" r="5" fill="#dc2626"/><text x="520" y="88" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₂</text>
+    <!-- Object between O and F1 (close to lens) -->
+    <line x1="340" y1="100" x2="340" y2="58" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="340,58 336,70 344,70" fill="#059669"/>
+    <text x="340" y="178" text-anchor="middle" font-size="10" fill="#059669" font-family="sans-serif">Object between O &amp; F₁</text>
+    <!-- Ray 1 parallel → diverges (appears from F1 side for concave, but convex passes through F2) -->
+    <line x1="340" y1="58" x2="397" y2="58" stroke="#f97316" stroke-width="1.5" marker-end="url(#cl6)"/>
+    <line x1="397" y1="58" x2="520" y2="100" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#cl6)"/>
+    <line x1="397" y1="58" x2="80" y2="18" stroke="#7c3aed" stroke-width="1" stroke-dasharray="4 2"/>
+    <!-- Ray 2 through O, straight -->
+    <line x1="340" y1="58" x2="70" y2="30" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#cl6)"/>
+    <!-- Virtual image on same side, enlarged, erect -->
+    <line x1="80" y1="100" x2="80" y2="20" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="5 3"/>
+    <polygon points="80,20 76,32 84,32" fill="#22c55e" opacity="0.8"/>
+    <text x="80" y="155" text-anchor="middle" font-size="10" font-weight="700" fill="#22c55e" font-family="sans-serif">Virtual image (same side)</text>
+    <text x="80" y="168" text-anchor="middle" font-size="10" fill="#22c55e" font-family="sans-serif">Enlarged, Erect</text>
+  </svg>
+  <div style="background:var(--phy-l);border:1px solid var(--phy-b);border-radius:10px;padding:12px 18px;margin:8px 0;"><table class="p1nt" style="margin:0;"><tr><th>Object</th><th>Image Position</th><th>Size</th><th>Nature</th></tr><tr class="img-virtual"><td>Between O and F₁</td><td>Same side as object</td><td>Enlarged</td><td>Virtual, Erect</td></tr></table></div>
+  <div class="p1cal green"><div class="p1ci">🔍</div><div class="p1cb"><strong>Real-life Use!</strong>This is exactly how a magnifying glass works. Object placed between O and F — image is virtual, erect and magnified. Used in reading glasses, jewellers' loupe, hand lens.</div></div>
+</div>
+
+<!-- CONVEX LENS SUMMARY -->
+<div class="p1sc">
+  <div class="p1sn">Summary — Convex Lens</div>
+  <div class="p1st">All 6 Positions — Quick Reference</div>
+  <table class="p1nt">
+    <tr><th>Object Position</th><th>Image Position</th><th>Size</th><th>Nature</th></tr>
+    <tr class="img-real"><td>At infinity</td><td>At F₂</td><td>Point-sized</td><td>Real, Inverted</td></tr>
+    <tr class="img-real"><td>Beyond 2F₁</td><td>Between F₂ and 2F₂</td><td>Diminished</td><td>Real, Inverted</td></tr>
+    <tr class="img-real"><td>At 2F₁</td><td>At 2F₂</td><td>Same size</td><td>Real, Inverted</td></tr>
+    <tr class="img-real"><td>Between F₁ and 2F₁</td><td>Beyond 2F₂</td><td>Enlarged</td><td>Real, Inverted</td></tr>
+    <tr class="img-real"><td>At F₁</td><td>At infinity</td><td>Highly enlarged</td><td>Real, Inverted</td></tr>
+    <tr class="img-virtual"><td>Between O and F₁</td><td>Same side as object</td><td>Enlarged</td><td>Virtual, Erect</td></tr>
+  </table>
+</div>
+
+<!-- CONCAVE LENS IMAGE FORMATION -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--phy);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--phy-b);">Concave Lens — Image Formation</h2>
+
+<div class="p1sc">
+  <div class="p1sn">Concave Lens · Case 1</div>
+  <div class="p1st">Object at Infinity</div>
+  <svg width="100%" viewBox="0 0 680 160" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="ccl1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="160" fill="#fff7ed" rx="12"/>
+    <path d="M 340 10 Q 300 80 340 150" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+    <path d="M 310 10 Q 350 80 310 150" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+    <line x1="40" y1="80" x2="620" y2="80" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="240" cy="80" r="5" fill="#dc2626" opacity="0.7"/><text x="240" y="68" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₁ (virtual)</text>
+    <circle cx="325" cy="80" r="3" fill="#c2410c"/>
+    <!-- Parallel rays diverged to appear from F1 -->
+    <line x1="60" y1="45" x2="325" y2="45" stroke="#f97316" stroke-width="2" marker-end="url(#ccl1)"/>
+    <line x1="60" y1="80" x2="325" y2="80" stroke="#f97316" stroke-width="2" marker-end="url(#ccl1)"/>
+    <!-- Diverging after lens -->
+    <line x1="325" y1="45" x2="600" y2="70" stroke="#c2410c" stroke-width="2" marker-end="url(#ccl1)"/>
+    <line x1="325" y1="80" x2="600" y2="90" stroke="#c2410c" stroke-width="2" marker-end="url(#ccl1)"/>
+    <!-- Extension to virtual F1 -->
+    <line x1="325" y1="45" x2="240" y2="80" stroke="#dc2626" stroke-width="1" stroke-dasharray="4 2"/>
+    <line x1="325" y1="80" x2="240" y2="80" stroke="#dc2626" stroke-width="1" stroke-dasharray="4 2"/>
+    <text x="240" y="120" text-anchor="middle" font-size="10" font-weight="700" fill="#22c55e" font-family="sans-serif">Image at F₁ (virtual, point-sized)</text>
+  </svg>
+  <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:12px 18px;margin:8px 0;"><table class="p1nt" style="margin:0;"><tr><th>Object</th><th>Image</th><th>Size</th><th>Nature</th></tr><tr class="img-virtual"><td>At infinity</td><td>At F₁ (virtual focus)</td><td>Point-sized</td><td>Virtual, Erect</td></tr></table></div>
+</div>
+
+<div class="p1sc">
+  <div class="p1sn">Concave Lens · Case 2</div>
+  <div class="p1st">Object anywhere in front of lens</div>
+  <svg width="100%" viewBox="0 0 680 190" style="margin:14px 0;border-radius:12px;overflow:hidden;">
+    <defs><marker id="ccl2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect width="680" height="190" fill="#fff7ed" rx="12"/>
+    <path d="M 380 10 Q 340 95 380 180" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+    <path d="M 350 10 Q 390 95 350 180" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+    <line x1="40" y1="95" x2="620" y2="95" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5 3"/>
+    <circle cx="260" cy="95" r="5" fill="#dc2626" opacity="0.7"/><text x="260" y="83" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif">F₁</text>
+    <circle cx="365" cy="95" r="3" fill="#c2410c"/>
+    <!-- Object -->
+    <line x1="140" y1="95" x2="140" y2="48" stroke="#059669" stroke-width="2.5"/>
+    <polygon points="140,48 136,60 144,60" fill="#059669"/>
+    <!-- Ray 1 parallel → diverges, appears from F1 -->
+    <line x1="140" y1="48" x2="365" y2="48" stroke="#f97316" stroke-width="1.5" marker-end="url(#ccl2)"/>
+    <line x1="365" y1="48" x2="600" y2="78" stroke="#c2410c" stroke-width="1.5" marker-end="url(#ccl2)"/>
+    <line x1="365" y1="48" x2="260" y2="95" stroke="#dc2626" stroke-width="1" stroke-dasharray="4 2"/>
+    <!-- Ray 2 through O straight -->
+    <line x1="140" y1="48" x2="600" y2="120" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 2" marker-end="url(#ccl2)"/>
+    <!-- Virtual image (small, erect, on same side) -->
+    <line x1="300" y1="95" x2="300" y2="72" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="5 3"/>
+    <polygon points="300,72 296,84 304,84" fill="#22c55e" opacity="0.8"/>
+    <text x="300" y="145" text-anchor="middle" font-size="10" font-weight="700" fill="#22c55e" font-family="sans-serif">Virtual image (small, erect)</text>
+    <text x="300" y="160" text-anchor="middle" font-size="10" fill="#22c55e" font-family="sans-serif">Between O and F₁, on same side as object</text>
+  </svg>
+  <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:12px 18px;margin:8px 0;"><table class="p1nt" style="margin:0;"><tr><th>Object</th><th>Image</th><th>Size</th><th>Nature</th></tr><tr class="img-virtual"><td>Anywhere in front</td><td>Between O and F₁</td><td>Diminished</td><td>Virtual, Erect</td></tr></table></div>
+  <div class="p1cal fire"><div class="p1ci">👓</div><div class="p1cb"><strong>Concave Lens — Always Virtual, Erect, Diminished!</strong>A concave lens NEVER forms a real image. It always gives a virtual, erect and smaller image. Used in spectacles for short-sightedness (myopia) — it diverges light before it enters the eye so the image falls on retina correctly.</div></div>
+</div>
+
+<!-- CONCAVE LENS SUMMARY -->
+<div class="p1sc">
+  <div class="p1sn">Summary — Concave Lens</div>
+  <div class="p1st">Key Facts — Concave Lens</div>
+  <div class="p1cmp">
+    <div class="p1cc phy">
+      <div class="p1ct">Always True for Concave Lens</div>
+      <ul>
+        <li>Image is ALWAYS virtual and erect</li>
+        <li>Image is ALWAYS diminished (smaller)</li>
+        <li>Image is ALWAYS on same side as object (between O and F₁)</li>
+        <li>NEVER forms a real image — ever!</li>
+      </ul>
+    </div>
+    <div class="p1cc orange">
+      <div class="p1ct">Uses of Concave Lens</div>
+      <ul>
+        <li>Spectacles for myopia (short-sightedness)</li>
+        <li>Galilean telescope (eyepiece)</li>
+        <li>Peepholes in doors</li>
+        <li>Cameras (wide-angle lens)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- LENS FORMULA + MAGNIFICATION -->
+<h2 style="font-family:var(--serif);font-size:26px;color:var(--phy);margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--phy-b);">Lens Formula, Magnification &amp; Power</h2>
+
+<div class="p1sc">
+  <div class="p1sn">Section 5.1 — ⭐⭐ Most Important</div>
+  <div class="p1st">Lens Formula</div>
+  <div style="background:var(--phy-l);border:2px solid var(--phy);border-radius:14px;padding:24px;margin:16px 0;text-align:center;">
+    <div style="font-family:var(--mono);font-size:26px;font-weight:700;color:#4c1d95;margin-bottom:8px;">1/v − 1/u = 1/f</div>
+    <div style="font-size:13px;color:var(--text3);margin-top:6px;">v = image distance · u = object distance · f = focal length</div>
+    <div style="font-size:13px;color:var(--text3);">All measured from Optical Centre (O). Apply sign convention!</div>
+  </div>
+
+  <div class="p1cal warn">
+    <div class="p1ci">⚠️</div>
+    <div class="p1cb"><strong>Mirror vs Lens Formula — Don't Confuse!</strong>Mirror formula: 1/v + 1/u = 1/f. Lens formula: 1/v − 1/u = 1/f. The ONLY difference is the sign between 1/v and 1/u. This is where most students lose marks — remember: Lens = MINUS in between!</div>
+  </div>
+
+  <h3>Rearrangements for Lens Formula</h3>
+  <div class="p1formula-grid">
+    <div class="p1fg">
+      <div class="fg-label">Find f</div>
+      <div class="fg-formula">1/f = 1/v − 1/u</div>
+      <div class="fg-words">f = uv / (v − u)</div>
+    </div>
+    <div class="p1fg">
+      <div class="fg-label">Find v</div>
+      <div class="fg-formula">1/v = 1/f + 1/u</div>
+      <div class="fg-words">v = uf / (u + f)</div>
+    </div>
+    <div class="p1fg">
+      <div class="fg-label">Find u</div>
+      <div class="fg-formula">1/u = 1/v − 1/f</div>
+      <div class="fg-words">u = vf / (v − f)</div>
+    </div>
+    <div class="p1fg">
+      <div class="fg-label">Magnification</div>
+      <div class="fg-formula">m = v/u = h'/h</div>
+      <div class="fg-words">Note: NO negative sign (unlike mirror!)</div>
+    </div>
+  </div>
+
+  <div class="p1cal tip">
+    <div class="p1ci">💡</div>
+    <div class="p1cb"><strong>Magnification — Lens vs Mirror</strong>Mirror: m = −v/u (has negative sign). Lens: m = v/u (NO negative sign). For real images in a convex lens: v is +ve, u is −ve → m = v/u = (+)/(−) = negative → inverted. Correct!</div>
+  </div>
+</div>
+
+<!-- POWER OF LENS -->
+<div class="p1sc">
+  <div class="p1sn">Section 5.2 — Important</div>
+  <div class="p1st">Power of a Lens</div>
+  <div class="p1def">
+    <div class="p1dt">Power (P)</div>
+    <div class="p1dx">The power of a lens is defined as the reciprocal of its focal length in metres. It measures the degree of convergence or divergence of light by the lens.</div>
+  </div>
+
+  <div style="background:var(--phy-l);border:2px solid var(--phy);border-radius:14px;padding:24px;margin:16px 0;text-align:center;">
+    <div style="font-family:var(--mono);font-size:26px;font-weight:700;color:#4c1d95;margin-bottom:8px;">P = 1/f (in metres)</div>
+    <div style="font-size:13px;color:var(--text3);">Unit: Dioptre (D). 1 D = 1 m⁻¹</div>
+    <div style="font-size:13px;color:var(--text3);">f must be in METRES, not centimetres!</div>
+  </div>
+
+  <table class="p1nt">
+    <tr><th>Lens Type</th><th>Focal Length</th><th>Power</th><th>Sign</th></tr>
+    <tr><td><strong>Convex (converging)</strong></td><td>+ve</td><td>Positive</td><td>P &gt; 0</td></tr>
+    <tr><td><strong>Concave (diverging)</strong></td><td>−ve</td><td>Negative</td><td>P &lt; 0</td></tr>
+    <tr><td>Plane glass</td><td>∞</td><td>Zero</td><td>P = 0</td></tr>
+  </table>
+
+  <h3>Combined Power of Lenses in Contact</h3>
+  <div style="background:var(--phy-l);border:2px solid var(--phy);border-radius:14px;padding:20px;margin:14px 0;text-align:center;">
+    <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:#4c1d95;margin-bottom:8px;">P = P₁ + P₂ + P₃ + ...</div>
+    <div style="font-size:13px;color:var(--text3);">Total power = algebraic sum of individual powers (with signs!)</div>
+  </div>
+
+  <div class="p1cal fire">
+    <div class="p1ci">👓</div>
+    <div class="p1cb"><strong>Spectacle Power — Real Life!</strong>When an optician says your power is "+2 D" → you need a convex lens of focal length 0.5 m (50 cm) → you are far-sighted. If "-3 D" → concave lens, focal length = −0.33 m → you are near-sighted. The power on your spectacle prescription IS the lens power!</div>
+  </div>
+
+  <div class="p1board">
+    <div class="pb-head">Lens Numerical — Power <span class="pb-marks">2 Marks</span></div>
+    <div class="pb-q">A convex lens has focal length 25 cm. Find its power.</div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 1 — Convert f to metres</div>
+      <div class="pb-sc">f = 25 cm = 25/100 m = 0.25 m</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 2 — Apply formula</div>
+      <div class="pb-sc">P = 1/f = 1/0.25 = +4 D</div>
+    </div>
+    <div class="pb-ans">∴ Power = +4 D (positive because convex lens)</div>
+  </div>
+
+  <div class="p1board">
+    <div class="pb-head">Combined Power Numerical <span class="pb-marks">2 Marks</span></div>
+    <div class="pb-q">A convex lens of power +3 D is kept in contact with a concave lens of power −2.5 D. Find combined power and focal length.</div>
+    <div class="pb-step">
+      <div class="pb-sl">Combined Power</div>
+      <div class="pb-sc">P = P₁ + P₂ = +3 + (−2.5) = +0.5 D</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Combined Focal Length</div>
+      <div class="pb-sc">f = 1/P = 1/0.5 = 2 m = 200 cm</div>
+    </div>
+    <div class="pb-ans">∴ Combined power = +0.5 D · Focal length = 2 m (convex combination)</div>
+  </div>
+</div>
+
+<!-- FULL NUMERICAL PRACTICE -->
+<div class="p1sc">
+  <div class="p1sn">Section 5.3 — Board Exam Numericals</div>
+  <div class="p1st">Lens Formula Numericals</div>
+
+  <div class="p1board">
+    <div class="pb-head">Convex Lens Numerical <span class="pb-marks">3 Marks</span></div>
+    <div class="pb-q">An object is placed 20 cm from a convex lens of focal length 15 cm. Find position and nature of image.</div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 1 — Given (with signs)</div>
+      <div class="pb-sc">u = −20 cm (object on left → −ve)<br/>f = +15 cm (convex → +ve)</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 2 — Lens formula</div>
+      <div class="pb-sc">1/v = 1/f + 1/u<br/>1/v = 1/15 + 1/(−20)<br/>1/v = 1/15 − 1/20<br/>1/v = (4−3)/60 = 1/60<br/>v = +60 cm</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 3 — Magnification</div>
+      <div class="pb-sc">m = v/u = 60/(−20) = −3</div>
+    </div>
+    <div class="pb-ans">∴ Image at 60 cm on other side of lens. Real, Inverted, 3× magnified. (Object was between F and 2F)</div>
+  </div>
+
+  <div class="p1board">
+    <div class="pb-head">Concave Lens Numerical <span class="pb-marks">3 Marks</span></div>
+    <div class="pb-q">An object is placed 30 cm from a concave lens of focal length 15 cm. Find image position.</div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 1 — Given (with signs)</div>
+      <div class="pb-sc">u = −30 cm (object left → −ve)<br/>f = −15 cm (concave → −ve)</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 2 — Lens formula</div>
+      <div class="pb-sc">1/v = 1/f + 1/u<br/>1/v = 1/(−15) + 1/(−30)<br/>1/v = −1/15 − 1/30<br/>1/v = (−2−1)/30 = −3/30 = −1/10<br/>v = −10 cm</div>
+    </div>
+    <div class="pb-step">
+      <div class="pb-sl">Step 3 — Interpret</div>
+      <div class="pb-sc">v = −10 cm → on same side as object → Virtual image<br/>m = v/u = (−10)/(−30) = +1/3 → erect, diminished</div>
+    </div>
+    <div class="pb-ans">∴ Image is 10 cm in front of lens (same side as object). Virtual, Erect, Diminished (1/3 of object).</div>
+  </div>
+</div>
+
+<!-- FULL COMPARISON TABLE -->
+<div class="p1sc">
+  <div class="p1sn">Ultimate Comparison</div>
+  <div class="p1st">Mirror vs Lens — Everything in One Table</div>
+  <table class="p1nt">
+    <tr><th>Property</th><th>Concave Mirror</th><th>Convex Mirror</th><th>Convex Lens</th><th>Concave Lens</th></tr>
+    <tr><td><strong>Type</strong></td><td>Converging</td><td>Diverging</td><td>Converging</td><td>Diverging</td></tr>
+    <tr><td><strong>f sign</strong></td><td>−ve</td><td>+ve</td><td>+ve</td><td>−ve</td></tr>
+    <tr><td><strong>Real image?</strong></td><td>Yes (mostly)</td><td>Never</td><td>Yes (mostly)</td><td>Never</td></tr>
+    <tr><td><strong>Virtual image?</strong></td><td>Object btw P&amp;F</td><td>Always</td><td>Object btw O&amp;F</td><td>Always</td></tr>
+    <tr><td><strong>Formula</strong></td><td>1/v + 1/u = 1/f</td><td>1/v + 1/u = 1/f</td><td>1/v − 1/u = 1/f</td><td>1/v − 1/u = 1/f</td></tr>
+    <tr><td><strong>Magnification</strong></td><td>m = −v/u</td><td>m = −v/u</td><td>m = v/u</td><td>m = v/u</td></tr>
+    <tr><td><strong>Power</strong></td><td>N/A</td><td>N/A</td><td>P = +1/f</td><td>P = −1/f</td></tr>
+    <tr><td><strong>Uses</strong></td><td>Torch, doctor's mirror</td><td>Rear-view mirror</td><td>Camera, projector</td><td>Myopia glasses</td></tr>
+  </table>
+</div>
+
+<!-- COMMON MISTAKES -->
+<div class="p1cal warn" style="margin-top:8px;">
+  <div class="p1ci">⚠️</div>
+  <div class="p1cb">
+    <strong>Common Exam Mistakes — Light Chapter</strong>
+    1. Mirror formula: 1/v + 1/u = 1/f (PLUS) · Lens formula: 1/v − 1/u = 1/f (MINUS)<br/>
+    2. Mirror magnification: m = −v/u · Lens magnification: m = v/u (NO minus sign)<br/>
+    3. Power formula needs f in METRES, not cm (convert first!)<br/>
+    4. Concave mirror f = −ve · Convex mirror f = +ve · Convex lens f = +ve · Concave lens f = −ve<br/>
+    5. For lenses: real image → v is +ve; For mirrors: real image → v is −ve<br/>
+    6. R = 2f — ALWAYS use this to convert between R and f<br/>
+    7. Virtual image → always erect. Real image → always inverted.
+  </div>
+</div>
+
+<!-- EXAM FOCUS -->
+<div class="p1cal fire">
+  <div class="p1ci">🔥</div>
+  <div class="p1cb">
+    <strong>Exam Focus — High Weightage Topics</strong>
+    Ray diagrams for concave mirror (object at F, between P&amp;F) · Ray diagram for convex lens (object between F and 2F) · Mirror formula numericals · Lens formula numericals · Power of lens · Sign convention · Uses of mirrors and lenses
+  </div>
+</div>
+
+<!-- QUICK REVISION MASTER GRID -->
+<h2 style="font-family:var(--serif);font-size:22px;color:var(--text);margin:28px 0 14px;">⚡ Ultimate Quick Revision — Light Ch1</h2>
+<div class="p1qr">
+  <div class="p1qr-item">Laws of reflection:<br/>∠i = ∠r, same plane</div>
+  <div class="p1qr-item">R = 2f (always!)<br/>f = R/2</div>
+  <div class="p1qr-item">Mirror formula:<br/>1/v + 1/u = 1/f</div>
+  <div class="p1qr-item">Mirror magnification:<br/>m = −v/u</div>
+  <div class="p1qr-item">Concave: f = −ve<br/>Convex mirror: f = +ve</div>
+  <div class="p1qr-item">u always −ve<br/>(object in front always)</div>
+  <div class="p1qr-item">Concave mirror uses:<br/>Torch · Doctor's mirror · Shaving</div>
+  <div class="p1qr-item">Convex mirror uses:<br/>Rear-view · Security cameras</div>
+  <div class="p1qr-item">Refractive index:<br/>n = c/v = sin i/sin r</div>
+  <div class="p1qr-item">Lens formula:<br/>1/v − 1/u = 1/f (MINUS!)</div>
+  <div class="p1qr-item">Lens magnification:<br/>m = v/u (no minus!)</div>
+  <div class="p1qr-item">Convex lens: f = +ve<br/>Concave lens: f = −ve</div>
+  <div class="p1qr-item">Power: P = 1/f(metres)<br/>Unit = Dioptre (D)</div>
+  <div class="p1qr-item">Convex lens: P = +ve<br/>Concave lens: P = −ve</div>
+  <div class="p1qr-item">Combined power:<br/>P = P₁ + P₂ + P₃</div>
+  <div class="p1qr-item">Real image → inverted<br/>Virtual image → erect</div>
+  <div class="p1qr-item">Concave mirror: 5 real + 1 virtual image<br/>All virtual → erect</div>
+  <div class="p1qr-item">Concave lens: ALWAYS<br/>virtual, erect, diminished</div>
+  <div class="p1qr-item">Convex mirror: ALWAYS<br/>virtual, erect, diminished</div>
+  <div class="p1qr-item">Magnifying glass = convex lens<br/>object between O and F</div>
+</div>
+`,
   'phy-2': ``,
   'phy-3': ``,
   'phy-4': ``,
